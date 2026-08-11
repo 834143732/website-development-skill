@@ -1,0 +1,4 @@
+interface:
+  display_name: "Website Production Standards"
+  short_description: "Default website visual, motion, contact, and Actions standards"
+  default_prompt: "Use $website-production-standards before building a website to apply the default visual, animation, contact, and deployment standards."
