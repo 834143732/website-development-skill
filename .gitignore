@@ -1,0 +1,15 @@
+# Superpowers/Codex and other local development artifacts
+/.superpowers/
+/superpowers/
+/.codex/
+/.workbuddy/
+/.playwright-mcp/
+/tmp/
+/temp/
+*.local.*
+*.scratch.*
+*.tmp
+*.bak
+
+# Customer-provided materials: root-level folders whose names start with CJK characters
+/[一-龥]*/

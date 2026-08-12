@@ -9,10 +9,18 @@ description: 统一网站项目的视觉模块、逐元素交互动效、联系�
 
 ## 开工前
 
-- 识别项目类型：WordPress、自建后端 API、第三方 API 或纯前端项目。
+- 识别项目类型：WordPress、自建后端 API、第三方 API 或纯前端项目；按代码证据分类，不要仅按目录名称、框架名称或 `.output/server` 判断。
+- 根据项目类型按需读取对应 reference；如果样例标签与代码证据冲突，以实际调用链和部署脚本为准：
+  - [WordPress](references/website-types/wordpress.md)：参考 `D:\wuyoustudio\daqing` 的主题、CPT、seed 和 Actions 部署逻辑。
+  - [自建后端 API](references/website-types/self-hosted-api.md)：参考真正的后端判断标准；`D:\wuyoustudio\mumen` 当前是外部 API 客户端，文档中记录了这一误分类边界。
+  - [第三方 API](references/website-types/third-party-api.md)：参考 `D:\wuyoustudio\feidekeNew` 的 Orchard GraphQL、媒体代理、迁移和缓存逻辑。
+  - [纯前端](references/website-types/frontend-only.md)：当前无指定样例，按静态数据、构建产物和静态托管边界判断。
 - 检查现有页面结构、组件、设计系统、断点、构建命令和 `.github/workflows/`，优先复用既有规范。
 - 确认部署目标、目标目录和所需密钥。缺少联系方式或配置值时使用占位配置并提醒用户，不要编造真实信息。
 - 直接在 `main` 分支上修改，不创建或切换分支。
+- 默认不创建隔离 worktree；个人开发时直接在当前 `main` 工作区推进任务。
+- 检查并维护仓库根目录的 `.gitignore`：手动创建的 Superpowers、Codex 和其他开发辅助目录/临时文件默认忽略，例如 `.superpowers/`、`superpowers/`、`.codex/`、`.workbuddy/`、`.playwright-mcp/`、`tmp/`、`temp/`、`*.local.*`、`*.scratch.*`、`*.tmp` 和 `*.bak`。
+- 客户资料默认放在仓库根目录的中文命名文件夹中，并将根目录下以中文字符开头的文件夹匹配规则加入 `.gitignore`；该规则只对尚未纳入版本控制的文件生效，不自动移除已跟踪内容。
 - 不自动执行 `git push`；只有用户明确要求时才推送。不要把 Git 推送与 Actions 向目标网站目录的部署混为一谈。
 
 ## 默认页面模块
@@ -96,6 +104,7 @@ description: 统一网站项目的视觉模块、逐元素交互动效、联系�
 ## Actions 标准化部署
 
 - 所有网站项目默认通过 GitHub Actions 部署。
+- 具体的数据源、API 边界、构建产物、迁移、回滚和验收要求，先按上面的项目类型 reference 执行，再套用本节通用 Actions 规则。
 - WordPress 项目：在仓库存放主体（主题/站点主体代码）和插件，使用 Actions 将对应内容推送到目标 WordPress 目录。
 - 自建后端 API 项目：使用 Actions 部署前端及其后端交付物，按仓库现有构建和服务重启方式执行。
 - 第三方 API 项目：同样使用 Actions 完成构建和部署；通过环境变量或仓库密钥注入 API 配置，不把密钥写入仓库。
