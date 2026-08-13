@@ -118,6 +118,9 @@ description: 统一网站项目的视觉模块、逐元素交互动效、联系�
 - 所有网站项目默认通过 GitHub Actions 部署。
 - 具体的数据源、API 边界、构建产物、迁移、回滚和验收要求，先按上面的项目类型 reference 执行，再套用本节通用 Actions 规则。
 - WordPress 项目：在仓库存放主体（主题/站点主体代码）和插件，使用 Actions 将对应内容推送到目标 WordPress 目录。
+- WordPress 客户服务器部署前置检查：当目标服务器由客户提供时，在 push 或触发 Actions 自动部署之前，必须使用本机保存且已确认对应服务器的 SSH alias/config/key 做只读预检。先核对解析出的主机、端口、登录用户、环境和 `known_hosts` 指纹；使用 `BatchMode`、`IdentitiesOnly` 和 `StrictHostKeyChecking=yes`，不得输出私钥、密码或密钥变量值。
+- 预检必须在实际部署用户上下文确认远端 `rsync` 和 WP-CLI 可执行并能返回版本信息，例如检查 `command -v rsync` + `rsync --version`、`command -v wp` + `wp --version`；只确认 SSH 能登录或只检查 `command -v` 不算通过。主机、用户、工具缺失/不可执行/版本不符合要求或环境无法核对时，必须阻止 Actions，不得先触发部署。
+- 本机 SSH 预检不等于 GitHub Actions runner 已具备部署条件；还要确认 workflow 使用的 SSH 密钥、网络访问、远端用户、`ssh`/`rsync` 和 WP-CLI/PHP 运行条件与预检目标一致。任何一项不一致都要先报告并修正，不能把本机检查结果直接当作线上部署成功。
 - 自建后端 API 项目：使用 Actions 部署前端及其后端交付物，按仓库现有构建和服务重启方式执行。
 - 第三方 API 项目：同样使用 Actions 完成构建和部署；通过环境变量或仓库密钥注入 API 配置，不把密钥写入仓库。
 - 检查 `.github/workflows/*.yml` 和 `.yaml` 中所有 Action 的运行时兼容性，优先使用支持 Node.js 24 的稳定版本。`actions/checkout@v4` 会触发 Node.js 20 弃用提示，默认更新为支持 Node.js 24 的版本（当前优先使用 `actions/checkout@v5`），并一并审查其他 Action。
@@ -149,5 +152,6 @@ description: 统一网站项目的视觉模块、逐元素交互动效、联系�
 - 检查 AI 生成的中文、英文和中英混排文字在桌面端、平板端和移动端均保持紧凑易读；实际渲染字号没有超过对应语义上限，未通过放大文字解决换行或布局问题。
 - 如果本次打开了项目，确认已检查工作区并完成安全的 `git pull --ff-only`，或已记录因本地改动、分叉或冲突而暂停同步的原因。
 - 如果本次执行了 `git push`，确认已用 GitHub CLI 检查当前 commit 对应的 Actions run；区分部署进行中、成功、失败、取消、跳过和找不到 run，不把 push 成功直接当作部署成功。
+- 如果是 WordPress 客户服务器，确认 Actions 触发前已使用本机对应 SSH 完成主机/用户核对，并记录远端 `rsync`、WP-CLI 版本和预检结果；任何预检失败都不得进入自动部署。
 - 检查 Actions 使用 Node.js 24 兼容版本，不再保留会产生该弃用提示的 `actions/checkout@v4`。
 - 按项目类型验证 WordPress 目录、自建 API 或第三方 API 的构建与部署路径。

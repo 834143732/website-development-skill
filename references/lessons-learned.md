@@ -84,3 +84,10 @@
   - 修正：电脑默认使用 GitHub CLI；每次 push 后按当前分支和 commit SHA 定位 Actions run，检查状态、结论和日志，区分进行中、成功和失败等终态。
   - 规则状态：已确认
   - 默认规则：每次 push 后使用 `gh` 检查对应自动部署，只有匹配当前 commit 的 Actions run 成功才确认部署完成。
+
+- 日期：2026-08-13
+  - 项目类型：WordPress
+  - 问题：客户服务器的 SSH 能连通不代表实际部署用户具备 `rsync` 和 WP-CLI，也不代表 GitHub Actions runner 能访问同一环境；先触发 Actions 可能导致部署中途失败。
+  - 修正：Actions 部署前使用本机保存且已确认的对应服务器 SSH 做只读预检，核对主机、用户、环境、指纹，并在实际部署用户下验证 `rsync`、WP-CLI 可执行及版本；同时核对 runner 的 SSH、网络和运行条件。
+  - 规则状态：已确认
+  - 默认规则：WordPress 客户服务器在自动部署前必须完成 SSH、`rsync` 和 WP-CLI 预检；任一项缺失、不可执行或无法核对时阻止 Actions，不输出敏感凭据。
