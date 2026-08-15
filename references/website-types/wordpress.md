@@ -9,8 +9,10 @@
 - [路由、内容与数据流](#路由内容与数据流)
 - [编辑入口与内容覆盖风险](#编辑入口与内容覆盖风险)
 - [内容导入、后台建模与调用经验](#内容导入后台建模与调用经验)
+- [GEO 后台与 WordPress 对接方式](#geo-后台与-wordpress-对接方式)
 - [前端交互](#前端交互)
 - [构建、部署与回滚](#构建部署与回滚)
+- [WordPress/Nginx/Actions 发布强制注意点](#wordpressnginxactions-发布强制注意点)
 - [实施检查清单](#实施检查清单)
 
 ## 识别信号与边界
@@ -122,6 +124,122 @@ WordPress 项目的主要边界是：
 
 安全检查的职责是防止代码、配置、权限和未明确禁止的敏感数据误泄露，不是替客户重新判断原始内容能否公开。内容可见性必须来源于客户要求或明确数据状态，并在后台、模板、归档、搜索和 JSON-LD 中保持一致。
 
+## GEO 后台与 WordPress 对接方式
+
+本节说明 `wuselu` 中 GEO 后台与 WordPress 的对接方式：GEO 后台保存 AI 生成的文章草稿，通过定时发布接口把内容写入 WordPress 原生 `post` 文章类型和 `category` 分类法。GEO 后台的网站框架必须选择“Wordpress”（`type=3`），不需要选择其他自定义框架模式；多个兼容入口必须复用同一套 WordPress 对接实现，不能各自维护发布逻辑。
+
+### 边界与部署拓扑
+
+```text
+GEO/外部内容平台
+   │  GET 发现分类与作者；POST 发布文章
+   ▼
+Nginx + WordPress
+   ├─ 兼容入口或轻量 loader
+   └─ 桥接插件的单一处理器
+        ├─ 解析 form/JSON
+        ├─ 鉴权、IP 检查与限流
+        ├─ 校验并归一化字段
+        ├─ 写入文章、分类、SEO Meta 与封面
+        └─ 返回结构化 JSON 并记录审计
+```
+
+主题只负责读取和展示已入库内容以及项目明确采用的远程封面 Meta；协议兼容、密钥、限流、审计和文章写入应放在插件中。根目录或历史插件目录中的 `get.php`、`post.php` 只能作为加载 WordPress 与桥接插件的薄引导层，最终必须调用同一处理器，不能复制鉴权和写入代码。
+
+当前 GEO 协议可能请求以下入口，接入旧站点时需逐项核对 Nginx、实际文件和 WordPress 接管结果：
+
+| 入口类型 | 兼容路径 |
+| --- | --- |
+| 旧 GEO 插件 | `/wp-content/plugins/geo/get.php`、`/wp-content/plugins/geo/post.php` |
+| 站点根目录 | `/get.php`、`/post.php` |
+| 自定义框架 | `/api/external/plugin`、`/api/external/plugin/get.php`、`/api/external/plugin/post.php` |
+| 历史桥接插件 | `/wp-content/plugins/enchoy-geo-bridge/get.php`、`/wp-content/plugins/enchoy-geo-bridge/post.php` |
+
+兼容路径是现有 GEO 协议的部署事实，不是新接口默认设计。新集成优先注册明确的 WordPress REST 路由、版本号和方法约束；只有上游固定依赖旧 URL 时才保留 loader，并为每个入口运行发现、发布、错误码和审计测试。
+
+### 发现与发布流程
+
+发现请求用于站点添加或校验：
+
+```text
+GET /api/external/plugin?s=getClassList&sign=API_KEY
+GET /api/external/plugin?s=getWriterList&sign=API_KEY
+```
+
+- `getClassList` 返回 `category` 的完整树；不能只返回当前有文章的分类。
+- `getWriterList` 只返回配置的专用发布作者，例如 `{ id, name: user_login }`，不要枚举高权限用户。
+- GEO 遗留发现协议会在 `sign` 中携带原始 API key。只为兼容该协议接收，并在首次发现时立即生成不可逆校验值及加密副本；不得写入访问日志、审计详情或错误响应。新协议不要在查询字符串中传密钥。
+- 对发现和发布入口都按来源 IP 限流；`wuselu` 样例基线为 `120 req/min/IP`，应按实际流量配置。
+
+发布处理顺序必须稳定，任何一步失败都停止写入并返回明确 HTTP 状态：
+
+1. 记录仅含必要元数据的 `request | received` 审计，不记录 token、正文或完整个人数据。
+2. 解析 `application/x-www-form-urlencoded` 或 JSON，并把字段别名归一化到内部 DTO。
+3. 检查插件配置是否就绪；缺少密钥校验值或发布作者时返回 `503`。
+4. 检查源 IP 白名单和全局限流，分别返回 `403`、`429`。
+5. 校验签名；缺 token 返回 `401`，连续失败再触发更严格的失败限流。`wuselu` 样例为 `10 failed req/min/IP`。
+6. 检查发布者是专用低权限账号：可以编辑目标文章，但不能 `manage_options`、`install_plugins` 或使用 `unfiltered_html`。
+7. 识别只有分类而没有正文的验证探针，返回 `200`，不得创建空文章。
+8. 校验标题、正文、分类和长度；净化正文、去除不允许的 shortcode，再写入 `post`、分类、允许的 SEO Meta 和封面。
+9. 发布状态服从已确认的 `auto_publish` 策略和作者 capability；作者不能发布或站点要求审核时写为 `draft`，不能用高权限账号绕过。
+10. 成功返回 `{ id, url, status, thumbnail_id }` 等稳定 JSON；创建新文章使用 `201`，验证探针使用 `200`。
+
+### 遗留签名兼容与密钥存储
+
+GEO 当前发布协议使用下列 MD5 兼容算法：按 key 排序，排除 `sign`、`code`、`s` 和空的非标量值，以 `k=v` 用 `&` 连接，末尾追加 `key=API_KEY` 后计算 MD5。WordPress 端使用安全保存的原始 key 副本重新计算并做常量时间比较；MD5 不能“反推”API key。
+
+早期发现请求还可能把 `HMAC-SHA256(raw_key, wp_salt('auth'))` 与保存的 `api_key_hash` 对比。实现遗留协议时可同时兼容两条验签路径，但必须明确：MD5 只为对接不可更改的 GEO 现有协议，不应作为新接口的安全默认。新接口优先使用 HTTPS 下的 HMAC-SHA256、时间戳、nonce/重放窗口、常量时间比较和可轮换的独立密钥。
+
+后台配置至少包含：专用 `publisher_id`、`auto_publish`、可选 `allowed_ips`、不可逆的 `api_key_hash`、用于遗留 MD5 验签的 AES-GCM `api_key_ciphertext`、仅展示用的 `api_key_last4` 和 `key_generated_at`。密钥生成/轮换后只展示一次原值；`api_key_hash` 不能恢复原 key，删除加密副本后遗留 MD5 请求只能通过重新轮换恢复。
+
+### 字段、分类与内容安全
+
+在协议边界集中维护字段别名，不要把上游命名分散进模板：
+
+| 归一化字段 | 可兼容的 GEO 字段 | WordPress 目标 |
+| --- | --- | --- |
+| title | `title`、`post_title`、`name`、`Title` | `post_title` |
+| content | `content`、`post_content`、`body`、`Content` | `post_content` |
+| excerpt | `excerpt`、`description`、`summary`、`Description` | `post_excerpt` |
+| category | `class_id`、`categories`、`scode`、`MenuID` | `category` term relationship |
+| SEO title | `seo_title`、`meta_title`、`seoTitle`、`SEOTitle` | `_seo_meta_title` |
+| SEO keywords | `seo_keywords`、`meta_keywords`、`seoKeyword`、`SEOKeyword` | `_seo_meta_keywords` |
+| SEO description | `seo_description`、`meta_description`、`seoDescription`、`SEODescription` | `_seo_meta_description` |
+| featured image | `thumb_url`、`thumb`、`thumbnailUrl`、`coverUrl`、`imgUrl`、`ImgUrl`、`image`、`coverImage`、`thumbnail`、`cover` | 媒体附件或远程封面 Meta |
+
+- 标题和去除标签后的正文必填；样例上限为标题 300 字符、摘要 5000 字符，项目可收紧但不能静默截断关键正文。
+- 正文使用 `wp_kses_post()` 等允许列表净化并处理 shortcode，不能给 GEO 对接专用作者 `unfiltered_html` 来规避净化。
+- 分类值为数字时先按目标 taxonomy 的 `term_id` 查找；非数字再按 slug、name 查找。找不到时返回 `400 Unknown post category: <value>`，不能自动创建未知分类或悄悄放进默认分类。
+- 外部系统中的旧分类 ID、菜单 ID 和 WordPress `term_id` 不是天然等价；配置发布任务时以发现接口返回的目标 taxonomy ID 为准，并验证文章实际分类关系。
+- SEO Meta 只在上游确实传值且站点允许该字段时写入；若 SEO 插件使用不同 key，应在桥接层显式映射，不要让模板猜字段。
+
+### 封面图策略与 SSRF 防护
+
+封面来源按已确认顺序选择：优先使用独立封面字段；未提供时可回退到正文第一张图片。选择结果还必须经过协议、主机、端口、响应、体积、MIME 和像素检查，不能直接对任意上游 URL 调用下载函数。
+
+`mirror` 模式把图片安全下载到临时文件，经 `media_handle_sideload()` 导入媒体库并调用 `set_post_thumbnail()`；`remote` 模式不下载，把已验证 URL 写入项目约定的 post Meta，由主题在归档和详情中一致读取。样例限制为 HTTPS、显式 host allowlist、443 端口、最大 5 MB、jpeg/png/gif/webp、单边不超过 10000 像素且总像素不超过 4000 万；下载必须使用 `wp_safe_remote_get()` 或等价的 DNS/IP 重绑定防护并禁止重定向逃出白名单。
+
+通过类似 `wuselu_geo_featured_image_strategy` 的 filter 返回 `{ mode, url }`，可以让站点选择 `mirror` 或 `remote`，但需遵守以下边界：
+
+- 默认使用 `mirror` 可获得本地媒体生命周期和稳定的 `_thumbnail_id`；切换模式只影响新同步内容，不应静默迁移旧文章。
+- 使用 `remote` 时，主题的首页、归档、分类、搜索、详情和结构化数据必须采用同一取图函数，并保留图片失败 fallback。
+- 远程 OSS/CDN 主机必须由站点显式加入 allowlist；不能把某个项目的 OSS 域名升级为所有站点默认值。
+- 审计记录策略、结果、文章 ID 和脱敏 URL 信息；不要把带签名参数的完整远程 URL写入日志。
+
+### 审计、故障定位与验收
+
+后台应显示固定上限、倒序且脱敏的审计记录。至少区分发现分类/作者、发布请求、验证探针、授权拒绝、内容校验失败、写入成功/失败和封面处理结果；记录 HTTP 状态、时间、来源标识、文章 ID 和错误代码即可，不能保存 API key、完整正文或无需长期保留的请求体。
+
+| 外部平台错误 | 优先检查 | 修复方向 |
+| --- | --- | --- |
+| `Invalid API key` | WordPress 校验值、加密副本与上游 key 是否来自同一次轮换 | 在后台轮换后立即更新上游配置；不要尝试恢复 hash |
+| `Unknown post category: X` | 目标 taxonomy、真实 `term_id` 和发现接口返回值 | 改用目标 WordPress 分类 ID，不沿用旧系统 ID |
+| `Source IP is not allowed` | 实际 IPv4/IPv6 出口、反向代理取 IP 逻辑和白名单 | 修正可信代理与出口地址；是否允许空白名单由风险评估决定 |
+| `Content is required` / `Title is required` | 上游生成结果和字段别名归一化 | 修正数据源，不创建空文章 |
+| 添加站点 UI 报验证失败 | GET/POST 探针状态、响应结构、框架类型和审计 | 读取真实 HTTP 响应；不能仅因发布链路偶尔成功就忽略红字 |
+
+一次端到端验收至少覆盖：发现完整分类树和专用作者；有效发布得到 `201`；验证探针不创建文章；错误 key、无权限 IP、超限、空正文和未知分类返回预期状态；文章作者、发布状态、分类、SEO Meta、封面和公开 URL 正确；重复请求的幂等或去重策略已明确；审计可定位错误且不泄密；所有兼容路径经公网 Nginx 和 WordPress 两层实测，而不只是直接调用 PHP 方法。
+
 ## 前端交互
 
 `script.js` 是未打包的主题脚本，处理移动菜单、下拉菜单、产品分类跳转、Hero 轮播、IntersectionObserver reveal/计数器、typewriter、返回顶部和 reduced-motion。交互是完整页面导航，不是 AJAX 数据层。
@@ -209,6 +327,9 @@ HTML: expected theme assets, verified brand title, no unintended CJK
 - [ ] 检查 CPT、Taxonomy、Meta Box、REST schema、权限和后台编辑入口是否一一对应。
 - [ ] 修改路由时同步检查 rewrite flush、模板命名、canonical URL 和线上 smoke test。
 - [ ] 检查产品分类是否混用了原生 Taxonomy、序号和硬编码 slug。
+- [ ] GEO WordPress 对接使用单一插件处理器；兼容入口只是薄 loader，Nginx 与 WordPress 两层均已实测。
+- [ ] GEO 发布接口已验证 HTTPS、签名/重放防护、最小权限作者、IP/失败限流、字段净化、未知分类拒绝和脱敏审计。
+- [ ] 外部封面已明确 `mirror`/`remote` 策略，并验证 host allowlist、SSRF/重定向、体积、MIME、像素限制及全站一致 fallback。
 - [ ] 联系表单必须有真实提交端点、服务端校验、nonce/CSRF、防滥用和失败反馈。
 - [ ] 逐项确认导航、联系方式、页面正文是否由后台数据驱动，不要被模板硬编码误导。
 - [ ] 部署前执行 PHP lint、数据校验、Nginx 配置检查和关键页面/资源检查。

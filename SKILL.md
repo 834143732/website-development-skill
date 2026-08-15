@@ -44,7 +44,7 @@ AURA 只用于按任务复杂度和风险选择工作模式，不覆盖用户指
 
 - 识别项目类型：WordPress、自建后端 API、第三方 API 或纯前端项目；按代码证据分类，不要仅按目录名称、框架名称或 `.output/server` 判断。
 - 根据项目类型按需读取对应 reference；如果样例标签与代码证据冲突，以实际调用链和部署脚本为准：
-  - [WordPress](references/website-types/wordpress.md)：参考 [daqing](https://github.com/wuyoustudio/daqing.git) 的主题、CPT、seed 和 Actions 部署逻辑。
+  - [WordPress](references/website-types/wordpress.md)：参考 [daqing](https://github.com/wuyoustudio/daqing.git) 的主题、CPT、seed、GEO 与 WordPress 对接和 Actions 部署逻辑。
   - [自建后端 API](references/website-types/self-hosted-api.md)：参考真正的后端判断标准；[mumen](https://github.com/wuyoustudio/mumen.git) 当前是外部 API 客户端，文档中记录了这一误分类边界。
   - [第三方 API](references/website-types/third-party-api.md)：参考 [feidekeNew](https://github.com/wuyoustudio/feidekeNew.git) 的 Orchard GraphQL、媒体代理、迁移和缓存逻辑。
   - [纯前端](references/website-types/frontend-only.md)：当前无指定样例，按静态数据、构建产物和静态托管边界判断。
