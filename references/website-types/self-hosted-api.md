@@ -1,6 +1,6 @@
 # 自建后端 API 网站类型
 
-样例审计：`D:\wuyoustudio\mumen`
+样例审计：[mumen](https://github.com/wuyoustudio/mumen.git)
 
 > 重要校正：用户将 `mumen` 归入“自建后端 API”，但当前仓库代码证据显示它是 Nuxt SSR 前端加外部内容 API 客户端。不能把 Nuxt/Nitro 生成的 `.output/server/index.mjs` 当成业务后端；若真实后端在另一个仓库，必须把两个仓库作为两个部署单元核对。
 

@@ -1,6 +1,6 @@
 # WordPress 网站类型
 
-样例项目：`D:\wuyoustudio\daqing`
+样例项目：[daqing](https://github.com/wuyoustudio/daqing.git)
 
 ## 目录
 
@@ -141,6 +141,8 @@ WordPress 项目的主要边界是：
 
 部署必须在写入前完成数据库导出并生成可验证的成功标记；同时保存当前主题归档、Nginx rewrite/vhost 配置和 active theme。失败回滚要恢复主题文件、数据库和 rewrite 配置，不能只重新激活旧主题。保留远端时间戳备份，smoke test 和报告回收都成功后才清理临时目录。
 
+WordPress 项目默认使用 **PHP 8.2**：开发电脑默认安装 PHP 8.2，线上服务器、PHP-FPM、WP-CLI 和 Actions runner 也应统一在 PHP 8.2 运行。部署前预检需确认远端 `php -v`、`wp --info` 或 WP-CLI 报告的 PHP 版本为 8.2；主题、插件和 seed 脚本按 PHP 8.2 的语法与弃用边界编写，不依赖更低或更高版本的行为。远端 PHP 版本不是 8.2 或执行 `php -l` 出错时，必须阻止自动部署。
+
 不要把 `rsync --delete-after`、root SSH、seed 覆盖和“只恢复 active theme”当作安全默认值。至少补充非 root 账号、固定 SSH 指纹、部署锁、staging、备份保留策略和恢复演练；部署包只允许运行时清单、主题、工具和必要配置进入 web root，原始客户资料与 source snapshot 必须排除或放在 docroot 外。
 
 ## WordPress/Nginx/Actions 发布强制注意点
@@ -202,7 +204,7 @@ HTML: expected theme assets, verified brand title, no unintended CJK
 
 ## 实施检查清单
 
-- [ ] 确认 WordPress Core、插件、PHP 版本、站点目录、媒体目录和数据库权限不依赖未声明状态。
+- [ ] 确认 WordPress Core、插件、PHP 版本（默认 8.2）、站点目录、媒体目录和数据库权限不依赖未声明状态。
 - [ ] 明确 JSON、seed、WP 后台和 fallback 的唯一内容源及覆盖规则。
 - [ ] 检查 CPT、Taxonomy、Meta Box、REST schema、权限和后台编辑入口是否一一对应。
 - [ ] 修改路由时同步检查 rewrite flush、模板命名、canonical URL 和线上 smoke test。

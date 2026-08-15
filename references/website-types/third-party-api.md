@@ -1,6 +1,6 @@
 # 第三方 API 网站类型
 
-样例项目：`D:\wuyoustudio\feidekeNew`
+样例项目：[feidekeNew](https://github.com/wuyoustudio/feidekeNew.git)
 
 ## 目录
 
