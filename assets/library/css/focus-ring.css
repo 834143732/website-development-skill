@@ -1,0 +1,16 @@
+:root {
+  --focus-ring-color: #0b63ce;
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 3px;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (forced-colors: active) {
+  :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+    outline-color: CanvasText;
+  }
+}

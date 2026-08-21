@@ -48,6 +48,12 @@ AURA 只用于按任务复杂度和风险选择工作模式，不覆盖用户指
   - [自建后端 API](references/website-types/self-hosted-api.md)：参考真正的后端判断标准；[mumen](https://github.com/wuyoustudio/mumen.git) 当前是外部 API 客户端，文档中记录了这一误分类边界。
   - [第三方 API](references/website-types/third-party-api.md)：参考 [feidekeNew](https://github.com/wuyoustudio/feidekeNew.git) 的 Orchard GraphQL、媒体代理、迁移和缓存逻辑。
   - [纯前端](references/website-types/frontend-only.md)：当前无指定样例，按静态数据、构建产物和静态托管边界判断。
+- 开始网站规划、设计、改版或参考站审阅时，先读取 [优秀网站案例库索引](references/site-reviews/index.md)，按客户行业、受众、网站类型、内容密度、页面类型和目标风格选择最相关的案例；只加载与当前决策有关的单站拆解，不把某一个案例的视觉或交互升级为通用默认。
+- 用户要求分析、参考或借鉴一个优秀网站时，不能只给即时总结：同一任务内必须在 `references/site-reviews/` 新建或更新该站档案，并登记到案例库索引。档案至少记录审阅日期、实际页面与视口、行业与网站类型、风格与内容密度、观察事实、可复用模式、适用条件、不应照搬项和最小验收；无法检查的页面或状态明确标记为未验证。
+- 后续制作网站时，优先组合多个匹配案例的结构经验，并用当前客户资料、真实资产和浏览器实测做取舍；案例用于扩展方案库，不替代品牌研究、用户目标、数据模型、可访问性、性能或项目专属 `docs/`。
+- 需要通用图标、CSS、JavaScript 或装饰图片时，按需读取 [网站通用素材库](references/asset-library.md) 并核对 `assets/library/manifest.json`；只能复用许可证明确或仓库自行创作的素材，复制后仍需按当前项目品牌、组件契约、响应式和可访问性要求调整。
+- 参考网站的 Logo、品牌图形、产品/项目照片、字体、整份 CSS/JavaScript 和打包文件只作观察，不下载到素材库、不用于客户项目；从视觉或交互中提炼的通用模式必须自行实现，不能复制原站源码、选择器、动效参数或品牌资产。
+- 修改或新增素材库文件时同步登记来源、许可证、允许用途、字节数和 SHA-256，并运行 `scripts/test-asset-library-validator.ps1` 与 `scripts/validate-asset-library.ps1`；成熟第三方库优先通过项目包管理器使用，不在仓库保存压缩副本。
 - 检查现有页面结构、组件、设计系统、断点、构建命令和 `.github/workflows/`，优先复用既有规范。
 - 确认部署目标、目标目录和所需密钥。缺少联系方式或配置值时使用占位配置并提醒用户，不要编造真实信息。
 - 直接在 `main` 分支上修改，不创建或切换分支。

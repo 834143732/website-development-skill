@@ -1,0 +1,25 @@
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal][data-reveal-ready="true"] {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition:
+    opacity 420ms ease,
+    transform 420ms ease;
+}
+
+[data-reveal][data-reveal-ready="true"].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal][data-reveal-ready="true"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
