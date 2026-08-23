@@ -1,0 +1,94 @@
+{
+  "slug": "ghrepower",
+  "title": "上海致远绿色能源（ghrepower.com）官网案例",
+  "source": "https://www.ghrepower.com/",
+  "observed_at": "2026-08-23",
+  "language": "zh-CN",
+  "industry": ["可再生能源", "分布式风电", "微电网", "工业制造"],
+  "page_type": "工业能源企业官网首页",
+  "evidence": {
+    "status": "public-homepage-readonly-observation",
+    "checked": ["response-headers", "home.html", "zhiyuan.css", "zy-h5.css", "zhiyuan.js", "nav.css", "nav.js", "public-image-assets", "desktop-and-mobile-screenshots"],
+    "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics", "third-party-verification-of-marketing-claims"]
+  },
+  "site_facts": [
+    "首页是 5 幕纵向全屏 Swiper，右侧编号分页，启用鼠标滚轮并用 sessionStorage 记住场景",
+    "Hero 内有 4 张图片的横向 Swiper，自动播放间隔 3 秒、切换速度 1 秒、循环播放",
+    "首页依次呈现品牌 Hero、四象限解决方案、7 个产品系列、售前售后服务、公司入口与认证",
+    "解决方案包括商业发电、微电网、离网与通讯、新能源投资",
+    "产品系列包括 FD56、FD42、FD32、FD25、FD22、FD16、FD5/8",
+    "主色是品牌蓝，交互渐变使用橙色到蓝色；移动端改为实体蓝色头部和两列产品网格",
+    "站点为 WordPress，观察时加载 jQuery 2.1.0、Swiper、AOS，并在响应头披露 PHP/7.0.30"
+  ],
+  "source_claims": [
+    {
+      "claim": "始于 2006 年",
+      "location": "首页 Hero 数字区",
+      "verification": "homepage-self-description"
+    },
+    {
+      "claim": "110+ 自主知识产权",
+      "location": "首页 Hero 数字区",
+      "verification": "unverified-homepage-marketing-claim"
+    },
+    {
+      "claim": "日本市场份额 50% 以上",
+      "location": "首页 Hero 数字区",
+      "verification": "unverified-homepage-marketing-claim"
+    }
+  ],
+  "transferable_patterns": [
+    {
+      "name": "五幕说服路径",
+      "when": "工业业务需要依次解释定位、场景、产品、服务和资质",
+      "use": "按品牌、方案、产品、服务、证据组织首页，每段只回答一个问题",
+      "guardrail": "章节导航只能辅助定位，页面必须保留自然滚动和可深链内容"
+    },
+    {
+      "name": "强场景 Hero",
+      "when": "真实设备或项目现场本身能快速解释行业并建立可信度",
+      "use": "全幅场景图 + HTML 价值主张 + 1–2 个动作 + 第二层级的证据数字",
+      "guardrail": "数字必须标注统计口径、时间和来源，重要信息不能烧进图片"
+    },
+    {
+      "name": "中心能力与场景矩阵",
+      "when": "4–6 个解决方案共享一项底层能力，用户更习惯按任务而非型号选择",
+      "use": "中心表达共享能力，周围图片卡片按商业、微网、离网等场景分流",
+      "guardrail": "超过 6 项后使用分类导航，移动端改为可扫描列表"
+    },
+    {
+      "name": "产品列表同步换景",
+      "when": "各产品系列都有明确、可区分的真实应用图片",
+      "use": "固定列表负责比较，背景图负责场景记忆；点击、焦点、键盘和触摸均可切换",
+      "guardrail": "hover 只做预览，名称、参数、选型条件和详情链接始终可见"
+    },
+    {
+      "name": "服务与认证收束",
+      "when": "用户看完产品后需要判断交付风险、运维能力和合规性",
+      "use": "产品之后展示售前评估、售后响应、公司入口和认证详情",
+      "guardrail": "承诺和证书链接到可核验来源，不用无说明的 Logo 墙替代证据"
+    }
+  ],
+  "do_not_copy": [
+    "不要照搬 maximum-scale=1 或 user-scalable=no，必须允许用户缩放",
+    "不要用启用 mousewheel 的全页 Swiper 劫持整页阅读",
+    "不要给数量可变的产品入口统一固定 20% 宽度",
+    "不要在移动端隐藏服务说明、关于内容或其他关键上下文",
+    "不要保留指向已删除 DOM 节点的 Canvas 初始化脚本",
+    "不要在 HTTPS 页面使用 HTTP 链接或第三方脚本",
+    "不要继承过时的 jQuery/PHP 运行时或暴露无必要的版本信息",
+    "不要在没有授权时把归档图片、Logo、CSS、JS 直接用于客户生产项目"
+  ],
+  "source_assets": [
+    {"file": "assets/source/home.html", "kind": "html", "role": "主页结构快照"},
+    {"file": "assets/source/zhiyuan.css", "kind": "css", "role": "桌面全屏与组件样式"},
+    {"file": "assets/source/zy-h5.css", "kind": "css", "role": "移动与平板响应式规则"},
+    {"file": "assets/source/zhiyuan.js", "kind": "javascript", "role": "产品换景、视频与数字滚动"},
+    {"file": "assets/source/banner01.jpg", "kind": "image", "role": "Hero 场景图"},
+    {"file": "assets/source/solution-commercial.jpg", "kind": "image", "role": "解决方案矩阵图片"},
+    {"file": "assets/source/product-fd56.png", "kind": "image", "role": "产品换景图片"},
+    {"file": "assets/source/service-bg.jpg", "kind": "image", "role": "服务场景背景"},
+    {"file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "桌面首页视觉证据"},
+    {"file": "assets/source/original-home-mobile.png", "kind": "screenshot", "role": "移动首页视觉证据"}
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "slug": "jxgtx",
+  "title": "江苏吉星 KomShine（jxgtx.com）官网案例",
+  "source": "https://www.jxgtx.com/",
+  "observed_at": "2026-08-23",
+  "timezone": "Asia/Shanghai",
+  "language": "zh-CN",
+  "page_type": "光通信设备与光纤仪器企业官网首页",
+  "industry": [
+    "光通信",
+    "光纤熔接",
+    "OTDR",
+    "测量仪器",
+    "ODN 网络",
+    "B2B工业设备"
+  ],
+  "evidence": {
+    "status": "public-homepage-readonly-observation",
+    "checked": [
+      "jxgtx.com 公开中文首页 DOM 快照",
+      "首页引用的 CSS、JavaScript、公开图片与字体引用",
+      "1440x900 桌面首页截图",
+      "390x844 移动首页截图",
+      "本地案例页的静态资源与交互"
+    ],
+    "not_checked": [
+      "登录与后台",
+      "真实表单提交",
+      "接口和数据库",
+      "第三方数据核验",
+      "所有深层产品页的内容完整性",
+      "www.komshine.com 多语变体的完整性"
+    ],
+    "notes": [
+      "根域可见内容主要为中文，但 HTML lang 为 en；语言链接指向 www.komshine.com 的多语变体。",
+      "30+研发团队、10+国际语种、50+服务国家、1000K+服务客户为原站自述，未做第三方核验。",
+      "本地 HTML 快照移除了重复 Baidu 统计加载器与 CNZZ 注入脚本，并保留清理注释。"
+    ]
+  },
+  "site_facts": {
+    "navigation": [
+      "首页",
+      "产品&解决方案：光纤熔接机、OTDR、测量仪器、ODN 网络、光纤清洁、光纤工具",
+      "新闻资讯：公司新闻、行业资讯、展会信息、常见问题",
+      "服务&支持：产品手册、快速指南、视频教程、售后服务、保修政策、防伪查询",
+      "关于吉星",
+      "联系吉星",
+      "搜索、语言与咨询"
+    ],
+    "hero": {
+      "slides": 5,
+      "image_ratio": "1920x750",
+      "themes": [
+        "干线光纤测试仪器",
+        "QX43 OTDR",
+        "FX39 干线光纤熔接机",
+        "EX39 FTTx",
+        "快速连接器"
+      ],
+      "images": [
+        "assets/source/images/hero-test-instrument.png",
+        "assets/source/images/hero-qx43.webp",
+        "assets/source/images/hero-fx39.webp",
+        "assets/source/images/hero-ex39.webp",
+        "assets/source/images/hero-connector.webp"
+      ],
+      "swiper": {
+        "loop": true,
+        "autoplay_delay_ms": 4000,
+        "disable_on_interaction": true,
+        "pagination_clickable": true,
+        "animate_plugin": true
+      }
+    },
+    "product_families": [
+      "光纤熔接机",
+      "OTDR",
+      "测量仪器",
+      "ODN 网络",
+      "光纤清洁",
+      "光纤工具"
+    ],
+    "service_shortcuts": [
+      "产品手册",
+      "快速指南",
+      "视频教程",
+      "售后服务"
+    ],
+    "recommended_products_count": 20,
+    "recommended_products_observed": [
+      "FFC-3L",
+      "EX39",
+      "FC-33",
+      "FX39",
+      "FFC-01",
+      "QX43",
+      "QX55",
+      "KPM-43F",
+      "KPM-43V",
+      "KPM-43",
+      "KPM-11M",
+      "KPM-25M",
+      "KFLC-3",
+      "KFLC-2",
+      "KFLC-1",
+      "KFI-35P",
+      "KFI-35V",
+      "KIP-600V",
+      "GX39",
+      "KOC-125/250"
+    ],
+    "about": {
+      "founded": "2015-04",
+      "location": "南京",
+      "description": "光纤测量、熔接、清洁相关产品的研发、生产与销售"
+    },
+    "proof_modules": [
+      "30+ 研发团队",
+      "10+ 国际语种",
+      "50+ 服务国家",
+      "1000K+ 服务客户"
+    ],
+    "news_and_exhibitions": "首页可见展会信息与公司/行业新闻卡；当前快照中可见 2025 展会条目与 2026-06-04、2026-01-16 等新闻日期。",
+    "responsive_observation": {
+      "desktop": "固定深灰 Header、1920x750 Hero、四项服务条、产品/关于/新闻模块并列展开",
+      "mobile": "约 990px 以下切换汉堡菜单；Hero 裁切，服务和产品卡收窄为多行或单列，咨询浮层保持可达"
+    },
+    "contact": {
+      "phone": "138-1489-7945",
+      "email": "info@komshine.com",
+      "address": "江苏省南京市雨花台区宁双路18号沁恒科技园D幢"
+    },
+    "source_stack": [
+      "jQuery 3.7",
+      "Swiper 3.4.2",
+      "Swiper Animate",
+      "Bootstrap",
+      "WOW",
+      "Fancybox",
+      "Waypoints",
+      "CountUp",
+      "social-share",
+      "Layer",
+      "index.js",
+      "common.js"
+    ],
+    "anti_copy": "common.js 含禁止右键、复制、选择和 Ctrl+C 的公开脚本逻辑；仅作为待重构证据归档。"
+  },
+  "source_claims": [
+    { "metric": "研发团队", "value": "30+", "verification": "unverified-public-site-claim" },
+    { "metric": "国际语种", "value": "10+", "verification": "unverified-public-site-claim" },
+    { "metric": "服务国家", "value": "50+", "verification": "unverified-public-site-claim" },
+    { "metric": "服务客户", "value": "1000K+", "verification": "unverified-public-site-claim" }
+  ],
+  "transferable_patterns": [
+    {
+      "name": "现场先行的工业 Hero",
+      "pattern": "设备/测试动作 + 一项可核验参数 + 单一分类 CTA",
+      "when": "技术产品需要先建立尺度与使用场景时",
+      "guardrail": "首屏之后必须提供产品详情、参数和支持入口，避免只有氛围照片"
+    },
+    {
+      "name": "任务型产品平台",
+      "pattern": "用熔接、测试、测量、分配、清洁、工具组织一级分类",
+      "when": "产品目录深、采购角色多、SKU 不适合直接平铺时",
+      "guardrail": "每类需要结果导向说明，并由真实详情路由承接"
+    },
+    {
+      "name": "服务支持层",
+      "pattern": "手册、指南、视频、售后紧邻产品内容",
+      "when": "安装、学习、校准或维修会影响成交与交付时",
+      "guardrail": "真实资源、下载状态和售后承诺要可验证"
+    },
+    {
+      "name": "交付证据条",
+      "pattern": "能力、沟通、网络、影响四类数字分工",
+      "when": "B2B 企业需要在首页快速建立覆盖感时",
+      "guardrail": "标注日期、单位、口径、来源与未核验状态"
+    },
+    {
+      "name": "渐进增强动效",
+      "pattern": "轮播/hover/计数只改变节奏，静态内容独立成立",
+      "when": "首页需要展示多个场景但仍要兼顾性能和无障碍时",
+      "guardrail": "支持键盘、触屏、无脚本和 prefers-reduced-motion"
+    }
+  ],
+  "do_not_copy": [
+    "common.js 中禁止复制、右键、选择和 Ctrl+C 的 anti-copy 逻辑",
+    "javascript:; 菜单占位链接",
+    "没有性能预算的 jQuery + Swiper + WOW + Layer + CountUp 多库叠加",
+    "未经核验的 30+ / 10+ / 50+ / 1000K+ 自述数字和公开联系方式",
+    "原站 Logo、照片、字体、产品图、CSS 和 JS 的生产复用"
+  ],
+  "source_assets": [
+    "assets/source/home.html",
+    "assets/source/main.css",
+    "assets/source/media.css",
+    "assets/source/reset.css",
+    "assets/source/bootstrap.min.css",
+    "assets/source/swiper-3.4.2.min.css",
+    "assets/source/animate.css",
+    "assets/source/fancybox.css",
+    "assets/source/font.css",
+    "assets/source/share.min.css",
+    "assets/source/iconfont.css",
+    "assets/source/iconfont-extra.css",
+    "assets/source/jquery-3.7.0.min.js",
+    "assets/source/swiper.jquery.min.js",
+    "assets/source/swiper.animate1.0.3.min.js",
+    "assets/source/bootstrap.min.js",
+    "assets/source/wow.js",
+    "assets/source/fancybox.umd.js",
+    "assets/source/jquery.waypoints.min.js",
+    "assets/source/jquery.countup.min.js",
+    "assets/source/social-share.min.js",
+    "assets/source/layer.js",
+    "assets/source/ksbm.js",
+    "assets/source/main.js",
+    "assets/source/common.js",
+    "assets/source/original-home-desktop.png",
+    "assets/source/original-home-mobile.png",
+    "assets/source/case-page-desktop.png",
+    "assets/source/case-page-mobile.png",
+    "assets/source/images/",
+    "assets/source/original/",
+    "assets/source/manifest.md"
+  ],
+  "case_files": {
+    "page": "index.html",
+    "styles": "styles.css",
+    "script": "script.js",
+    "analysis": "README.md",
+    "structured_data": "case.json"
+  }
+}

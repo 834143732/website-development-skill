@@ -1,0 +1,2937 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name=renderer  content=webkit>
+    <title>版权隐私 - 舟欧工业科技（上海）有限公司</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>    
+    <link href="//g-style-js.bcdn8.com/css/font.css" rel="stylesheet">
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/v4/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/css/swiper-3.4.2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3575476_p34hs9wvu6o.css" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4393273_vchu8r3fyp.css" />
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/reset.css">
+    <link rel="stylesheet" href="/assets/addons/cms/frontend/css/share.min.css">
+    <link rel="stylesheet" href="/assets/addons/cms/frontend/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/assets/addons/cms/frontend/css/main.css">
+</head>
+
+<body class="ny-body-page">
+
+
+       <!-- pc头部 -->
+
+     <div class="head pc-hidden">
+
+        <div class="head2">
+  
+          <div class="wh1 flex2">
+  
+            <div class="logo flex-z">
+  
+              <a href="https://www.zoe-industry.com" class="imgs flex_left">
+  
+                <img src="https://imgs-data-brwq.bcdn8.com/zouo0117/uploads/20240730/607b7947dddcb152154d56765d997eb4.svg" alt="舟欧工业科技（上海）有限公司">
+  
+                <div class="cont-zx">
+  
+                   <p>舟欧工业</p>
+  
+                   <span>zoe Industry</span>
+  
+                </div>
+  
+              </a>
+  
+            </div>              
+  
+            <div id="menu">
+  
+              <ul class="nav_a1 clearfix">
+  
+                <li><a href="/"><span>网站首页</span></a></li>
+  
+                  
+                <li class="">
+  
+                    <a href="/product" class="bl"><span>产品中心</span></a>
+  
+                      
+                    <div class="sec1">             
+  
+                       <div class="wh">
+  
+                        <div class="pro-sort-v2 flex2">
+  
+                          <div class="pro-sorta1">
+  
+                            <ul class="pro-sortlist1">
+  
+                                
+                              <li>
+  
+                                <a href="/bmqia" class="bl">编码器</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/gybe" class="bl">工业泵</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/gyfa" class="bl">工业阀</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/gydj" class="bl">工业电机</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/gyjj" class="bl">工件夹具</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/cgq" class="bl">传感器</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/dqsbyj" class="bl">电气设备及元件</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/yqyba" class="bl">仪器仪表</a>
+  
+                              </li>
+  
+                                
+                              <li>
+  
+                                <a href="/jxjpk" class="bl">机械及配件</a>
+  
+                              </li>
+  
+                                
+                            </ul>
+  
+                         </div>
+  
+                         <div class="pro-sorta2">
+  
+                            <ul class="pro-sortlist2">
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/Speck">AMI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Baumer">Baumer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Digitronic">Digitronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/heidenhain">heidenhain</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Hengstler">Hengstler</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Kuebler">Kuebler</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LenordBauer">Lenord+Bauer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LIKA">LIKA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Mayr">Mayr</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Motrona">Motrona</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Renishaw">Renishaw</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/vatec">SCANCON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SEW">SEW</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SIKO">SIKO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Brinkmann">SOLARTRON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TRelectronic">TR-electronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Binks">TYCO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WENGLOR">WENGLOR</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/grundfos">grundfos</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ANCOTECH">ANCOTECH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AppliedPumps">Applied Pumps</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AXFLOW">AXFLOW</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BehlenMfg">Behlen Mfg</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Biks">Binks</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Brinkma">Brinkmann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BUCHER">BUCHER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Buehler">Buehler</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CAPRARI">CAPRARI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Casappa">Casappa</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Dualpumps">Dual pumps</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Ergoswiss">Ergoswiss</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/flexbimec">flexbimec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Fluxpump">Flux-pump</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GEABock">GEA Bock</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HIP">HIP</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KELVION">KELVION</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KNF">KNF</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LARZEP">LARZEP</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LOWARA">LOWARA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Maximat">Maximator</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MENZE">MENZEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/parker">parker</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PCM">PCM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PIAB">PIAB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Rexroth">Rexroth</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ROEMHEL">ROEMHELD</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ROQUET">ROQUET</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/sabatini">sabatini</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SALAMI">SALAMI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SAUERBIBUS">SAUER BIBUS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Scherzinger">Scherzinger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/schmalz">schmalz</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHMIDT">SCHMIDT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Settima">Settima</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/shurflo">shurflo</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/slico">slico</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Spe">Speck</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/STEIDLE">STEIDLE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Taskers">Taskers</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TEKAWE">TEKAWE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/vat">vatec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Vicker">Vickers</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Weinreich">Weinreich</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Williamson">Williamson</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/wolfcraft">wolfcraft</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/zuwa">zuwa</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/RICOSicherheitstechnikAG">RICO Sicherheitstechnik AG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AROFLEX">AROFLEX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ARON">ARON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AUKRAMaritimeAS">AUKRA Maritime AS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Baldwin">Baldwin</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BEKO">BEKO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/bielomatik">bielomatik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Bieri">Bieri</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/bink">binks</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Buche">Bucher</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/cayre">cayre</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Centerline">Centerline</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/COAX">COAX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EA">EA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EBRO">EBRO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ECONEX">ECONEX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GBEE">G.BEE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Gaebler">Gaebler</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Gemu">Gemu</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GESTRA">GESTRA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GSR">GSR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HAUHINCO">HAUHINCO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Herion">Herion</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HOPPE">HOPPE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/hydac">hydac</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Hydrasun">Hydrasun</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/JAKSA">JAKSA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/JC valve">JC valve</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Keofitt">Keofitt</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/kingstonvalves">kingstonvalves</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KRAFT">KRAFT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LAVAIR">LAVAIR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/mabo">mabo</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Maximator">Maximator</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MENZEL">MENZEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MHA">MHA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MikroPul">MikroPul</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MOOG">MOOG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Norgren">Norgren</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NUOVA GENERAL">NUOVA GENERAL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ORIGA">ORIGA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Penta">Penta</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PNEUMATROL">PNEUMATROL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PREVOST">PREVOST</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Roemheld">Roemheld</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SAMES">SAMES</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/schlesinger">schlesinger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/schneider">schneider kreuznach</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schubert & Salzer">Schubert & Salzer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Sectoriel">Sectoriel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/sirai">sirai</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Socla">Socla</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Sun">Sun Hydraulic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/super">super swivel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Taconova">Taconova</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Vickers">Vickers</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VULKAN">VULKAN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/walvoil">walvoil</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Wandfluh">Wandfluh</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WAREX">WAREX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WEBER-hydraulik">WEBER-hydraulik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WILKERSON">WILKERSON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/zimmerliag">zimmerliag</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/AC-MAGNETIC">AC-MAGNETIC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Ac-motoren">Ac-motoren</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ALLIED MOTION">ALLIED MOTION</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ATB">ATB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ELECTRO ADDA">ELECTRO ADDA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Elektror">Elektror</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FAULHABER">FAULHABER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HIMMEL">HIMMEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LAT">LAT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LONNE">LONNE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LYNCH">LYNCH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MAVILOR">MAVILOR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/maxon">maxon</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/nidec">nidec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PARVALUX">PARVALUX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SAIA">SAIA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SOCO SYSTEM">SOCO SYSTEM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VEM">VEM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Watt">Watt</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/Walter">Walter</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/brugola">brugola</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DESTACO">DESTACO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EMILE MAURIN">EMILE MAURIN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FIBRO">FIBRO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/greifer">greifer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HAINBUCH">HAINBUCH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/halder">halder</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Kipp">Kipp</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/legrand">legrand</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/OTT-JAKOB">OTT-JAKOB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PRUDHOMME">PRUDHOMME</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Roehm">Roehm</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ROEMHE">ROEMHELD</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SAS">SAS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schnorr">Schnorr</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHUNK">SCHUNK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Nann">Simon Nann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SMW-AUTOBLOK">SMW-AUTOBLOK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/zimmer">zimmer</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/Selmatec">Selmatec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ACELLI">ACELLI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AFRISO">AFRISO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ATAL">ATAL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/bamo">bamo</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Baum">Baumer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BD">BD SENSORS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Beckhoff">Beckhoff</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Black Teknigas">Black Teknigas</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Brugger">Brugger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CET">CET</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Contrinex">Contrinex</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Datalogic">Datalogic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DATASENSOR">DATASENSOR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Dressel">Dressel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/E+H">E+H</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Elettrotec">Elettrotec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Elobau">Elobau</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/eltroma - technik">eltroma - technik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GIACOMELLO">F.LLI GIACOMELLO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FISO">FISO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FOX">FOX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GRAS">G.R.A.S</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Gedi">Gedi</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/gems sensors">gems sensors</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HBM">HBM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HENKE-SASS">HENKE-SASS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Heraeus">Heraeus</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HKL SENSOREN">HKL SENSOREN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HOLTHAUSE">HOLTHAUSEN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HOLTHAUSEN">HOLTHAUSEN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Ingersoll Rand">Ingersoll Rand</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Jola">Jola</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/JUMO">JUMO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KFM">KFM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KOBOLD">KOBOLD</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Kromschroeder">Kromschroeder</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KSR Kuebler">KSR Kuebler</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LAUDA">LAUDA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LEM">LEM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Leuze">Leuze</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LORENZ">LORENZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/May">Mayr</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Meister">Meister</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MEYER VASTUS">MEYER VASTUS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/micronext">micronext</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/microsonic ">microsonic </a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NODING">NODING</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/norbar">norbar</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Novotechnik">Novotechnik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Pentronic">Pentronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Phoenix">Phoenix</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/pizzato">pizzato</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PLANISTAR">PLANISTAR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PULSOTRONIC">PULSOTRONIC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RHEONIK">RHEONIK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Regeltechnik">S+S Regeltechnik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SBS">SBS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/schischek">schischek</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/schmal">schmalz</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SECATEC">SECATEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SENSOPART">SENSOPART</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/sensortechnics">sensortechnics</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SEUSTER">SEUSTER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Stapleford">Stapleford</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/stefan-mayer">stefan-mayer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/suco">suco</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Testo">Testo</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TR-electronic">TR-electronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/variohm">variohm</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VSE">VSE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WEBTEC">WEBTEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WENGLO">WENGLOR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WOERNER">WOERNER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/XECRO">XECRO</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/CarloGavazzi">Carlo Gavazzi</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ingersollrand"> ingersoll rand</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SIEMENS">SIEMENS </a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SMC">SMC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Festo">Festo</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EXSYS">EXSYS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/eltromatechnik">eltroma-technik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/primes">primes</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LifaAir">Lifa Air </a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/OTTJAKOB">OTT-JAKOB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PANTR">PANTRON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PE">PELI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Pem">Pemuk</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/picker">pickering</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PicoL">PicoLAS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PI">PILZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PM">PMA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/POLY">POLYAMP</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/QUICKSCHOTT">QUICK-SCHOTT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Racelogic">Racelogic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Radafl">Radaflex</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/relp">relpol</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/REOV">REOVIB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RITTA">RITTAL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ROLAD">ROLAND</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/roxte">roxtec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RU">RUG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RZ">RZB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Sac">Sachs</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SATH">SATHL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Scaldal">Scaldalai</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHAEFR">SCHAEFER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schaere">Schaerer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/schare">scharer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHLEGE">SCHLEGEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schult">Schultz</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHWARZBEC">SCHWARZBECK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SIMPO">SIMPRO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SKLfengshan">SKL(风扇）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCOMEC">SOCOMEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/soehnl">soehnle</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SOLARTON">SOLARTRON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Sonheimer">Sontheimer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SAHL">STAHL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/STEO">STEGO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Stute">Steute</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/STROAG">STROMAG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TDKLAMBDA">TDK-LAMBDA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Tecautomatismes">Tec automatismes</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Therik">Thermik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/thermofisherzhuban">thermofisher（主板）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TK">TKD</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TrafoTechnik">Trafo-Technik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TUR">TURBO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Vah">Vahle</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VARIOM">VARIOHM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Vgt">Vogt</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Walthe">Walther</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WAMPFL">WAMPFLER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VOLTCRAT">VOLTCRAFT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Wielan">Wieland</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ACOMEL">ACOMEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/adaptronic">adaptronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AIRtronic">AIRtronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/APPOLDT">APPOLDT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/arsopi-thermal">arsopi-thermal</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AVL">AVL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BADUR">BADUR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/bilz">bilz</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BUCHNER">BUCHNER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/burgess">burgess</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Busch-jaeger">Busch-jaeger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CAB">CAB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/calipri">calipri</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CARL">CARL VALENTIN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CEAG">CEAG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CHIEFTEC">CHIEFTEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/cleevetech">cleevetech</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Cleware">Cleware</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/COMAR">COMAR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/control techniques">control techniques</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Data Industrial">Data Industrial</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Data">Data Track</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/delta elekronika">delta elekronika</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Deutronic">Deutronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DFx">DFx</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DIGITUS">DIGITUS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/distrelec">distrelec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DOLD">DOLD</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/E.L.B.">E.L.B.</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EAO">EAO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ECOVARIO">ECOVARIO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EILERSEN">EILERSEN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Eisenbau">Eisenbau</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ELECTRONICON">ELECTRONICON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ELSI">ELSI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/eltek">eltek</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Eltra（变压器）">Eltra（变压器）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EMG">EMG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EnerSys">EnerSys</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EXTREME NETWORKS">EXTREME NETWORKS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Exxotest">Exxotest</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FEINMETALL">FEINMETALL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/finder">finder</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FSG">FSG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FSM">FSM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FUNKE">FUNKE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GEGA">GEGA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Giovenzana">Giovenzana</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GLENAIR">GLENAIR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GLO-QUARTZ">GLO-QUARTZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GRAEFF">GRAEFF</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GREISINGER">GREISINGER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/h.team">h.team</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Hager">Hager</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/hankison">hankison</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HELIOS">HELIOS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HELLWIG">HELLWIG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Herrmann">Herrmann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HETRONIC">HETRONIC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HIGHTECH">HIGHTECH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HIRSCHMANN">HIRSCHMANN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/horstmann">horstmann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Humpert">Humpert</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/IGUS">IGUS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/IMC">IMC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/INDU-SOL">INDU-SOL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/IPR">IPR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Jackmark">Jackmark</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Just">Just Normlicht</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Kraus">K+N</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KEINATH Electronic">KEINATH Electronic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/keya">keya</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KNIEL">KNIEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KRAH">KRAH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LABOM">LABOM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/lapp">lapp</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Leoni">Leoni</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LTI">LTI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LUMBERG">LUMBERG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LUTZE">LUTZE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/lytron">lytron</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Mayser">Mayser</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Meilhaus">Meilhaus</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/metz-connect">metz-connect</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MGV">MGV</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Michael">Michael Riedel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MOORE">MOORE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Nanotec">Nanotec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Neuberger">Neuberger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NEUHAEUSER">NEUHAUSER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NF">NF Forward</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Oerlikon Metco">Oerlikon Metco</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/OPTRIS">OPTRIS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/OTT-JAKO">OTT-JAKOB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PANTRON">PANTRON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PELI">PELI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Pemuk">Pemuk</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/pickering">pickering</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PicoLAS">PicoLAS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PILZ">PILZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PMA">PMA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/POLYAMP">POLYAMP</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/QUICK-SCHOTT">QUICK-SCHOTT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Radaflex">Radaflex</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/relpol">relpol</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/REOVIB">REOVIB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RITTAL">RITTAL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ROLAND">ROLAND</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/roxtec">roxtec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RUG">RUG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RZB">RZB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Sachs">Sachs</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SATHL">SATHL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Scaldalai">Scaldalai</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHAEFER">SCHAEFER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schaerer">Schaerer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/scharer">scharer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHLEGEL">SCHLEGEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schultz">Schultz</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHWARZBECK">SCHWARZBECK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SIC">SIC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SIMPRO">SIMPRO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SKL(风扇）">SKL(风扇）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SOCOMEC">SOCOMEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/soehnle">soehnle</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SOLARTRON">SOLARTRON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/sommer-technik">sommer-technik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Sontheimer">Sontheimer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SPAL">SPAL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/STEGO">STEGO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Steute">Steute</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/STROMAG">STROMAG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TDK-LAMBDA">TDK-LAMBDA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Tec automatismes">Tec automatismes</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TELE">TELE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Thermik">Thermik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/thermofisher（主板）">thermofisher（主板）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Trafo-Technik">Trafo-Technik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TURBO">TURBO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Vahle">Vahle</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VARIOH">VARIOHM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VOLTCRAFT">VOLTCRAFT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/vulcanic">vulcanic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WAMPFLER">WAMPFLER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WEKA">WEKA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Wieland">Wieland</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/adstec">adstec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/alltraxinc">alltraxinc</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Armaturenbau">Armaturenbau</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BRECO">BRECO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Edmund">Edmund Optics</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HPS Industrial">HPS Industrial</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/INFICON">INFICON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Inspectis">Inspectis</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/laser2000">laser2000</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Lindab">Lindab</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Lon Science">Lon Science</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NEWPORT">NEWPORT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Planar">Planar</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Ready_Optics">Ready Optics</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/REIKOTRONIC">REIKOTRONIC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Sewerin">Sewerin</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SILVA">SILVA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TESA">TESA</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                              <li>           
+  
+                                   <div class="seck flex_left">
+  
+                                      
+                                      <p><a href="/MAGIAS">MAG IAS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/POGGI">POGGI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Jens">Jens S</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/handley">John handley</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/JOK">JOKE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KAB">KABI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KK">KBK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KESLER">KESSLER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KONAR-MES">KONCAR-MES</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KT">KTS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LEUC">LEDUC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/lindstom">lindstrom</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LUBBERNG">LUBBERING</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/M">M&C</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/M.V.MSrl">M.V.M Srl</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Msto">Mesto</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MJET">MiJET</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MOTVARIO">MOTOVARIO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NAEL">NAGEL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NEUEQ">NEUTEQ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/NIK">NIMAK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/O.E.GS.r.l.">O.E.G S.r.l.</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Olfasene">Olfasense</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PINT">PINET</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PROFILSCPE">PROFILSCOPE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Retus">Rectus</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/sabtini">sabatini</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SAB">SAIB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Suter">Sauter</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHUTE">SCHUTZE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SS">SHS（O型圈）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SOFMA">SOFIMA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Specer">Spencer Franklin</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ST">STOBER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Talbt">Talbot tool</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TEKN">TEKON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ULAN">ULMAN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Unbraded">Unbranded</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Uniflex-Hydrulik">Uniflex-Hydraulik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/UNIVERSAL">UNIVERSAL HYDRAULIK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/waltrroller">walterroller</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/wb">webi</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/wibeger">wiberger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/winel">winkel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WZ">WMZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AB">AB TRASMISSIONI SRL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ABSOLENT">ABSOLENT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ACM">ACM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Actuonix">Actuonix</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AIR">AIR TORQUE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AIRTEC">AIRTEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AIXIA">AIXIA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Alessandro">Alessandro</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/alfagomma">alfagomma</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AMF">AMF</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ANCOTEH">ANCOTECH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Arag">Arag</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Arcolectric">Arcolectric</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ARGO-HYTOS">ARGO-HYTOS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/argus">argus</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ARO_Welding">ARO Welding</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ASS">ASS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Automotion">Automotion Components</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/AVIT">AVIT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Axelent">Axelent</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Bansbach">Bansbach</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Bea-Antriebstechnik">Bea-Antriebstechnik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BIBUS">BIBUS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Bondioli">Bondioli & Pavesi</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/BONFIGLIOLI">BONFIGLIOLI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Brimatco">Brimatco</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/buerkle">buerkle</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Busak+Shamban">Busak+Shamban</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CHAMBRELAN">CHAMBRELAN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CLAX">CLAX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/COES">COES</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Conductix-Wampfler">Conductix-Wampfler</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/CONTITECH">CONTITECH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DEMAG">DEMAG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DEUBLIN">DEUBLIN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DIATEST">DIATEST</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/DREI-S-WERK">DREI-S-WERK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Druckluft-Fachhandel">Druckluft-Fachhandel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ECM">ECM Technologies</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EEPOS">EEPOS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EFTEC">EFTEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/elesa-ganter">elesa-ganter</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/elite">elite</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ELKO">ELKO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ElringKlinger">ElringKlinger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/emico">emico</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EMMEGI">EMMEGI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ENEMAC">ENEMAC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EPIDOR">EPIDOR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/EPPENSTEINER">EPPENSTEINER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/esska">esska</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ETTINGER">ETTINGER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ETXETAR">ETXETAR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/farma">farma</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FERROFLEX">FERROFLEX</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Fischbach">Fischbach</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Flammer">Flammer</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FLEXA">FLEXA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/flexball">flexball</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/FLURO">FLURO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/frigel">frigel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GATES">GATES</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Gelbau">Gelbau</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GERWAH">RINGFEDER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Giustina">Giustina</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GKS">GKS（搬运车）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/gloria">gloria</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GMN">GMN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/gorbel">gorbel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/GOUDSMIT">GOUDSMIT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Gutekunst">Gutekunst </a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HAACON">HAACON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Haberkorn">Haberkorn</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HAIMER">HAIMER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HEB">HEB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/hebezone">hebezone</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HEDI">HEDI</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HEGENSCHEIDT">HEGENSCHEIDT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Helical">Helical</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HHS">HHS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/hitec">hitec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/hofmann">hofmann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/holex">holex</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HUCHEZ">HUCHEZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HUCO">HUCO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HWS">HWS（玻璃容器）</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Hydram">Hydram</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/hydratech">hydratech</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/HYDROMEC">HYDROMEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Hydrotechnik">Hydrotechnik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/IDEATEC">IDEATEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/IKO">IKO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/IMT">IMT</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ingemat">ingemat</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Interchim">Interchim</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/INTZA">INTZA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/ITEM">ITEM</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/IWIS">IWIS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Thielmann">J. Thielmann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/JACOB">JACOB</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/John">John godrich</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Johnson">Johnson Controls</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/jutec">jutec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KARL ROLL">KARL ROLL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KNARR">KNARR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Kobe">Kobe Red Line</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/KRAUSSE">KRAUSSE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/kremlin">kremlin rexson</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LECHLER">LECHLER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LEROY">LEROY SOMER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LINEARTEK">LINEARTEK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LOHMANN">LOHMANN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/LUTZ">LUTZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MAGPOWER">MAGPOWER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MAHLE">MAHLE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Manutan">Manutan</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/mastervolt">mastervolt</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MATADOR">MATADOR</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MayTec">MayTec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Mobac">Mobac</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/mubea">mubea</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/MULCO">MULCO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Noma">Noma</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/norelem">norelem</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/oilite">oilite</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/optimithdraulic">optimithdraulic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Otto">Otto Olsen</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PAXTON">PAXTON</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PERMA">PERMA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Plitsch">Plitsch</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/poeppelmann">poeppelmann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Prodan">Prodan</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/PROFIL">PROFIL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Profiroll">Profiroll</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/propack">propack</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/protex">protex</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Q-lab">Q-lab</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/R">R+W</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RAUH">RAUH Hydraulik</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/REBS">REBS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/reggianariduttori">reggianariduttori</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Regoplast">Regoplast</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Reiff">Reiff</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/REITER">REITER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Relex">Relex</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/REVO">REVO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Rexnord">Rexnord</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RIEGLER">RIEGLER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RIETSCHOTEN & HOUWEN">RIETSCHOTEN & HOUWEN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RINGLER">RINGLER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/RINGSPANN">RINGSPANN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/robotunits">robotunits</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Rotork">Rotork</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/sahlberg">sahlberg</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SAYWELL">SAYWELL</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Scharmann">Scharmann</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schleuniger">Schleuniger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHNEEBERGER">SCHNEEBERGER</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SCHOLZ">SCHOLZ</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Schwingmetall">Schwingmetall</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SDCEM">SDCEM </a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Semper-plastic">Semper-plastic</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SENGA">SENGA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SFERO">SFERO</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SoftTIE">SoftTIE</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SOMATEC">SOMATEC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/SPIETH">SPIETH</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/STABILUS">STABILUS</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Staudinger">Staudinger</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/STM spa">STM spa</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Supermagnete">Supermagnete</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Survitec">Survitec</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/System Plast">System Plast</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TANDEMLOC">TANDEMLOC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Temporiti">Temporiti</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/crosby">crosby</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TIVOLY">TIVOLY</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TRAFAG">TRAFAG</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/t-spray">t-spray</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/TURIAN">TURIAN</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VAC">VAC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Vanel">Vanel</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Veith">Veith</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/VIBRA-TECHNIK">VIBRA-TECHNIK</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Vito">Vito</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/Wampf">Wampfler</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WARNER ELECTRIC">WARNER ELECTRIC</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WEMA">WEMA</a><span>|</span></p>
+  
+                                       
+                                      <p><a href="/WESA-Armaturen">WESA-Armaturen</a><span>|</span></p>
+  
+                                       
+                                   </div>             
+  
+                              </li>
+  
+                                
+                            </ul>
+  
+                         </div>
+  
+                         </div>             
+  
+                       </div>
+  
+                     </div> 
+  
+                      
+                </li>
+  
+                  
+                <li class="">
+  
+                    <a href="/pinpaizhongxin" class="bl"><span>品牌中心</span></a>
+  
+                                    
+  
+                    <div class="sec">             
+  
+                        
+                            <a href="/dlpp" class="bl">代理品牌</a>
+  
+                        
+                            <a href="/jxpp" class="bl">经销品牌</a>
+  
+                                     
+  
+                     </div> 
+  
+                       
+                </li>
+  
+                  
+                <li class="">
+  
+                    <a href="/about" class="bl"><span>关于我们</span></a>
+  
+                                    
+  
+                    <div class="sec">             
+  
+                        
+                            <a href="/about#abt1" class="bl">公司简介</a>
+  
+                        
+                            <a href="/about#abt2" class="bl">企业文化</a>
+  
+                        
+                            <a href="/about#abt3" class="bl">发展历程</a>
+  
+                                     
+  
+                     </div> 
+  
+                       
+                </li>
+  
+                  
+                <li class="">
+  
+                    <a href="/news" class="bl"><span>新闻中心</span></a>
+  
+                                    
+  
+                    <div class="sec">             
+  
+                        
+                            <a href="/gsxw" class="bl">公司新闻</a>
+  
+                        
+                            <a href="/hyhd" class="bl">行业活动</a>
+  
+                                     
+  
+                     </div> 
+  
+                       
+                </li>
+  
+                  
+                <li class="">
+  
+                    <a href="/contact" class="bl"><span>联系我们</span></a>
+  
+                      
+                </li>
+  
+                  
+  
+              </ul>
+  
+            </div>       
+  
+            <div class="toubuas flex">    
+  
+              <!-- <div class="zywena">
+  
+                <a href="javascript:translate.changeLanguage('english');" class="rhgxt flex-z ignore">
+  
+                  <i class="iconfont icon-yuyan"></i>
+  
+                  <p>EN</p>
+  
+                </a>        
+  
+              </div>    -->
+              <div class="fl deng-div clearfix">
+                <div class="yu-div fl ">
+                    <div class="zywena flex_left">
+                        <a href="javascript:;"><i style="color: black;" class="iconfont icon-yuyan"></i> </a>
+                        <div id="translate"></div>
+                       </div>
+                </div>
+                <!-- <div class="sou-div fl">
+                    <i class="iconfont icon-sousuo1"></i>
+                </div> -->
+            </div>
+  
+              <div class="sska">
+  
+                <a href="javascript:;" class="sskza ds">
+  
+                  <i class="iconfont icon-a-Group927"></i>
+  
+                </a>
+  
+              </div>
+  
+            </div>
+  
+          </div>
+  
+        </div>
+  
+      </div>
+  
+                <!-- 搜索 -->
+  
+                <div class="sskbj">
+  
+                  <div class="searchbox1">
+  
+                    <div class="search-close-btn fr"><i class="iconfont icon-guanbi1"></i></div>
+  
+                    <div class="clearboth"></div>
+  
+                    <div class="searchs">
+  
+                      <dt>请输入搜索关键词！</dt>
+  
+                      <form id="formm" action="/s/s.html" method="get">
+  
+                        <div class="conx">
+  
+                          <!-- <input type="text" hidden name="model_id" value="2"> -->
+  
+                          <input type="text" placeholder="请输入关键词" class="sertext" name="q"
+  
+                            data-suggestion-url="/addons/cms/search/suggestion.html" type="text" id="searchinput"
+  
+                            value="">
+  
+                          <button type="submit" id="btt" class="serbtn">搜索</button>
+  
+                        </div>
+  
+                        <input type="hidden" name="__searchtoken__" value="2118676e42803f393ad4ffc4e7dd8415" />  
+                      </form>
+  
+                    </div>
+  
+                  </div>
+  
+                </div>
+  
+  
+  
+    <!-- 手机头部 -->
+  
+    <div class="m-bm-head m-hidden white">
+  
+      <div class="m-bm-head-box">
+  
+        <div class="m-bm-logo">
+  
+          <h1><a href="/"><img src='https://imgs-data-brwq.bcdn8.com/zouo0117/uploads/20240730/607b7947dddcb152154d56765d997eb4.svg' alt='舟欧工业科技（上海）有限公司'></a></a></h1>
+  
+        </div>
+  
+        <a href="javascript:translate.changeLanguage('english');" class="sskza flex-z ignore">
+  
+          <i class="iconfont icon-yuyan"></i>
+  
+          <p>EN</p>
+  
+        </a>
+  
+        <div class="m-bm-navbtn">
+  
+          <span></span>
+  
+        </div>
+  
+      </div>
+  
+  
+  
+      <div class="m-bm-menu" style="display: none;">
+  
+        <div class="m-bm-menu-box">
+  
+          <ul class="m-bm-nav">
+  
+            <li>
+  
+              <a href="/">网站首页</a>
+  
+             </li>
+  
+               
+              <li class="">
+  
+                  <a href="/product" class="bl">产品中心</a>                     
+  
+                    
+                  <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+  
+                      <div class="sec">
+  
+                            
+                          <a href="/bmqia" class="bl">编码器</a>
+  
+                            
+                          <a href="/gybe" class="bl">工业泵</a>
+  
+                            
+                          <a href="/gyfa" class="bl">工业阀</a>
+  
+                            
+                          <a href="/gydj" class="bl">工业电机</a>
+  
+                            
+                          <a href="/gyjj" class="bl">工件夹具</a>
+  
+                            
+                          <a href="/cgq" class="bl">传感器</a>
+  
+                            
+                          <a href="/dqsbyj" class="bl">电气设备及元件</a>
+  
+                            
+                          <a href="/yqyba" class="bl">仪器仪表</a>
+  
+                            
+                          <a href="/jxjpk" class="bl">机械及配件</a>
+  
+                            
+                      </div>
+  
+                    
+              </li>
+  
+              
+              <li class="">
+  
+                  <a href="/pinpaizhongxin" class="bl">品牌中心</a>                     
+  
+                    
+                  <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+  
+                      <div class="sec">
+  
+                            
+                          <a href="/dlpp" class="bl">代理品牌</a>
+  
+                            
+                          <a href="/jxpp" class="bl">经销品牌</a>
+  
+                            
+                      </div>
+  
+                    
+              </li>
+  
+              
+              <li class="">
+  
+                  <a href="/about" class="bl">关于我们</a>                     
+  
+                    
+                  <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+  
+                      <div class="sec">
+  
+                            
+                          <a href="/about#abt1" class="bl">公司简介</a>
+  
+                            
+                          <a href="/about#abt2" class="bl">企业文化</a>
+  
+                            
+                          <a href="/about#abt3" class="bl">发展历程</a>
+  
+                            
+                      </div>
+  
+                    
+              </li>
+  
+              
+              <li class="">
+  
+                  <a href="/news" class="bl">新闻中心</a>                     
+  
+                    
+                  <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+  
+                      <div class="sec">
+  
+                            
+                          <a href="/gsxw" class="bl">公司新闻</a>
+  
+                            
+                          <a href="/hyhd" class="bl">行业活动</a>
+  
+                            
+                      </div>
+  
+                    
+              </li>
+  
+              
+              <li class="">
+  
+                  <a href="/contact" class="bl">联系我们</a>                     
+  
+                    
+              </li>
+  
+              
+  
+          </ul>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  
+  
+      
+  <div class="xw_ny_banner">
+      <div class="wh">
+    <h2>版权隐私</h2>
+  </div>
+  </div>
+
+  <div class="wh">
+    <div class="ajhhsd">
+      您当前所在的位置：
+            <a href="/">首页</a> <span>·</span>
+            <a href="/p/banquanyinsi">版权隐私</a> <span>·</span>
+         </div>  
+  </div>
+
+  <div class="shzr-content">
+    <div class="wh">
+      <strong>【特别提示】</strong><br /> 本政策仅适用于舟欧工业科技（上海）有限公司及其关联公司（以下或称“我们”或“舟欧工业”）提供的产品和服务及其延伸的功能（以下简称“舟欧工业服务”），包括舟欧工业网站、公众号、视频号以及随技术发展出现的新形态向您提供的各项产品和服务。如我们提供的某款产品或服务有单独的隐私政策或相应的法律声明当中存在特殊约定，则该产品的隐私政策将优先适用，该款产品或服务隐私政策和用户服务协议未涵盖的内容，以本政策内容为准。如我们关联公司的产品或服务中使用了舟欧工业提供的产品或服务但未设置独立隐私政策的，则本隐私政策同样适用于该部分产品或服务。<br /> <br /> 请仔细阅读《舟欧工业隐私政策》（尤其是粗体内容）并确定了解我们对您个人信息的处理规则。阅读过程中，如您有任何疑问，可通过《舟欧工业隐私政策》中的联系方式咨询我们。<br /> <br /> <div style="text-align:center;"><strong>引言</strong></div>
+<br /> 欢迎您访问舟欧工业科技（上海）有限公司网站（“本网站”）！<br /> 本网站由舟欧工业科技（上海）有限公司（“我们”）提供和控制，我们的注册地址是中华人民共和国中国（上海）自由贸易试验区临港新片区申港大道133号百润时代509。<br /> 我们非常重视用户的隐私和个人信息保护。您在使用我们的产品与/或服务时，我们可能会收集和使用您的相关信息。我们希望通过《舟欧工业隐私政策》（“本隐私政策”）向您说明在您使用我们的产品与/或服务时我们如何收集、使用、保存、共享和转移这些信息，以及我们为您提供的访问、更新、删除和保护这些信息的方式。<br /> 本隐私政策将帮助您了解以下内容：<br /> 1.我们收集了您的哪些类型的信息<br /> 2.我们如何使用您的信息<br /> 3.我们如何共享您的信息<br /> 4.委托处理<br /> 5.我们如何保护您的信息<br /> 6.我们将您的信息保留多长时间<br /> 7.未成年人的个人信息保护<br /> 8.通知和修订<br /> 9.第三方链接<br /> 10.联系我们<br /> <br /> <strong>目录</strong><br /> 1.我们收集了您的哪些类型的信息<br /> 2.我们如何使用您的信息<br /> 3.我们如何共享您的信息<br /> 4.委托处理<br /> 5.我们如何保护您的信息<br /> 6.我们将您的信息保留多长时间<br /> 7.未成年人的个人信息保护<br /> 8.通知和修订<br /> 9.第三方链接<br /> 10.联系我们<br /> <br /> <strong>1.我们收集了您的哪些类型的信息</strong><br /> 当您使用本网站时，我们可能会收集您的以下类别的信息：<br /> <br /> <strong>您提供给我们的信息。</strong><br /> 我们可能会收集您提供给我们的个人信息。当您通过本网站上的“联系我们”页面向我们发送信息时，您需要提供您的个人身份和联系信息，如您的姓名、电子邮件地址、电话号码、所在国家和城市等；您还可能向我们提供您的就业信息，如您的雇主和工作职位。我们还可能在您与我们的通信中，例如在您的评论、问题、反馈和您在使用本网站功能过程中提供的其他内容，获得有关您的信息。<br /> <br /> <strong>我们收集的您的信息。</strong><br /> 在您使用本网站的过程中，我们可能会自动收集您的一些信息。这些信息可能包括：<br /> ● 技术和设备信息。我们可能会收集有关您和您的设备的某些技术信息。这些信息可能包括但不限于您的IP地址、系统时区、系统语言和其他系统或网络识别信息。<br /> ● 操作和行为信息。我们自动收集您访问本网站时产生的信息，并记录您在本网站上的使用活动，包括您在本网站上的停留时间，您访问了本网站的哪些部分以及您访问了哪些信息。<br /> ● Cookies及其相似技术。本网站可能使用“Cookies”和其他跟踪技术，以存储本网站用户提供的信息。Cookies是由网络服务器发送至用户浏览器的信息片段。Cookies可能包括如用户偏好、在网站上花费的时间和访问的页面等信息。我们使用这些信息来识别您，并定制和改善您在本网站上的体验。您可以通过大多数浏览器自带的功能来管理您设备上的Cookies设置。例如，您可以将浏览器设置为在收到Cookies时通知您，或者您可以选择用浏览器阻止Cookies，但请注意，不接受Cookies可能会限制您使用本网站的某些功能。此外，请注意，目前本网站对您发出的“不跟踪”指令无法回应。<br /> <br /> <strong>我们从第三方收集的您的信息。</strong><br /> 我们可能会从第三方平台和我们的服务提供商获得关于您使用和访问本网站的个人信息，如您的系统所在国家/地区、设备的品牌和型号、正在浏览的记录、浏览历史，包括您为访问我们的网站而访问的其他服务、搜索记录和点击记录。<br /> <br /> <strong>2.我们如何使用您的信息</strong><br /> 我们可能在以下方面使用您的信息：<br /> 基于我们提供本网站的合法利益，我们可能将您的信息用于以下目的：<br /> ● 查阅您的意见或问题，并向您提供适当的服务；<br /> ● 执行我们的条款和政策；<br /> ● 处理和回复您的请求、问询、申请、投诉和反馈；<br /> ● 提供支持并回应您的请求、反馈和问询；<br /> ● 监测、操作、维护和管理本网站；<br /> ● 处理和解决本网站的技术问题和故障；<br /> ● 确保本网站有效和高效地运行；<br /> ● 发现、防止或以其他方式解决安全、欺诈或技术问题；<br /> ● 改进和提高本网站和相关服务的功能和性能；<br /> ● 妥善管理和经营我们与您的关系；<br /> ● 管理我们的业务；以及保护、执行或维护我们的权利和利益（包括我们对于违反我们的条款和条件的情况所享有的权利和利益）；<br /> ● 基于学术研究而使用；<br /> ● 基于符合法律法规的社会公共利益、突发公共卫生事件而使用。<br /> 我们可能出于履行我们的法律义务和责任的目的使用您的信息。在我们取得您的同意，或法律法规允许的情况下，我们也可能根据我们向您披露的其他目的来处理您的信息。<br /> <br /> <strong>3.我们如何共享您的信息</strong><br /> 我们可能与以下第三方共享您的信息：<br /> 服务提供商。我们可能与为我们提供服务的第三方分享您的信息，用以运营和维护本网站，如网站托管服务提供商、开发服务提供商、云服务提供商。<br /> 我们的关联方。我们为提供本网站，可能会出于包括防止非法使用和支持用户在内的目的，与我们公司的任何成员、子公司或关联方分享您的信息。<br /> 执法机构和主管部门。我们可能会根据法院判决、传票、合法的诉讼准备程序的要求、监管要求，或在法律允许或要求提供信息的情况，包括我们合理认为有必要或适宜对非法活动、涉嫌欺诈或对任何人的人身安全的潜在威胁进行调查、预防或采取行动的情况，而向主管部门、法院、第三方和其他机构分享您的信息。<br /> 出售或兼并。我们可能向符合以下情形的任何第三方披露您的信息：<br /> ● 收购或有意收购我们全部或部分资产或股份的第三方；<br /> ● 被我们全部或部分收购的第三方。<br /> ● 与我们合并的第三方；或<br /> ● 承继我们的全部或部分业务的第三方，<br /> 在上述每一种情形下，如未经我们授权，该第三方有法律义务不得披露和使用您的信息。<br /> <br /> 请您注意，您在使用我们服务时自愿共享甚至公开分享的信息，可能会涉及您或他人的个人信息甚至敏感个人信息。请您共享时谨慎考虑并决定。<br /> <br /> <strong>4.委托处理</strong><br /> 我们可能委托授权合作伙伴处理您的个人信息，以便向您提供相应的产品或服务。但我们仅会出于合法、正当、必要、特定、明确的目的共享您的个人信息，并且只会共享提供产品或服务所必要的个人信息。如果我们的合作伙伴将您的个人信息用于我们未委托的用途，其将单独征得您的同意。<br /> 我们的合作伙伴包括以下类型：<br /> 提供技术服务的供应商。我们可能会将您的个人信息提供给支持我们功能的第三方，包括为我们提供基础设施技术服务、数据分析服务及数据处理服务的供应商。<br /> 广告、分析服务类合作伙伴。我们会遵守法律法规及行业通用安全技术，委托这些合作伙伴处理与广告投放、覆盖面和有效性相关的信息。<br /> 对我们委托合作伙伴处理个人信息的，我们会与其签署数据保护协议，要求其按照协议约定、本隐私政策以及相关法律法规要求来处理个人信息。<br /> <br /> <strong>5.我们如何保护您的信息</strong><br /> 我们根据本隐私政策实施安全措施，并设有实体的、电子的和管理上的流程，以保护和保障我们所处理的您的信息。但是，在互联网上传输数据不存在绝对安全，我们不能确保您的信息的绝对安全。所有向我们传输您的信息的行为应由您自行承担风险。<br /> <br /> <strong>6.我们将您的信息保留多长时间</strong><br /> 在您使用本网站服务期间，您的个人信息将在为了实现本政策所述目的之期限内保存，同时将结合法律有强制的留存要求期限的规定确定，如《中华人民共和国电子商务法》要求商品和服务信息、交易信息保存时间自交易完成之日起不少于三年。在超出保存期间后，我们会根据适用法律的要求删除您的个人信息，或进行匿名化处理。<br /> 在我们有其他合法目的时，我们也可能保留您的信息；例如，在我们受到法律法规、行政司法部门强制性要求、合同或类似义务的约束而需要保留个人信息的情况，我们尊重并高度重视与您的个人信息有关的权利，包括：<br /> 数据访问权。您有权要求我们确认我们是否处理您的个人信息，并要求我们提供您的个人信息的副本。<br /> 更正权。如果我们所收集的您的任何个人信息不完整或不准确，您可以要求我们更正或更新这些信息。<br /> 删除权。在特定情况下，您可以要求我们删除您的全部或部分个人信息。<br /> 撤回同意。如果我们对您个人信息的处理是基于您的同意，您有权在任何时候撤回您的同意。但是，如果您的同意被撤回，您可能无法使用本网站的一些功能和我们的服务。<br /> 您可以根据本隐私政策第10条（联系我们）联系我们，以行使您的任何权利。为了保护您的隐私，在我们处理您的请求前，我们可能要求您提供额外的信息以证明您的身份。<br /> <br /> <strong>7.未成年人的个人信息保护</strong><br /> 舟欧工业非常重视对未成年人个人信息的保护。若您是18周岁以下的未成年人，在使用我们的产品与/或服务前，应事先取得您监护人的同意。舟欧工业根据国家相关法律法规的规定保护未成年人的个人信息。<br /> 我们不会主动直接向未成年人收集其个人信息。对于经监护人同意而收集未成年人个人信息的情况，我们只会在受到法律允许、监护人同意或者保护未成年人所必要的情况下使用、共享、转让或披露此信息。<br /> <br /> <strong>8.通知和修订</strong><br /> 我们保留不时自行决定修订本隐私政策的权利。我们将通过本网站发布的通知告知您本隐私政策的任何重大变更，该等变更仅适用于修订后的隐私政策生效后收集的信息。对本隐私政策的任何修订将在发布后立即生效。我们鼓励您定期查阅本隐私政策，以了解本隐私政策的变更情况以及我们如何保护您的个人信息。<br /> <br /> <strong>9.第三方链接</strong><br /> 本隐私政策不适用于任何其他网站或平台，除非上下文另有说明。请注意，本网站可能包括其他网站、平台或产品的链接，这些网站、平台或产品的隐私政策和实际操作与我们的不同。这些链接只是为您提供便利和更多信息，并不代表我们与第三方网站构成关联关系或赞助关系，亦不代表我们对第三方网站上信息的认可。如果您向任何这些第三方提供您的信息或与这些第三方网站互动，我们对您的信息被其收集和处理不承担责任。<br /> <br /> <strong>10.联系我们</strong><br /> 如果您对本隐私政策有任何疑问，请通过【021-58888912】与我们联系。<br /> 一般情况下，我们将在15天内回复。如果您对我们的回复不满意，特别是我们的个人信息处理行为损害了您的合法权益，您还可以向网信、电信、公安及工商监管部门进行投诉或举报。<br /> 附：个人信息及敏感个人信息示例（非舟欧工业网站、公众号、视频号所收集的个人信息，仅作示例说明）<br /> 个人信息：是以电子或者其他方式记录的与已识别或者可识别的自然人有关的各种信息，不包括匿名化处理后的信息。<br /> 敏感个人信息：是一旦泄露或者非法使用，容易导致自然人的人格尊严受到侵害或者人身、财产安全受到危害的个人信息，包括生物识别、宗教信仰、特定身份、医疗健康、金融账户、行踪轨迹等信息，以及不满十四周岁未成年人的个人信息。<br /> 设备信息：包括设备识别码（IMEI、IDFA、AndroidID、MAC、OAID、IMSI及其他设备相关信息）、应用信息（应用崩溃信息、通知开关状态、应用安装列表及其他应用相关信息）、设备参数及系统信息（设备类型、设备型号、操作系统及硬件相关信息），设备网络环境信息（IP地址，WiFi信息，基站信息及其他网络相关信息）。<br />    </div>
+  </div>
+
+
+     <!-- 底部 -->
+ <div class="foot-fot">
+  <div class="foot1">
+    <div class="foot1-m">
+      <ul class="m-bm-nav">
+                <li class="">
+            <a href="/product" class="bl">产品中心</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/bmqia" class="bl">编码器</a>
+                                       <a href="/gybe" class="bl">工业泵</a>
+                                       <a href="/gyfa" class="bl">工业阀</a>
+                                       <a href="/gydj" class="bl">工业电机</a>
+                                       <a href="/gyjj" class="bl">工件夹具</a>
+                                       <a href="/cgq" class="bl">传感器</a>
+                                       <a href="/dqsbyj" class="bl">电气设备及元件</a>
+                                       <a href="/yqyba" class="bl">仪器仪表</a>
+                                       <a href="/jxjpk" class="bl">机械及配件</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/pinpaizhongxin" class="bl">品牌中心</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/dlpp" class="bl">代理品牌</a>
+                                       <a href="/jxpp" class="bl">经销品牌</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/about" class="bl">关于我们</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/about#abt1" class="bl">公司简介</a>
+                                       <a href="/about#abt2" class="bl">企业文化</a>
+                                       <a href="/about#abt3" class="bl">发展历程</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/news" class="bl">新闻中心</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/gsxw" class="bl">公司新闻</a>
+                                       <a href="/hyhd" class="bl">行业活动</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/contact" class="bl">联系我们</a>                     
+                    </li>
+           
+      </ul>
+    </div>
+    <div class="wh pc-footaas">
+      <div class="foota2 flex2">
+        <div class="fo-a1">
+          <div class="d—tit">联系我们</div>
+          <ul class="d_sdha">
+             <li class="flex">
+               <div class="iamsgh">
+                  <img src="https://imgs-data-brwq.bcdn8.com/zouo0117/uploads/20240118/1536d18a6b8680e8b7b4c7928c1c2a4a.svg" alt="">
+               </div>
+               <div class="cont-b">
+                 <b>021-58888912</b>
+               </div>
+             </li>
+             <li class="flex">
+              <div class="iamsgh">
+                 <img src="https://imgs-data-brwq.bcdn8.com/zouo0117/uploads/20240118/77d7c4aae413932c264f2b2ada713f0b.svg" alt="">
+              </div>
+              <div class="cont-b">
+                <span>sales@zoe-industry.com</span>
+              </div>
+            </li>
+            <li class="flex2">
+              <div class="iamsgh">
+                 <img src="https://imgs-data-brwq.bcdn8.com/zouo0117/uploads/20240118/6da83cd751ec717233ae6abbed3fce16.svg" alt="">
+              </div>
+              <div class="cont-b">
+                <p>中国（上海）自由贸易试验区临港新片区港城广场一街坊12号楼501</p>
+              </div>
+            </li>
+            <li class="flex">
+              <div class="cont-b">
+                 <div class="social-share" data-initialized="true" data-mode="prepend">
+                  <a href="#" class="social-share-icon icon-wechat"></a>
+                  <a href="#" class="social-share-icon icon-weibo" target="_blank"></a>    
+                  <a href="#" class="social-share-icon icon-linkedin" target="_blank"></a>      
+                  <a href="#" class="social-share-icon icon-twitter" target="_blank"></a>   
+                  <a href="#" class="social-share-icon icon-facebook" target="_blank"></a>         
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>  
+                <div class="fo-a2">
+          <div class="d—tit">产品中心</div>
+                    <div class="sec">
+                        <a href="/bmqia" class="bl bla">编码器</a>
+                        <a href="/gybe" class="bl bla">工业泵</a>
+                        <a href="/gyfa" class="bl bla">工业阀</a>
+                        <a href="/gydj" class="bl bla">工业电机</a>
+                        <a href="/gyjj" class="bl bla">工件夹具</a>
+                        <a href="/cgq" class="bl bla">传感器</a>
+                        <a href="/dqsbyj" class="bl bla">电气设备及元件</a>
+                        <a href="/yqyba" class="bl bla">仪器仪表</a>
+                        <a href="/jxjpk" class="bl bla">机械及配件</a>
+               
+          </div>                 
+                  </div>
+            <div class="fo-a2">
+          <div class="d—tit">品牌中心</div>
+                    <div class="sec">
+                        <a href="/dlpp" class="bl bla">代理品牌</a>
+                        <a href="/jxpp" class="bl bla">经销品牌</a>
+               
+          </div>                 
+                  </div>
+            <div class="fo-a2">
+          <div class="d—tit">关于我们</div>
+                    <div class="sec">
+                        <a href="/about#abt1" class="bl bla">公司简介</a>
+                        <a href="/about#abt2" class="bl bla">企业文化</a>
+                        <a href="/about#abt3" class="bl bla">发展历程</a>
+               
+          </div>                 
+                  </div>
+            <div class="fo-a2">
+          <div class="d—tit">新闻中心</div>
+                    <div class="sec">
+                        <a href="/gsxw" class="bl bla">公司新闻</a>
+                        <a href="/hyhd" class="bl bla">行业活动</a>
+               
+          </div>                 
+                  </div>
+      
+      </div>
+    </div>
+    <div class="foota3">
+      <div class="wh flex2">
+        <p>Copyright © <script>var d=new Date();document.write(d.getFullYear());</script>  舟欧工业科技（上海）有限公司 All Rights Reserved.备案号：<a href="https://beian.miit.gov.cn" target="_blank">沪ICP备17031067号-15</a> 技术支持：<a href="http://www.qing.sh.cn" target="_blank">上海高端网站建设</a>  <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+<script>LA.init({id:"KOGRHVFlxB125wv6",ck:"KOGRHVFlxB125wv6"})</script><a target="_blank" title="51la网站统计" href="https://v6.51.la/s/7oJ4ih61oEQA1yj"><img src="https://sdk.51.la/icon/3-1.png"></a></p>
+        <p><a href="/p/wangzhanditu">网站地图</a><span> | </span><a href="/p/falvshengming">法律声明</a><span> | </span><a href="/p/banquanyinsi">版权隐私</a><span> | </span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 置顶 -->
+<div class="zd_erha">
+  <ul class="aat_list">
+    <li class="fc">
+      <a href="/contact/#abt1" class="ad_sts">
+        <i class="flex-z"><img src="/assets/addons/cms/frontend/images/zd1.svg" alt=""></i>
+      </a>
+      <!-- <div class="erghgsa">021-58888912</div> -->
+    </li>
+    <li>
+      <a href="javascript:;" class="ad_sts">
+        <i class="flex-z"><img src="/assets/addons/cms/frontend/images/zd2.svg" alt=""></i>
+      </a>
+      <div class="erghgsa erghgsb"><img src="https://imgs-data-brwq.bcdn8.com/zouo0117/uploads/20251124/296f72cbaddff8d23c725ea8f5135de2.png" alt="微信" class="w100"></div>
+    </li>
+    <li class="tops">      
+      <a href="javascript:;">
+        <i class="flex-z"><img src="/assets/addons/cms/frontend/images/zd3.svg" alt=""></i>
+      </a>
+    </li>
+  </ul>
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?34d88fd1149d4c8395488a59c92ad36f";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</body>
+<script src="//g-style-js.bcdn8.com/js/js/jquery-3.7.0.min.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/wow.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/swiper.jquery.min.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/swiper.animate1.0.3.min.js"></script>
+<script src="//g-style-js.bcdn8.com/js/v4/bootstrap.min.js"></script>
+<script src="//share-boooming.oss-accelerate.aliyuncs.com/jquery.share.min.js"></script>
+<script src="//share-boooming.oss-accelerate.aliyuncs.com/social-share.min.js"></script>
+<script src="/assets/addons/cms/frontend/layer/layer.js"></script>
+<script src="/assets/addons/cms/frontend/js/ksbm.js"></script>
+<script src="/assets/addons/cms/frontend/js/jquery.fancybox.min.js"></script>
+<script src="/assets/addons/cms/frontend/js/jquery.waypoints.min.js"></script>
+<script src="/assets/addons/cms/frontend/js/jquery.countup.min.js"></script>
+<script src="/assets/addons/cms/frontend/js/jquery.SuperSlide.2.1.3.js"></script>
+<script src="/assets/addons/cms/frontend/js/main.js"></script>
+<script src="https://res.zvo.cn/translate/translate.js"></script>
+<script>
+    translate.language.setLocal('chinese_simplified'); //设置本地语种（当前网页的语种）。如果不设置，默认自动识别当前网页显示文字的语种。 可填写如 'english'、'chinese_simplified' 等，具体参见文档下方关于此的说明。
+    translate.nomenclature.append('chinese_simplified','english',`
+  未成年=underage
+  
+  `);
+    translate.execute();//进行翻译
+    translate.language.setUrlParamControl('lang');
+    translate.selectLanguageTag.languages = 'english,chinese_simplified';
+      // 对网页中图片进行翻译
+translate.images.add({
+    "/uploads/a.jpg":"https://www.zvo.cn/a_english.jpg",
+    "/uploads/b.jpg":"https://www.zvo.cn/b_english.jpg",
+});
+
+translate.images.add({
+    "/uploads/a.jpg":"https://www.zvo.cn/a_{language}.jpg",
+    "/uploads/b.jpg":"https://www.zvo.cn/b_{language}.jpg",
+});
+  </script>
+
+
+
+</html>
+

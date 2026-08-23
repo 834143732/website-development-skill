@@ -1,0 +1,94 @@
+{
+  "slug": "phabuilder",
+  "title": "微构工场（phabuilder.com）官网案例",
+  "source": "https://www.phabuilder.com/",
+  "observed_at": "2026-08-23",
+  "language": "zh-CN",
+  "industry": ["生物材料", "合成生物学", "PHA", "工业生物制造", "可持续制造"],
+  "page_type": "生物材料与工业生物制造企业官网首页",
+  "evidence": {
+    "status": "public-homepage-readonly-browser-observation",
+    "checked": ["browser-response-dom", "index.css", "media.css", "index.js", "ksbm.js", "public-image-assets", "desktop-and-mobile-screenshots"],
+    "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics", "third-party-verification-of-company-claims"],
+    "note": "直接命令行 GET 在观察时返回 403；使用浏览器同源只读请求取得 HTML 快照。归档 home.html 移除了 51.la 与 CNZZ 的站点分析脚本及 ID。"
+  },
+  "site_facts": [
+    "顶部导航包含 PHAmily 原料产品、PHAbrary 定制方案、PHAdustry 智造产线、PHA Life 多元创造、其他非 PHA 产品和关于我们，并有中英文、搜索与采购入口",
+    "桌面端在窗口宽度大于 990px 时初始化 fullPage.js，首页源码包含 9 个全屏章节和右侧进度导航；990px 及以下销毁 fullPage 实例",
+    "Hero 使用自然湖泊场景、使命标题、副标题和淡入 Swiper；自动播放 5 秒、切换速度 1 秒、循环播放",
+    "关于区连接清华大学成果转化、PHA 研发和产业合作伙伴 Logo 墙",
+    "核心产品区解释 PHA 的低碳、亲和、自然降解属性，并使用 PHA 生物制造应用示意图",
+    "4P 战略为 PHAmily、PHAbrary、PHAdustry、PHA Life，分别对应材料组合、应用开发、产业化和终端商业化",
+    "生物制造区拆为简易、节能低碳、高效、非粮四张优势卡片",
+    "热销产品区展示 PB3000G、PB3430G、PV3000G 三个产品系列，并提供详情链接",
+    "新闻区使用循环 Swiper 展示约 10 条公司动态，卡片包含图片、日期、标题和详情入口",
+    "页面加载 jQuery 3.3.1、Swiper 3.4.2、WOW、fullPage.js、ScrollOverflow、Fancybox、CountUp 与第三方统计/分享脚本"
+  ],
+  "source_claims": [
+    {"claim": "PHA 可在 1–3 年内于自然环境中彻底消解", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
+    {"claim": "PHA 降解效率是传统塑料所需时间的 1%", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
+    {"claim": "超过 100 亿种组合方式的 PHA 家族", "location": "品牌描述/4P 战略", "verification": "unverified-homepage-marketing-claim"},
+    {"claim": "设备成本降低 30%、能耗减少 50% 以上、产率提高 80%、生产时间降低 30%", "location": "生物制造优势区", "verification": "unverified-homepage-marketing-claims"}
+  ],
+  "transferable_patterns": [
+    {
+      "name": "自然使命 Hero",
+      "when": "品牌价值与低碳、自然友好或循环利用相关，真实自然场景能先建立方向感",
+      "use": "自然场景 + 一句使命 + 简短副标题 + 一个行动入口",
+      "guardrail": "重要技术定义、统计、认证和适用边界必须以 HTML 文本提供"
+    },
+    {
+      "name": "统一词根的业务家族",
+      "when": "研发、应用、制造和商业化共享同一底层技术",
+      "use": "为各层设计统一词根，并分别配用户任务、副标题、详情入口和证据",
+      "guardrail": "造词不能代替信息架构，不能只对内部人员有意义"
+    },
+    {
+      "name": "技术解释顺序",
+      "when": "产品术语密集，访客既有科研用户又有品牌/采购用户",
+      "use": "先讲自然愿景，再讲来源、材料、产业战略、制造优势和产品规格",
+      "guardrail": "情绪场景不能替代技术事实，规格也不能成为首屏唯一内容"
+    },
+    {
+      "name": "一判断一优势卡",
+      "when": "制造能力可以被拆为 4–6 个独立的比较维度",
+      "use": "每张卡只保留一个标题、两句说明和一条证据链接",
+      "guardrail": "成本、能耗、产率、时间等数字必须有基线、日期、样本和验证方"
+    },
+    {
+      "name": "产品行动桥",
+      "when": "品牌官网最终需要承接 B2B 采购或样品咨询",
+      "use": "名称、共聚比例、图片、型号和详情链接同屏，卡片可点击",
+      "guardrail": "hover 只能强化记忆；规格和详情入口不能隐藏在 hover 中"
+    },
+    {
+      "name": "时间化新闻证据",
+      "when": "品牌的可信度来自持续的科研、认证、ESG、行业活动与合作",
+      "use": "使用真实日期、缩略图、标题和详情链接建立动态时间线",
+      "guardrail": "新闻必须有来源，不用数量制造没有证据的活跃感"
+    }
+  ],
+  "do_not_copy": [
+    "不要照搬 lang=\"en\" 到中文页面",
+    "不要让 fullPage.js、ScrollOverflow、Swiper 和 WOW 叠加成为唯一阅读路径",
+    "不要让移动端首屏标题存在横向裁切风险",
+    "不要让视频自动播放、进入章节后取消静音或第三方脚本干扰用户",
+    "不要照搬 51.la、CNZZ、分享和其他第三方统计/供应链脚本",
+    "不要把原站的材料降解、能耗、成本、产率、时间和组合数量宣传数字迁移到新项目",
+    "不要在没有授权时把归档 Logo、图片、视频、CSS、JS、新闻文案和伙伴标识用于生产项目"
+  ],
+  "source_assets": [
+    {"file": "assets/source/home.html", "kind": "html", "role": "首页 DOM 快照（已移除统计脚本及 ID）"},
+    {"file": "assets/source/index.css", "kind": "css", "role": "桌面、全屏与组件样式"},
+    {"file": "assets/source/media.css", "kind": "css", "role": "990px/767px/500px 响应式样式"},
+    {"file": "assets/source/index.js", "kind": "javascript", "role": "菜单、Swiper、fullPage、WOW、搜索与返回顶部"},
+    {"file": "assets/source/hero-lake.jpg", "kind": "image", "role": "自然场景 Hero"},
+    {"file": "assets/source/core-pha-diagram.png", "kind": "image", "role": "PHA 生物制造与应用示意图"},
+    {"file": "assets/source/strategy-phamily.svg", "kind": "svg", "role": "4P 战略图标"},
+    {"file": "assets/source/manufacturing-lowcarbon.svg", "kind": "svg", "role": "制造优势图标"},
+    {"file": "assets/source/product-pb3000-front.png", "kind": "image", "role": "热销产品图"},
+    {"file": "assets/source/news-01.jpg", "kind": "image", "role": "新闻卡片图"},
+    {"file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "桌面首页视觉证据"},
+    {"file": "assets/source/original-home-mobile.png", "kind": "screenshot", "role": "移动首页视觉证据"}
+  ]
+}
