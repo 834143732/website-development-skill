@@ -31,13 +31,29 @@ function Get-NormalizedRelativePath {
     return $Path.Replace('\', '/').TrimStart('/')
 }
 
+function Get-NormalizedRelativePathBelowRoot {
+    param(
+        [Parameter(Mandatory)][string]$Root,
+        [Parameter(Mandatory)][string]$Path
+    )
+
+    $rootFull = [IO.Path]::GetFullPath($Root).TrimEnd('\', '/')
+    $rootPrefix = $rootFull + [IO.Path]::DirectorySeparatorChar
+    $candidateFull = [IO.Path]::GetFullPath($Path)
+    if (-not $candidateFull.StartsWith($rootPrefix, [StringComparison]::OrdinalIgnoreCase)) {
+        return $null
+    }
+
+    return Get-NormalizedRelativePath -Path $candidateFull.Substring($rootPrefix.Length)
+}
+
 if (-not (Test-Path -LiteralPath $resolvedManifestPath -PathType Leaf)) {
     Write-Error "Manifest not found: $resolvedManifestPath"
     exit 1
 }
 
 try {
-    $manifest = Get-Content -LiteralPath $resolvedManifestPath -Raw | ConvertFrom-Json -Depth 20
+    $manifest = Get-Content -LiteralPath $resolvedManifestPath -Raw | ConvertFrom-Json
 }
 catch {
     Write-Error "Manifest JSON is invalid: $($_.Exception.Message)"
@@ -185,10 +201,14 @@ foreach ($asset in $assets) {
 }
 
 if (Test-Path -LiteralPath $libraryRoot -PathType Container) {
-    $manifestRelative = Get-NormalizedRelativePath -Path ([IO.Path]::GetRelativePath($libraryRoot, $resolvedManifestPath))
+    $manifestRelative = Get-NormalizedRelativePathBelowRoot -Root $libraryRoot -Path $resolvedManifestPath
     foreach ($file in Get-ChildItem -LiteralPath $libraryRoot -Recurse -File) {
-        $relative = Get-NormalizedRelativePath -Path ([IO.Path]::GetRelativePath($libraryRoot, $file.FullName))
-        if ($relative -eq $manifestRelative) {
+        $relative = Get-NormalizedRelativePathBelowRoot -Root $libraryRoot -Path $file.FullName
+        if ($null -eq $relative) {
+            Add-ValidationError "asset file resolves outside assets/library: $($file.FullName)"
+            continue
+        }
+        if ($null -ne $manifestRelative -and $relative -eq $manifestRelative) {
             continue
         }
         if (-not $registeredPaths.Contains($relative)) {

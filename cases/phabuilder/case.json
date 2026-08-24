@@ -48,6 +48,7 @@
     "PHA Life 区分合作展示、可购买产品和即将上线状态"
   ],
   "source_claims": [
+    {"claim": "页面展示的材料属性、抗菌率、产能、投资额、数字化率、人员、认证和合作关系均为原站自述。", "location": "多页面公开内容", "verification": "unverified-source-claim", "claim_type": "aggregate-review-boundary"},
     {"claim": "PHA 可在 1–3 年内于自然环境中彻底消解", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
     {"claim": "PHA 降解效率是传统塑料所需时间的 1%", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
     {"claim": "超过 100 亿种组合方式的 PHA 家族", "location": "品牌描述/4P 战略", "verification": "unverified-homepage-marketing-claim"},

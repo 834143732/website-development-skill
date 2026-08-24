@@ -5,10 +5,17 @@ $ErrorActionPreference = 'Stop'
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $validatorPath = Join-Path $PSScriptRoot 'validate-asset-library.ps1'
+$windowsPowerShellPath = (Get-Command powershell.exe -ErrorAction Stop).Source
 
 if (-not (Test-Path -LiteralPath $validatorPath -PathType Leaf)) {
     throw "Validator script not found: $validatorPath"
 }
+
+$childMajorVersion = (& $windowsPowerShellPath -NoProfile -Command '$PSVersionTable.PSVersion.Major' | Out-String).Trim()
+if ($LASTEXITCODE -ne 0 -or $childMajorVersion -ne '5') {
+    throw "Expected validator child host to be Windows PowerShell 5.x, received major version '$childMajorVersion'."
+}
+Write-Host "PASS validator child host is Windows PowerShell $childMajorVersion.x"
 
 function Get-FileSha256 {
     param([Parameter(Mandatory)][string]$Path)
@@ -94,7 +101,7 @@ function Invoke-ValidatorCase {
     )
 
     Save-FixtureManifest -Fixture $Fixture
-    $output = & pwsh -NoProfile -File $validatorPath -Root $Fixture.Root -ManifestPath $Fixture.ManifestPath 2>&1
+    $output = & $windowsPowerShellPath -NoProfile -ExecutionPolicy Bypass -File $validatorPath -Root $Fixture.Root -ManifestPath $Fixture.ManifestPath 2>&1
     $exitCode = $LASTEXITCODE
     $rendered = ($output | Out-String).Trim()
 
@@ -127,6 +134,24 @@ function Assert-FileMatches {
         if ($content -notmatch $pattern) {
             throw "[$Name] expected pattern not found: $pattern"
         }
+    }
+
+    Write-Host "PASS $Name"
+}
+
+function Assert-GitEolAttribute {
+    param(
+        [Parameter(Mandatory)][string]$Name,
+        [Parameter(Mandatory)][string]$Path
+    )
+
+    $output = & git -C $repoRoot check-attr eol -- $Path 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        throw "[$Name] git check-attr failed:`n$(($output | Out-String).Trim())"
+    }
+    $rendered = ($output | Out-String).Trim()
+    if ($rendered -notmatch ': eol: lf$') {
+        throw "[$Name] expected eol=lf for '$Path' but received: $rendered"
     }
 
     Write-Host "PASS $Name"
@@ -209,6 +234,10 @@ try {
         'revealReady',
         'prefers-reduced-motion'
     )
+    Assert-GitEolAttribute -Name 'asset css uses stable LF checkout' -Path 'assets/library/css/focus-ring.css'
+    Assert-GitEolAttribute -Name 'asset js uses stable LF checkout' -Path 'assets/library/js/reveal-on-scroll.js'
+    Assert-GitEolAttribute -Name 'asset svg uses stable LF checkout' -Path 'assets/library/icons/menu.svg'
+    Assert-GitEolAttribute -Name 'asset license uses stable LF checkout' -Path 'assets/library/licenses/lucide-LICENSE.txt'
 
     Write-Host 'All asset library validator tests passed.'
 }

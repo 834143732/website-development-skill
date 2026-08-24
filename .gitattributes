@@ -1,0 +1,6 @@
+assets/library/manifest.json text eol=lf
+assets/library/**/*.css text eol=lf
+assets/library/**/*.js text eol=lf
+assets/library/**/*.svg text eol=lf
+assets/library/**/*.md text eol=lf
+assets/library/**/*.txt text eol=lf
