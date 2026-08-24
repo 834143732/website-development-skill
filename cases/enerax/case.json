@@ -110,31 +110,31 @@
       "name": "场景先行的工业 Hero",
       "use": "真实设备动作 + 短使命句 + 单一 CTA + 静态 poster 退路",
       "when": "产品价值需要被看见或理解运行过程时",
-      "guardrail": "user-scalable=no；antiClone 禁止复制、选择、右键和图片拖拽；没有性能预算的 jQuery/旧版 Swiper/WOW/GSAP/ScrollTrigger 多库叠加；没有 poster、暂停、字幕和文字替代的自动播放视频；javascript:; 咨询链接；未标注口径、日期和来源的企业统计数字；未经授权的原站图片、Logo、字体与脚本"
+      "guardrail": "自动播放视频必须提供 poster、暂停、字幕与文字替代，且不得阻止用户缩放。"
     },
     {
       "name": "按决策任务分层产品",
       "use": "硬件/补能/数字平台三层入口，系列承接规模，单品承接规格",
       "when": "目录同时包含设备、站端和软件服务时",
-      "guardrail": "user-scalable=no；antiClone 禁止复制、选择、右键和图片拖拽；没有性能预算的 jQuery/旧版 Swiper/WOW/GSAP/ScrollTrigger 多库叠加；没有 poster、暂停、字幕和文字替代的自动播放视频；javascript:; 咨询链接；未标注口径、日期和来源的企业统计数字；未经授权的原站图片、Logo、字体与脚本"
+      "guardrail": "硬件、站端和软件入口必须连接真实详情或咨询状态，不使用 javascript:; 占位。"
     },
     {
       "name": "应用矩阵做筛选器",
       "use": "场景图 + 运营约束 + 解决方案链接",
       "when": "客户需要按路线、负载、班次或连续作业匹配方案时",
-      "guardrail": "user-scalable=no；antiClone 禁止复制、选择、右键和图片拖拽；没有性能预算的 jQuery/旧版 Swiper/WOW/GSAP/ScrollTrigger 多库叠加；没有 poster、暂停、字幕和文字替代的自动播放视频；javascript:; 咨询链接；未标注口径、日期和来源的企业统计数字；未经授权的原站图片、Logo、字体与脚本"
+      "guardrail": "场景图片不能替代运营约束与解决方案证据，且不得复用未经授权的原站素材。"
     },
     {
       "name": "使命句与证据条收束",
       "use": "品牌主张 + 可核验数字 + 新闻/伙伴事件",
       "when": "首页需要在目录之后建立信任时",
-      "guardrail": "user-scalable=no；antiClone 禁止复制、选择、右键和图片拖拽；没有性能预算的 jQuery/旧版 Swiper/WOW/GSAP/ScrollTrigger 多库叠加；没有 poster、暂停、字幕和文字替代的自动播放视频；javascript:; 咨询链接；未标注口径、日期和来源的企业统计数字；未经授权的原站图片、Logo、字体与脚本"
+      "guardrail": "统计数字必须标注口径、日期和来源，不能把宣传自述当成已核验证据。"
     },
     {
       "name": "渐进增强动效",
       "use": "原生交互与 CSS 为底，动画只增强节奏并尊重 reduced-motion",
       "when": "首页有视频、轮播、计数或滚动进入效果时",
-      "guardrail": "user-scalable=no；antiClone 禁止复制、选择、右键和图片拖拽；没有性能预算的 jQuery/旧版 Swiper/WOW/GSAP/ScrollTrigger 多库叠加；没有 poster、暂停、字幕和文字替代的自动播放视频；javascript:; 咨询链接；未标注口径、日期和来源的企业统计数字；未经授权的原站图片、Logo、字体与脚本"
+      "guardrail": "限制旧版动效库叠加，提供静态终态并尊重 prefers-reduced-motion。"
     }
   ],
   "do_not_copy": [

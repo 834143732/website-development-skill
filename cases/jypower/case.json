@@ -231,15 +231,15 @@
     { "file": "assets/source/splitType.js", "kind": "javascript", "role": "归档来源文件：splitType.js" },
     { "file": "assets/source/jquery.SuperSlide.2.1.3.js", "kind": "javascript", "role": "归档来源文件：jquery.SuperSlide.2.1.3.js" },
     { "file": "assets/source/layui.js", "kind": "javascript", "role": "归档来源文件：layui.js" },
-    { "file": "assets/source/original-home-desktop.png", "kind": "png", "role": "归档来源文件：original-home-desktop.png" },
-    { "file": "assets/source/original-home-mobile.png", "kind": "png", "role": "归档来源文件：original-home-mobile.png" },
-    { "file": "assets/source/case-page-desktop.png", "kind": "png", "role": "归档来源文件：case-page-desktop.png" },
-    { "file": "assets/source/case-page-mobile.png", "kind": "png", "role": "归档来源文件：case-page-mobile.png" },
+    { "file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "原站桌面首页视觉证据" },
+    { "file": "assets/source/original-home-mobile.png", "kind": "screenshot", "role": "原站移动首页视觉证据" },
+    { "file": "assets/source/case-page-desktop.png", "kind": "derived-screenshot", "role": "案例页桌面 QA 视觉证据" },
+    { "file": "assets/source/case-page-mobile.png", "kind": "derived-screenshot", "role": "案例页移动 QA 视觉证据" },
     { "file": "assets/source/manifest.md", "kind": "markdown", "role": "归档来源文件：manifest.md" }
   ],
   "source_asset_groups": [
-    "assets/source/images/",
-    "assets/source/original/"
+    { "path": "assets/source/images/", "kind": "directory", "description": "归档素材目录：images" },
+    { "path": "assets/source/original/", "kind": "directory", "description": "归档素材目录：original" }
   ],
   "case_files": {
     "readme": "README.md",
