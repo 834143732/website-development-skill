@@ -51,7 +51,7 @@
 | `review` | 必须 | 必须 | 可有 | 可有 | 允许逐步制作增强文件，但消费者不能假定增强文件存在 |
 | `snapshot` | 必须 | 必须 | 必须 | 必须且至少有 1 个文件 | 可加载复盘页和来源证据 |
 
-半升级案例继续标记为 `review`，直到 `index.html` 与非空的 `assets/source/` 同时存在并通过校验后才改为 `snapshot`。`review` 不禁止预先存在其中一项，避免升级过程中人为移动或删除有效文件。
+半升级案例继续标记为 `review`，直到 `index.html` 与非空的 `assets/source/` 同时存在并通过校验后才改为 `snapshot`。`review` 不禁止预先存在其中一项，避免升级过程中人为移动或删除有效文件。任何已经存在的增强入口都必须同步声明：存在 `index.html` 时必须有 `case_files.review_page`，存在 `assets/source/` 时必须有 `case_files.source_root`；声明了入口但文件不存在同样校验失败。
 
 ### 2. `case.json` 最小契约
 
@@ -69,7 +69,7 @@
 | `industry` | 至少 1 项的非空字符串数组 |
 | `page_type` | 非空字符串 |
 | `evidence.status` | 非空字符串，说明证据总体状态 |
-| `evidence.observations` | 至少 1 项的对象数组；每项必须有 `observed_at`、`scope`、`checked`、`not_checked`、`note`，其中三类清单均为字符串数组 |
+| `evidence.observations` | 至少 1 项的对象数组；每项必须有 `observed_at`、`scope`、`checked`、`not_checked`、`notes`；`observed_at` 为日期字符串，其余四项均为字符串数组，`scope` 至少 1 项，其他数组允许为空 |
 | `site_facts` | 字符串数组，只写观察事实，不混入建议或未经核实数字 |
 | `transferable_patterns` | 对象数组；每项必须有非空字符串 `name`、`when`、`use`、`guardrail` |
 | `do_not_copy` | 非空字符串数组 |
@@ -82,11 +82,15 @@
 
 所有相对路径必须位于当前案例目录内，不能是绝对路径、不能包含 `..`。`source_assets` 是供 AI 定位的**精选证据清单**，不要求枚举原始归档中的每一个文件，但列出的文件必须真实存在。轻量案例本次统一使用空数组，不能制造不存在的归档证据。`case_files` 则完整声明案例入口文件和顶层支持文件。
 
+Schema 使用条件约束：`artifact_level=snapshot` 时，`case_files.review_page`、`case_files.source_root` 必须存在，`source_assets` 至少 1 项；文件系统校验还要求两个声明指向真实入口，且来源目录非空。`artifact_level=review` 时不要求增强入口，但已存在或已声明的入口必须双向一致；若 review 已有来源目录和精选证据，`source_assets` 可以非空。
+
 可选 `source_claims` 为对象数组，每项必须包含 `claim`、`location`、`verification`。所有原站自述数字、资质、客户、效果和授权关系只能进入 `source_claims`，`verification` 使用原有更具体状态或 `unverified-source-claim`，不得混入 `site_facts`。
 
 ### 2.1 旧字段迁移
 
 所有已有案例都写入统一必需字段。对已经接近新结构的案例：字符串 `source`、日期和现有数组直接保留；对象形态的 `site_facts` 先按原分组展平为摘要字符串数组，原分组保留在可选 `site_fact_groups`；现有 `source_assets` 作为精选清单保留；缺失的 `case_files` 根据实际文件生成。
+
+所有旧 `evidence` 形态统一包装为 observation：顶层 `checked`、`not_checked` 复制为同名字符串数组；旧 `note` 字符串转为单项 `notes`，旧 `notes` 数组直接保留；`scope` 从对应 README 的实际检查页面、视口和归档类型生成；缺失项使用空数组，不能用猜测补内容。每个案例的 `evidence.status` 保留原状态；原来没有状态时，快照案例使用 `public-site-readonly-snapshot`，轻量案例使用 `public-site-readonly-review`。
 
 `btj_hcm` 与 `zoe_industry` 按以下规则迁移，避免只为通过 Schema 而丢弃信息：
 
@@ -101,6 +105,8 @@
 | `designRules` | 原文保留为可选 `design_rules`，同时根据 README 语境写成具备四字段的 `transferable_patterns` |
 | `doNotCopy` | `do_not_copy` |
 | `assets` | 规范为可选 `asset_groups`，同时从中选取代表文件写入 `source_assets` |
+
+`btj_hcm` 与 `zoe_industry` 原来没有 `evidence`：分别从各自 README 的“观察方式/归档资源/不应复制”内容生成单条 observation；`scope` 写实际公开首页、桌面/移动截图和已归档资源类型，`checked` 只列 README 明确说明已读取的 DOM/CSS/JS/图片等内容，`not_checked` 记录表单提交、登录/后台、第三方宣传核验和生产授权，`notes` 同时保留 `source.notes` 与 README 的归档边界，状态使用 `public-site-readonly-snapshot`。
 
 其他可选字段统一优先使用 snake_case；删除旧的重复 camelCase 键，但保留其等价内容。Schema 允许 `contact`、多语言、导航、产品族、应用等案例专属字段。
 
@@ -139,7 +145,7 @@ README 以线上快照说明为主体，新增“多页面补充观察”及其�
 
 ### 4. Git 合并策略
 
-在当前 `main` 上保留两侧已有提交历史，不执行 reset、clean、rebase 或强制覆盖。执行合并前必须确认当前分支为 `main`、工作区干净并重新运行 `git fetch origin main`。随后记录 `git rev-parse origin/main`：
+在当前 `main` 上保留两侧已有提交历史，不执行 reset、clean、rebase 或强制覆盖。执行合并前必须确认当前分支为 `main`、工作区干净并运行 `git fetch origin`，明确刷新远端跟踪引用。随后记录 `git rev-parse refs/remotes/origin/main`：
 
 - 如果仍为已审阅的 `6862f2c`，直接合并该提交；
 - 如果远端 tip 已变化，先检查新增提交列表和 diff。新增内容仍属于本次案例库范围且不覆盖本地独有内容时，合并新的已确认 tip；出现无关、破坏性或无法判断的改动时暂停并向用户报告。
@@ -172,8 +178,9 @@ README 以线上快照说明为主体，新增“多页面补充观察”及其�
 
 - Git：确认 `main` 已包含 `a726900` 与 `6862f2c`，工作区不存在未解决冲突。
 - 结构：每个 `cases/<slug>/` 都有 `README.md` 和合法的 `case.json`。
-- 契约：新增无第三方依赖的 `scripts/validate-case-library.ps1`，读取 Draft 2020-12 Schema 的约束并执行 PowerShell 侧文件系统/索引检查。命令为 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\validate-case-library.ps1`；成功退出 0，任何错误输出案例、字段/路径并退出 1。
-- 校验器测试：新增 `scripts/test-case-library-validator.ps1`，使用临时夹具覆盖合法 `review`、合法 `snapshot`、slug/目录不一致、缺必需文件、snapshot 缺复盘页、snapshot 来源目录为空、越界路径、非法完整度、索引缺项和重复索引。命令为 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-case-library-validator.ps1`。
+- 契约：新增无第三方依赖、兼容 Windows PowerShell 5.1 的 `scripts/validate-case-library.ps1`。脚本使用 `ConvertFrom-Json` 并手写本契约所需的类型、枚举、正则、条件和文件系统检查，不实现完整 JSON Schema 解释器，也不依赖 5.1 不具备的 `Test-Json`；`case.schema.json` 作为可供其他工具使用的声明式契约，脚本同时检查其可解析且版本为 `1.0.0`。默认命令为 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\validate-case-library.ps1`；成功退出 0，任何错误输出案例、字段/路径并退出 1。
+- 校验器接口：脚本参数为 `-CasesPath`（默认仓库 `cases/`）、`-SchemaPath`（默认 `cases/case.schema.json`）和 `-IndexPath`（默认 `cases/README.md`），三者都解析为显式路径并用于生产校验或临时夹具。
+- 校验器测试：新增 `scripts/test-case-library-validator.ps1`，为每个场景建立独立临时案例根、Schema 和索引，并通过上述三个参数调用校验器；覆盖合法 `review`、合法 `snapshot`、slug/目录不一致、缺必需文件、snapshot 缺复盘页、snapshot 来源目录为空、越界路径、非法完整度、索引缺项和重复索引。命令为 `powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\test-case-library-validator.ps1`。
 - 索引：校验 `cases/README.md` 与一级案例目录一一对应，并验证每个链接目标存在；`case.schema.json` 及说明文件不作为案例目录。
 - 链接：对 `SKILL.md`、根 `README.md`、`cases/` 与 `references/lessons-learned.md` 扫描，不得存在 `references/site-reviews/` 路由；`docs/superpowers/specs/` 和历史计划中的背景描述不纳入此检查。
 - 素材库：运行现有素材库测试与校验脚本，确认合并没有破坏清单、许可和哈希。
