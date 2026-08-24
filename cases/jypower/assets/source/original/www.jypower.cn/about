@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="博敏网络提供技术支持,https://www.bomin.cn" />
+    <meta name=renderer  content=webkit>
+    <title>关于吉远 - 苏州吉远电子科技有限公司</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>  
+    <link href="//g-style-js.bcdn8.com/css/font.css" rel="stylesheet">
+    <link href="//g-style-js.bcdn8.com/css/fonts.css" rel="stylesheet">
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/v4/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/css/swiper-3.4.2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/css/animate.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_3575476_p34hs9wvu6o.css" />
+    <link rel="stylesheet" href="//at.alicdn.com/t/c/font_4922437_mpbtotwb70m.css" />
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/reset.css">
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/share/css/share.min.css">
+    <link rel="stylesheet" href="//g-style-js.bcdn8.com/css/css/fancybox.css">
+<link rel="stylesheet" href="/assets/addons/cms/frontend/layui/css/layui.css">
+    <link rel="stylesheet" href="/assets/addons/cms/frontend/css/main.css">
+</head>
+
+<body class="ny-body">
+
+
+       <!-- pc头部 -->
+     <div class="head pc-hidden">
+      <div class="head2">
+        <div class="wh flex2">
+          <div class="logo">
+            <a href="/" class="imgs">
+              <img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250515/2edbfd7ef7ab3d6d0f718bbaaf44912f.svg" alt="苏州吉远电子科技有限公司">
+            </a>
+          </div>    
+                <div id="menu" class="flex">
+              <ul class="nav_a1 clearfix">
+                                <li><a href="/"><span>首页</span></a></li>
+                                <li class=" pra7">
+                    <a href="/AC-DC" class="bl"><span>产品</span></a>
+                                          <div class="sec1">             
+                         <ul class="asxq">
+                                                         <li>
+                                <a href="/AC-DC" class="tit">AC/DC功率转换控制器</a>
+                                <div class="seca">
+                                                                       <a href="/Original-Edge" class="bl">反激转换控制器</a>
+                                                                      <a href="/Power-Factor" class="bl">功率因数校正控制器</a>
+                                                                      <a href="/Forward-architecture" class="bl">正激架构转换控制器</a>
+                                                                      <a href="/llc" class="bl">LLC架构控制器</a>
+                                                                      <a href="/led" class="bl">LED 控制器</a>
+                                                                      <a href="/Motor" class="bl">直流电机电源控制器</a>
+                                                                      <a href="/Non-isolated" class="bl">非隔离转换器控制器</a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/usb" class="tit">USB PD or Type C</a>
+                                <div class="seca">
+                                                                       <a href="/PD-PWM-Contoller" class="bl">PD PWM控制器</a>
+                                                                      <a href="/PFC-Controller" class="bl">PFC  控制器</a>
+                                                                      <a href="/Synchronous-Rectifier" class="bl">同步整流控制器</a>
+                                                                      <a href="/USB-Power-Delivery-Controller" class="bl">USB PD控制器</a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/Discrete-Power-Devices" class="tit">功率器件</a>
+                                <div class="seca">
+                                                                       <a href="/High-voltage-power-devices" class="bl">高压功率器件</a>
+                                                                      <a href="/Medium-and-low-voltage-MOSFETs" class="bl">中低压 MOSFET</a>
+                                                                      <a href="/Schottky-power-diodes" class="bl">肖特基功率二极管</a>
+                                                                      <a href="/sic" class="bl">SiC 功率二极管</a>
+                                                                      <a href="/Single-phase-rectifier-bridge" class="bl">单相整流桥</a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/SR-Controller" class="tit">同步整流控制器</a>
+                                <div class="seca">
+                                                                       <a href="/TO-220" class="bl">TO-220封装系列</a>
+                                                                      <a href="/TO-252" class="bl">TO-252封装系列</a>
+                                                                      <a href="/SM7" class="bl">SM7封装系列</a>
+                                                                      <a href="/SOP-8" class="bl">SOP-8封装系列</a>
+                                                                      <a href="/Controller-series" class="bl">控制器系列</a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/Hall-Devices-DC-to-DC-Converter" class="tit">霍尔与DC-DC控制器</a>
+                                <div class="seca">
+                                                                       <a href="/Hall-effect-Switch" class="bl">霍尔开关</a>
+                                                                      <a href="/DC-to-DC" class="bl">DC  to DC </a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/Reference-Voltage" class="tit">参考电压、运放及光耦</a>
+                                <div class="seca">
+                                                                       <a href="/Reference-Voltage" class="bl">参考电压</a>
+                                                                      <a href="/Operational-Amplifiers" class="bl">运算放大器</a>
+                                                                      <a href="/Photocoupler" class="bl">光电耦合</a>
+                                        
+                                </div>
+                              </li>
+                                 
+                         </ul>     
+                      </div> 
+                                      </li>
+                                <li class=" pra6">
+                    <a href="/ac" class="bl"><span>应用</span></a>
+                                          <div class="sec1">             
+                         <ul class="asxq">
+                                                         <li>
+                                <a href="/ac" class="tit">AC/DC电源</a>
+                                <div class="seca">
+                                                                       <a href="/30w-psr/28" class="bl"><30W PSR</a>
+                                                                      <a href="/30w-ssr/27" class="bl"><30W SSR</a>
+                                                                      <a href="/75W/124" class="bl"><75W</a>
+                                                                      <a href="/150W/131" class="bl"><150W</a>
+                                                                      <a href="/500W/132" class="bl"><500W</a>
+                                                                      <a href="/1000W/133" class="bl"><1000W</a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/qc/148" class="tit">USB PD & Type C</a>
+                                <div class="seca">
+                                         
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/LED-Drivers/397" class="tit">LED 驱动电源</a>
+                                <div class="seca">
+                                         
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/Motor-drive-power-supply" class="tit">电机驱动</a>
+                                <div class="seca">
+                                                                       <a href="/AC-to-DC-Adapter/398" class="bl">AC to DC 适配器</a>
+                                                                      <a href="/Power-MOSFET/399" class="bl">功率 MOSFET</a>
+                                                                      <a href="/DC/400" class="bl">DC to DC</a>
+                                        
+                                </div>
+                              </li>
+                                 
+                         </ul>     
+                      </div> 
+                                      </li>
+                                <li class=" pra5">
+                    <a href="/Power-Converter-Principle-and-Design" class="bl"><span>设计</span></a>
+                                           <div class="sec1 sec1a">             
+                         <ul class="asxq">
+                                                         <li>
+                                <a href="/Power-Converter-Principle-and-Design" class="tit">设计小课堂</a>
+                                <div class="seca">
+                                                                       <a href="/Power-Converter-Principle-and-Design" class="bl">功率变换器拓扑原理与设计</a>
+                                                                      <a href="/Characteristics-and-design-of-power-magnetic-components" class="bl">功率磁元件特性与设计</a>
+                                                                      <a href="/Principles-and-Applications-of-Power-Devices" class="bl">功率开关器件原理与应用</a>
+                                                                      <a href="/Principle-and-Application-of-Synchronous-Rectification" class="bl">同步整流器件原理与应用</a>
+                                                                      <a href="/Switching-power-supply-design-and-verification" class="bl">开关电源设计与验证</a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/AD-DC-Reference-Design" class="tit">设计应用</a>
+                                <div class="seca">
+                                                                       <a href="/AD-DC-Reference-Design" class="bl">参考设计</a>
+                                                                      <a href="/Application-and-selection" class="bl">应用与选型</a>
+                                                                      <a href="/Application-Classroom" class="bl">应用小课堂</a>
+                                        
+                                </div>
+                              </li>
+                                                         <li>
+                                <a href="/Customization" class="tit">客制化产品设计</a>
+                                <div class="seca">
+                                         
+                                </div>
+                              </li>
+                                 
+                         </ul>     
+                      </div> 
+                                      </li>
+                                <li class=" pra4">
+                    <a href="/Technical-Support" class="bl"><span>支持</span></a>
+                                           <div class="sec1 sec1b">             
+                         <ul class="asxq">
+                                                         <li>
+                                <a href="/Technical-Support" class="tit">技术支持</a>
+                              </li>
+                                                         <li>
+                                <a href="/Information-and-sample-application" class="tit">资料与样品申请</a>
+                              </li>
+                                                         <li>
+                                <a href="/Quality-Support" class="tit">品质管理</a>
+                              </li>
+                                                         <li>
+                                <a href="/Partners" class="tit">合作伙伴</a>
+                              </li>
+                                 
+                         </ul>     
+                      </div> 
+                                      </li>
+                                <li class="active pra2">
+                    <a href="/about" class="bl"><span>关于吉远</span></a>
+                                          <div class="sec">             
+                                                      <a href="/about#abt1" class="bl">吉远简介</a>
+                                                      <a href="/about#abt2" class="bl">公司愿景</a>
+                                                      <a href="/about#abt3" class="bl">吉远历程</a>
+                                                      <a href="/news" class="bl">新闻速递</a>
+                                                      <a href="/join" class="bl">加入吉远</a>
+                                       
+                      </div> 
+                                     </li>
+                                <li class=" pra1">
+                    <a href="/contact" class="bl"><span>联系方式</span></a>
+                                    </li>
+                  
+              </ul>
+            </div>        
+          <div class="toubuas flex">          
+            <div class="sska">
+              <a href="javascript:;" class="sskza ds">
+                <i class="iconfont icon-a-Group927"></i>
+              </a>
+            </div>
+            <div class="zywena">              
+              <a href="javascript:;" class="rhgxt flex"><i class="iconfont icon-yuyan"></i></a>
+              <div class="yy-sec">
+                <a href="/" target="_blank">CN</a>
+                <a href="https://en.jypower.cn" target="_blank">EN</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+              <!-- 搜索 -->
+              <div class="sskbj">
+                <div class="searchbox1">
+                  <div class="search-close-btn fr"><i class="iconfont icon-guanbi1"></i></div>
+                  <div class="clearboth"></div>
+                  <div class="searchs">
+                    <dt>请输入搜索关键词！</dt>
+                    <form id="formm" action="/s/s.html" method="get">
+                      <div class="conx">
+                        <input type="text" placeholder="请输入关键词" class="sertext" name="q"
+                          data-suggestion-url="/addons/cms/search/suggestion.html" type="text" id="searchinput"
+                          value="">
+                        <button type="submit" id="btt" class="serbtn">搜索</button>
+                      </div>
+                      <input type="hidden" name="__searchtoken__" value="5fda074c92130c29505c84026b2cb8c3" />                    </form>
+                  </div>
+                </div>
+              </div>
+
+  <!-- 手机头部 -->
+  <div class="m-bm-head m-hidden white">
+    <div class="m-bm-head-box">
+      <div class="m-bm-logo">
+        <h1><a href="/"><img src='https://s-files.bcdn8.com/jiyuan0515/uploads/20250515/2edbfd7ef7ab3d6d0f718bbaaf44912f.svg' alt='苏州吉远电子科技有限公司'></a></a></h1>
+      </div>
+      <a href="https://en.jypower.cn" class="sskza flex-z">
+        <i class="iconfont icon-yuyan"></i>
+        <p>EN</p>
+      </a>
+      <div class="m-bm-navbtn">
+        <span></span>
+      </div>
+    </div>
+
+    <div class="m-bm-menu" style="display: none;">
+      <div class="m-bm-menu-box">
+        <ul class="m-bm-nav">
+          <li>
+            <a href="/">首页</a>
+           </li>
+                       <li class="">
+                <a href="/AC-DC" class="bl">产品</a>                     
+                                <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                    <div class="sec">
+                                                <a href="/AC-DC" class="bl">AC/DC功率转换控制器</a>
+                                                <a href="/usb" class="bl">USB PD or Type C</a>
+                                                <a href="/Discrete-Power-Devices" class="bl">功率器件</a>
+                                                <a href="/SR-Controller" class="bl">同步整流控制器</a>
+                                                <a href="/Hall-Devices-DC-to-DC-Converter" class="bl">霍尔与DC-DC控制器</a>
+                                                <a href="/Reference-Voltage" class="bl">参考电压、运放及光耦</a>
+                                            </div>
+                            </li>
+                      <li class="">
+                <a href="/ac" class="bl">应用</a>                     
+                                <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                    <div class="sec">
+                                                <a href="/ac" class="bl">AC/DC电源</a>
+                                                <a href="/qc/148" class="bl">USB PD & Type C</a>
+                                                <a href="/LED-Drivers/397" class="bl">LED 驱动电源</a>
+                                                <a href="/Motor-drive-power-supply" class="bl">电机驱动</a>
+                                            </div>
+                            </li>
+                      <li class="">
+                <a href="/Power-Converter-Principle-and-Design" class="bl">设计</a>                     
+                                <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                    <div class="sec">
+                                                <a href="/Power-Converter-Principle-and-Design" class="bl">设计小课堂</a>
+                                                <a href="/AD-DC-Reference-Design" class="bl">设计应用</a>
+                                                <a href="/Customization" class="bl">客制化产品设计</a>
+                                            </div>
+                            </li>
+                      <li class="">
+                <a href="/Technical-Support" class="bl">支持</a>                     
+                                <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                    <div class="sec">
+                                                <a href="/Technical-Support" class="bl">技术支持</a>
+                                                <a href="/Information-and-sample-application" class="bl">资料与样品申请</a>
+                                                <a href="/Quality-Support" class="bl">品质管理</a>
+                                                <a href="/Partners" class="bl">合作伙伴</a>
+                                            </div>
+                            </li>
+                      <li class="active">
+                <a href="/about" class="bl">关于吉远</a>                     
+                                <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                    <div class="sec">
+                                                <a href="/about#abt1" class="bl">吉远简介</a>
+                                                <a href="/about#abt2" class="bl">公司愿景</a>
+                                                <a href="/about#abt3" class="bl">吉远历程</a>
+                                                <a href="/news" class="bl">新闻速递</a>
+                                                <a href="/join" class="bl">加入吉远</a>
+                                            </div>
+                            </li>
+                      <li class="">
+                <a href="/contact" class="bl">联系方式</a>                     
+                            </li>
+            
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    
+   <!-- nbanner -->
+   <div class="pr nbanner">
+            <div class="img m-imgny"><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250714/ee470805b05d40be92f4c391d1924737.jpg" class="w100" alt="关于吉远"></div>
+      <div class="nbanner-wen1 z pa">
+        <div class="wh">
+          <div class="banner-cont">
+            <div class="p1">关于吉远</div>           
+            <div class="p2">专业开关电源器件供应商</div>           
+          </div>
+        </div>
+      </div>  
+  </div>
+
+ 
+  <div class="mbxdh">
+  <div class="wh">
+   <div class="ajhhsd">当前所在的位置：
+            <a href="/">首页</a> <span> > </span>
+            <a href="/about">关于吉远</a> <span> > </span>
+         </div>
+  </div>
+</div>
+  
+  
+  <div id="abt1"></div>
+ <div class="abt-cont1">
+  <div class="wh">
+    <div class="abt-a1v1 flex2">
+       <div class="abt-a1v1c1">
+          <div class="title2">
+            <div class="tit">企业简介</div>
+          </div>
+          <div class="p1 gong-p"><p>&nbsp; &nbsp; &nbsp; &nbsp;苏州吉远电子科技有限公司成立于2009年4月，核心团队由拥有二十余年功率变换器研发与元器件销售经验的资深工程师构成，其中80%以上成员拥有本科及以上学历。我们专注于成为一站式功率变换器件及解决方案供应商，提供从核心器件（如控制器、功率开关、功率二极管、同步整流及CC/CV器件）到完整系统方案的高性价比整合服务。</p><p><br /></p><p>&nbsp; &nbsp; &nbsp; &nbsp;我们以“成为客户可信赖、高附加值的战略伙伴”为原则，通过苏州与深圳两地的功率变换器研发与测试中心，结合与本地芯片设计制造厂商的紧密协作，快速响应并定制满足客户需求的产品，持续为客户创造持续价值。</p><p><br /></p></div>
+       </div>
+       <div class="abt-a1v1c2">
+          <div class="fang img"><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/89e1a77b0b5531efdccc65370aae5985.jpg" alt="企业简介"></div>
+       </div>
+    </div>    
+    <div id="abt2"></div>
+    <div class="abt-a1v2" style="background-image: url(https://s-files.bcdn8.com/jiyuan0515/uploads/20250520/dc5815aeed0b32878b603b85d4ca9b84.jpg);">      
+      <div class="tit">企业愿景</div>
+      <div class="ftit">吉远科技   科技节源</div>
+      <div class="txt"><p>全力推进低功耗、高效、节能、环保的功率变换器件</p><p>为绿色能源与低碳环保贡献一份力量</p></div>
+    </div>
+  </div>
+ </div>
+<div class="abt-cont2">
+  <div class="wh">
+    <div class="title2 ta">
+      <div class="tit">经营理念</div>
+      <div class="txt">客户不断提升的需求是我们前进的源动力<br>以诚信为本，以服务创造未来</div>
+    </div>
+    <ul class="abt-a2_list1">
+                <li class="top">
+           <i class="flex-z"><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250714/4d713f75fb07745e1f856a5bd8175072.svg" alt="诚信" loading="lazy"></i>
+            <div class="wenata">
+              <div class="tit">诚信</div>
+              <div class="p"><p>谨守诚信的做人原则，信守承诺，不折不扣地维护公司信誉</p></div>
+            </div>
+        </li>
+                <li class="top">
+           <i class="flex-z"><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250714/7a2ed620523d1072a270744590fdd5a6.svg" alt="灵活" loading="lazy"></i>
+            <div class="wenata">
+              <div class="tit">灵活</div>
+              <div class="p"><p>发挥灵活的处事方法，凝聚共识，沉着冷静地应对变化局面</p></div>
+            </div>
+        </li>
+                <li class="top">
+           <i class="flex-z"><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250714/6a4bd1cb8430b9f57b1c98587b7ded41.svg" alt="快速" loading="lazy"></i>
+            <div class="wenata">
+              <div class="tit">快速</div>
+              <div class="p"><p>弘扬快速的办事作风，雷厉风行，及时准确地响应客户需求</p></div>
+            </div>
+        </li>
+                <li class="top">
+           <i class="flex-z"><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250520/8ff53b7a9a85bcab76014e689f00147e.svg" alt="专业" loading="lazy"></i>
+            <div class="wenata">
+              <div class="tit">专业</div>
+              <div class="p"><p>秉持专业的行事态度，持续创新，全力以赴地推动客户成功</p></div>
+            </div>
+        </li>
+            </ul>
+  </div>
+</div>
+<div id="abt3"></div>
+<div class="abt-cont3">
+  <div class="wh">
+    <div class="title2">
+      <div class="tit">发展历程</div>
+    </div>
+    <div class="abt-a3v1">
+          <div class="swiper mySwiper2">
+      <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2024</div>
+                  <div class="p"><p>第三代半导体合作商</p><p>低压工艺LLC &nbsp;Controller</p><p>组建电源开发与系统测试</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2023</div>
+                  <div class="p"><p>JY2011N 120V &nbsp;SOT-23-6 同步控制器&emsp;</p><p>JY3011N SOT-23-6 恒功率电源 controller</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2021</div>
+                  <div class="p"><p>JY431AN 0.4% &nbsp;VAK= 46V</p><p>通嘉代理商</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2020</div>
+                  <div class="p"><p>JY125X系列销售超45KK Pcs</p><p>设立深圳办公室</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2019</div>
+                  <div class="p"><p>开发JY125X系列
+</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2016</div>
+                  <div class="p"><p>东微半导体代理商</p><p>东科半导体代理商</p><p>蓝牙模块圣诞灯控制器电源</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2014</div>
+                  <div class="p"><p>成都启臣微电子代理商
+</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2012</div>
+                  <div class="p"><p>实现乡村简易自动供水目的开发自供水系统</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2010</div>
+                  <div class="p"><p>OB-Bright 、CBC、 IMP电源管理器件代理商</p></div>
+            </div>
+          </div>
+                    <div class="swiper-slide">
+            <div class="wenata">
+                  <div class="tit">2009</div>
+                  <div class="p"><p>公司成立</p></div>
+            </div>
+          </div>
+                </div> 
+    </div>
+     <div class="abt-a3va1">
+         <div class="swiper-button-next1 flex-z"><i class="iconfont icon-xiangyoujiantou"></i></div>
+         <div class="swiper-button-prev1 flex-z"><i class="iconfont icon-xiangzuojiantou"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+     <!-- 底部 -->
+ <div class="foot-fot">
+  <div class="foot1">
+    <div class="foot1-m">
+      <ul class="m-bm-nav">
+                <li class="">
+            <a href="/AC-DC" class="bl">产品</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/AC-DC" class="bl">AC/DC功率转换控制器</a>
+                                       <a href="/usb" class="bl">USB PD or Type C</a>
+                                       <a href="/Discrete-Power-Devices" class="bl">功率器件</a>
+                                       <a href="/SR-Controller" class="bl">同步整流控制器</a>
+                                       <a href="/Hall-Devices-DC-to-DC-Converter" class="bl">霍尔与DC-DC控制器</a>
+                                       <a href="/Reference-Voltage" class="bl">参考电压、运放及光耦</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/ac" class="bl">应用</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/ac" class="bl">AC/DC电源</a>
+                                       <a href="/qc/148" class="bl">USB PD & Type C</a>
+                                       <a href="/LED-Drivers/397" class="bl">LED 驱动电源</a>
+                                       <a href="/Motor-drive-power-supply" class="bl">电机驱动</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/Power-Converter-Principle-and-Design" class="bl">设计</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/Power-Converter-Principle-and-Design" class="bl">设计小课堂</a>
+                                       <a href="/AD-DC-Reference-Design" class="bl">设计应用</a>
+                                       <a href="/Customization" class="bl">客制化产品设计</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/Technical-Support" class="bl">支持</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/Technical-Support" class="bl">技术支持</a>
+                                       <a href="/Information-and-sample-application" class="bl">资料与样品申请</a>
+                                       <a href="/Quality-Support" class="bl">品质管理</a>
+                                       <a href="/Partners" class="bl">合作伙伴</a>
+                                   </div>
+                    </li>
+                 <li class="active">
+            <a href="/about" class="bl">关于吉远</a>                     
+                        <div class="aniut"><i class="iconfont icon-jiahao"></i></div>
+                <div class="sec">
+                                        <a href="/about#abt1" class="bl">吉远简介</a>
+                                       <a href="/about#abt2" class="bl">公司愿景</a>
+                                       <a href="/about#abt3" class="bl">吉远历程</a>
+                                       <a href="/news" class="bl">新闻速递</a>
+                                       <a href="/join" class="bl">加入吉远</a>
+                                   </div>
+                    </li>
+                 <li class="">
+            <a href="/contact" class="bl">联系方式</a>                     
+                    </li>
+           
+      </ul>
+    </div>
+    <div class="wh">
+      <div class="foota1 flex2">    
+        <div class="fo-a3">
+           <ul class="dbdz flex_left1">
+                                <li>
+                   <div class="tit">苏州</div>
+                </li>
+                                <li>
+                   <div class="tit">深圳</div>
+                </li>
+                           </ul>
+           <ul class="asdx-z">
+                            <li>
+               <div class="flex_left">
+                 <i><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/c32aa5a509afefebd4005040557f50e9.svg" alt="" /></i> <p>地址：苏州工业园区苏虹东路177号方正智谷</p>
+               </div>
+                <div class="flex_left">
+                 <i><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/6abc39e2c8383495829bb4be911c6ee0.svg" alt="" /></i> <p>电话：+86 512-62373510</p>
+               </div>
+                <div class="flex_left">
+                 <i><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/16cf894e5b731c2abab81991ff0ec2c5.svg" alt="" /></i> <p>传真：+86 512-62373512</p>
+               </div>
+                <div class="flex_left">
+                 <i><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/8382998a5bc68d916b0563101267e054.svg" alt="" /></i> <p>E-mail：weixiliu@jypower.cn</p>
+               </div>              </li>
+                            <li>
+               <div class="flex_left">
+                 <i><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/c32aa5a509afefebd4005040557f50e9.svg" alt="" /></i> <p>地址：深圳市光明区华强创意产业园A5幢</p>
+               </div>
+                <div class="flex_left">
+                 <i><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/6abc39e2c8383495829bb4be911c6ee0.svg" alt="" /></i> <p>电话：1866-2166-251 </p>
+               </div>
+              
+                <div class="flex_left">
+                 <i><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/8382998a5bc68d916b0563101267e054.svg" alt="" /></i> <p>E-mail：Stevenshi@jypower.cn</p>
+               </div>              </li>
+                         </ul>
+        </div>   
+        <div class="fo-a1">
+                          <a href="/AC-DC" class="foot-tit">产品</a>   
+                          <a href="/ac" class="foot-tit">应用</a>   
+                          <a href="/Power-Converter-Principle-and-Design" class="foot-tit">设计</a>   
+                          <a href="/Technical-Support" class="foot-tit">支持</a>   
+                          <a href="/about" class="foot-tit">关于吉远</a>   
+                          <a href="/contact" class="foot-tit">联系方式</a>   
+              
+        </div> 
+        <div class="fo-a4">
+          <div class="foot-tit">订阅最新产品资讯</div>
+          <form action="/d/dibudingyue/post" method="POST" id="f1a" name="form1" data-isver="true" data-confirm="true"
+            data-vercss="contact" enctype="multipart/form-data">
+            <div class="contact flex2">
+              <div class="inpt flex_left">
+                <u><img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20250516/8382998a5bc68d916b0563101267e054.svg"></u>
+                <input type="text" name='row[email]' data-required="true" placeholder="输入您的电子邮件" data-empty-tip="请输入电子邮箱" data-illegal-tip="请输入正确的电子邮箱"
+                  data-modular="email" class="m_input">
+              </div>
+              <button type="button" id="f2a" class="more-bta">订阅</button>
+            </div>
+            <input type="hidden" name="__token__" value="5fda074c92130c29505c84026b2cb8c3" />          </form>
+        </div>
+        <div class="fo-a2">
+          <div class="foot-tit">分享与关注</div>   
+          <div class="social-share" data-initialized="true" data-mode="prepend">
+            <a href="#" class="social-share-icon icon-wechat"></a>
+            <a href="#" class="social-share-icon icon-weibo" target="_blank"></a>     
+            <a href="#" class="social-share-icon icon-linkedin" target="_blank"></a>          
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foota2">
+      <div class="wh">
+         <div class="foot-av flex2">
+          <p>Copyright © <script>var d=new Date();document.write(d.getFullYear());</script>  苏州吉远电子科技有限公司. All Rights Reserved   备案号：<a href="https://beian.miit.gov.cn" target="_blank">苏ICP备11046326号-2</a>   <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1281425896'%3E%3C/span%3E%3Cscript src='https://s4.cnzz.com/z.js%3Fid%3D1281425896' type='text/javascript'%3E%3C/script%3E"));</script></p>
+          <p><a href="/p/wangzhanditu">网站地图</a><span> | </span><a href="/p/Legal-Notice">法律声明</a><span> | </span><a href="/p/Privacy-Policy">隐私政策</a><span> | </span></p>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 置顶 -->
+<div class="zd_erha">
+  <ul class="aat_list">
+      <li>
+          <a href="javascript:;" class="ad_sts">
+              <i><img src="/assets/addons/cms/frontend/images/zd1.svg" alt=""></i>
+              <p>联系</p>
+          </a>
+          <div class="erghgsa">+86 512-62373510</div>
+      </li>
+      <li>
+          <a href="javascript:;" class="ad_sts">
+              <i><img src="/assets/addons/cms/frontend/images/zd2.svg" alt=""></i>
+              <p>客服</p>
+          </a>
+          <div class="erghgsa erghgsb">
+            <img src="https://s-files.bcdn8.com/jiyuan0515/uploads/20260627/45bc9640a0b344d318eaafc3fbeab197.png" alt="微信" class="w100">
+          </div>
+      </li>
+      <li class="tops">
+          <a href="javascript:;">
+              <i><img src="/assets/addons/cms/frontend/images/zd4.svg" alt=""></i>
+              <p>置顶</p>
+          </a>
+      </li>
+  </ul>
+</div>
+</body>
+<script src="//g-style-js.bcdn8.com/js/js/jquery-3.7.0.min.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/wow.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/swiper.jquery.min.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/swiper.animate1.0.3.min.js"></script>
+<script src="//g-style-js.bcdn8.com/js/v4/bootstrap.min.js"></script>
+<script src="//g-style-js.bcdn8.com/share/js/social-share.min.js"></script>
+<script src="//g-style-js.bcdn8.com/layer/layer.js"></script>
+<script src="/assets/addons/cms/frontend/js/ksbm.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/fancybox.umd.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/jquery.waypoints.min.js"></script>
+<script src="//g-style-js.bcdn8.com/js/js/jquery.countup.min.js"></script>
+<script src="//g-style-js.bcdn8.com/gsap/gsap.min.js"></script>
+<script src="//g-style-js.bcdn8.com/gsap/ScrollTrigger.min.js"></script>
+<script src="/assets/addons/cms/frontend/js/splitType.js"></script>
+<script src="/assets/addons/cms/frontend/js/jquery.SuperSlide.2.1.3.js"></script>
+<script src="/assets/addons/cms/frontend/layui/layui.js"></script>
+<script src="/assets/addons/cms/frontend/js/more.js"></script>
+<script src="/assets/addons/cms/frontend/js/main.js"></script>
+
+<script>
+        const container = document.querySelector('.asjcont1 .table-cont');
+        let isDragging = false;
+        let startX, scrollLeft;
+      
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;  
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+        });
+      
+        container.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          e.preventDefault();
+          const x = e.pageX - container.offsetLeft;
+          const walk = (x - startX) * 3;
+          container.scrollLeft = scrollLeft - walk;
+        });
+      
+        container.addEventListener('mouseup', () => {
+          isDragging = false;  
+        });
+      
+        container.addEventListener('mouseleave', () => {
+          isDragging = false;  
+        });
+</script>
+</html>
+

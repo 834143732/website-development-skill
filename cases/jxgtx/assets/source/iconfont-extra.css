@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4986188 */
+  src: url('//at.alicdn.com/t/c/font_4986188_iyph8rqcgme.woff2?t=1754452404544') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4986188_iyph8rqcgme.woff?t=1754452404544') format('woff'),
+       url('//at.alicdn.com/t/c/font_4986188_iyph8rqcgme.ttf?t=1754452404544') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fangdajing:before {
+  content: "\e625";
+}
+
+.icon-youxiang:before {
+  content: "\e7b1";
+}
+
+.icon-dizhiguanli:before {
+  content: "\e63f";
+}
+
+.icon-share_:before {
+  content: "\e645";
+}
+
+.icon-riqi:before {
+  content: "\e64e";
+}
+
+.icon-jiantou:before {
+  content: "\e67d";
+}
+
+.icon-message:before {
+  content: "\e617";
+}
+
+.icon-message-copy:before {
+  content: "\e7b2";
+}
+
+.icon-guanbi:before {
+  content: "\e639";
+}
+
+.icon-menu:before {
+  content: "\e629";
+}
+
+.icon-xiajiantou1:before {
+  content: "\e600";
+}
+
+.icon-a-Group927:before {
+  content: "\e60c";
+}
+
+.icon-yuyan:before {
+  content: "\e684";
+}
+
+.icon-a-Phone-telephonedianhua:before {
+  content: "\e65b";
+}
+

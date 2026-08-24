@@ -1,0 +1,70 @@
+{
+  "slug": "jsmems",
+  "title": "苏州晶溯微纳（jsmems.com）官网案例",
+  "source": "https://www.jsmems.com/",
+  "observed_at": "2026-08-23",
+  "language": "zh-CN",
+  "industry": ["工业制造", "MEMS 技术服务", "半导体材料"],
+  "page_type": "工业技术型官网首页",
+  "evidence": {
+    "status": "public-homepage-readonly-observation",
+    "checked": ["home.html", "index.css", "media.css", "index.js", "public-image-assets"],
+    "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics"]
+  },
+  "site_facts": [
+    "顶部 7 个一级导航，MEMS 加工、测试服务、半导体材料、关于我们包含二级入口",
+    "Hero 是 3 张全屏图片的 Swiper，自动播放间隔 4 秒，编号分页，图片约 20 秒缓慢缩放",
+    "首页内容顺序为公司简介、产品与服务、核心优势、行业动态、合作/品牌图集、页脚与咨询入口",
+    "产品与服务由 7 个 MEMS 工艺、7 个测试服务和 3 个半导体材料入口组成",
+    "主色 #73B92B，页脚色 #2D3333，圆角变量 1.25rem，使用 rem 与 990px/767px 等断点"
+  ],
+  "transferable_patterns": [
+    {
+      "name": "服务地图",
+      "when": "服务项达到 6 个以上且用户需要比较工艺、设备或材料范围",
+      "use": "左侧高层分类定位，右侧编号卡片解释具体入口；移动端退化为单列或可操作轮播",
+      "evidence_needed": ["真实服务分类", "卡片详情入口", "统一图片比例"]
+    },
+    {
+      "name": "全屏定调 Hero",
+      "when": "工业、洁净室、设备或专业人员的真实场景能建立可信第一印象",
+      "use": "全幅场景图 + HTML 价值主张 + 编号分页 + 向下阅读提示",
+      "guardrail": "重要参数、资质和结果不能只存在于图片或自动轮播中"
+    },
+    {
+      "name": "叠加导航状态切换",
+      "when": "Hero 图像与 Logo 对比度已经验证且导航需要保持品牌感",
+      "use": "顶部透明叠加，滚动或聚焦后切实体背景；移动端直接实体导航",
+      "guardrail": "不能只依赖 hover，必须支持键盘、触摸和清晰焦点"
+    },
+    {
+      "name": "中心锚点优势矩阵",
+      "when": "需要同时表达 4–6 个团队、交付、响应或保密承诺",
+      "use": "中心图形或关键词 + 对称/镜像卡片，每张卡只保留一条可证据化描述",
+      "guardrail": "宣传口号不能自动升级为客户规模、转化率或资质事实"
+    },
+    {
+      "name": "一主三辅新闻",
+      "when": "既要承接行业深度，又要展示持续更新内容",
+      "use": "一张主图配长摘要，旁边 3 条紧凑列表；日期、标题、摘要可检索",
+      "guardrail": "没有详情页、来源或授权的内容标记为待补"
+    }
+  ],
+  "do_not_copy": [
+    "不要把同一桌面大图直接用在手机端并用 object-fit: cover 裁切关键内容",
+    "不要照搬按 100vw 计算根字号的实现；新项目优先使用 clamp()",
+    "不要照搬 lang=\"en\" 或 user-scalable=no 到中文站点",
+    "不要让自动轮播、hover、视差或浮层成为内容可见和操作的唯一条件",
+    "不要在没有授权时把归档图片、Logo、CSS、JS 直接用于客户生产项目"
+  ],
+  "source_assets": [
+    {"file": "assets/source/home.html", "kind": "html", "role": "主页结构快照"},
+    {"file": "assets/source/index.css", "kind": "css", "role": "设计变量与组件样式"},
+    {"file": "assets/source/media.css", "kind": "css", "role": "响应式断点"},
+    {"file": "assets/source/index.js", "kind": "javascript", "role": "Swiper、菜单、弹窗与滚动交互"},
+    {"file": "assets/source/hero-01.jpg", "kind": "image", "role": "Hero 场景图"},
+    {"file": "assets/source/about-diagram.png", "kind": "image", "role": "公司简介结构图"},
+    {"file": "assets/source/process-photolithography.jpg", "kind": "image", "role": "服务卡片图"},
+    {"file": "assets/source/news-feature.png", "kind": "image", "role": "新闻主图"}
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "id": "zoe_industry",
+  "title": "舟欧工业科技网站案例：把工业 MRO 讲成一条跨境交付链",
+  "source": {
+    "url": "https://www.zoe-industry.cn/",
+    "observedAt": "2026-08-23",
+    "locale": "zh-CN",
+    "notes": "Public homepage claims are recorded as source claims and require verification before reuse."
+  },
+  "positioning": ["industrial automation supplier", "MRO procurement", "European brand agency/distribution", "cross-border delivery"],
+  "navigation": ["网站首页", "产品中心", "品牌中心", "关于我们", "新闻中心", "联系我们"],
+  "productFamilies": [
+    {"name": "编码器", "slug": "bmqia", "task": "Sense position"},
+    {"name": "工业泵", "slug": "gybe", "task": "Move the medium"},
+    {"name": "工业阀", "slug": "gyfa", "task": "Control the flow"},
+    {"name": "工业电机", "slug": "gydj", "task": "Drive the motion"},
+    {"name": "工件夹具", "slug": "gyjj", "task": "Hold the part"},
+    {"name": "传感器", "slug": "cgq", "task": "Read the process"},
+    {"name": "电气设备及元件", "slug": "dqsbyj", "task": "Connect the system"},
+    {"name": "仪器仪表", "slug": "yqyba", "task": "Verify the signal"},
+    {"name": "机械及配件", "slug": "jxjpk", "task": "Complete the line"}
+  ],
+  "brandExamples": [
+    {"name": "Profiroll", "relationship": "代理/经销（页面可见 Logo，具体关系待核验）"},
+    {"name": "Carlo Gavazzi", "relationship": "代理/经销（具体关系待核验）"},
+    {"name": "SIEMENS", "relationship": "经销品牌（具体授权范围待核验）"},
+    {"name": "Lynch Motor", "relationship": "页面新闻自述中国总代理"},
+    {"name": "SMC", "relationship": "经销品牌（具体授权范围待核验）"},
+    {"name": "Festo", "relationship": "经销品牌（具体授权范围待核验）"}
+  ],
+  "industries": ["矿山设备", "冶金行业", "能源行业", "生物医药", "机械加工", "船舶行业", "物流运输", "轨道交通", "航空航天", "电力行业", "石油化工", "汽车制造行业"],
+  "publicClaims": [
+    {"claim": "公司公开自述成立于 2016 年", "status": "source-claim"},
+    {"claim": "1000+ 全球供应商", "status": "source-claim-unverified"},
+    {"claim": "2000+ 全球合作客户（家）", "status": "source-claim-unverified"},
+    {"claim": "50+ 国内名校团队占比（人）", "status": "source-copy-needs-clarification"},
+    {"claim": "德国分支与欧洲供应商直接联系", "status": "source-claim-unverified"}
+  ],
+  "contact": {
+    "phone": "021-58888912",
+    "email": "sales@zoe-industry.com",
+    "address": "中国（上海）自由贸易试验区临港新片区港城广场一街坊12号楼501"
+  },
+  "designRules": [
+    "Provide product, brand relationship and industry task routes in parallel.",
+    "Treat brand relationship as structured evidence, not a decorative logo wall.",
+    "Translate each industry card into a real process task and next action.",
+    "Bind every trust number to date, scope, source and verification status.",
+    "Use equipment imagery for context; provide static and reduced-motion fallbacks."
+  ],
+  "doNotCopy": [
+    "user-scalable=no",
+    "javascript:; placeholder links",
+    "third-party analytics loaders in the local snapshot",
+    "unverified supplier/customer/team counts",
+    "logos, customer marks, fonts, images and authorization copy without permission"
+  ],
+  "assets": {
+    "semanticImages": "assets/source/images/",
+    "rawArchive": "assets/source/original/",
+    "homeSnapshot": "assets/source/home.html",
+    "styles": ["assets/source/main.css", "assets/source/reset.css", "assets/source/swiper-3.4.2.min.css", "assets/source/animate.css"],
+    "scripts": ["assets/source/main.js", "assets/source/jquery-3.7.0.min.js", "assets/source/swiper.jquery.min.js", "assets/source/wow.js", "assets/source/layer.js"]
+  }
+}

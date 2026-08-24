@@ -1,0 +1,121 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><title>51.LA网站统计V6</title><meta name="keywords" content="51la,v6,网站统计,51la统计,51la网站统计,站群统计,网站统计图表,专业网站统计,行为分析,站长工具"><meta name="description" content="免费、易用、专业的网站数据统计与营销分析平台，实时监测，精准洞察，专注用户行为分析，助力业务增长，提供更加精准全面的来路统计分析、数据报表可视化、网站分析能力、事件分析和渠道追踪归因，助力网站持续增长和赋能决策，超过300万用户和开发者的信赖选择。"><link rel="preconnect" href="https://ai.51.la"><link rel="dns-prefetch" href="//ai.51.la"><link rel="preconnect" href="https://user.51.la"><link rel="dns-prefetch" href="//user.51.la"><script>(function () {
+        function getOpenAiValue(search) {
+          try {
+            return new URLSearchParams(search).get("openAi");
+          } catch (error) {
+            return /(?:^|[?&#])openAi=1(?:&|$)/.test(search || "") ? "1" : "";
+          }
+        }
+
+        function getHashSearch() {
+          var rawHash = String(window.location.hash || "").replace(/^#/, "");
+          if (!rawHash) return "";
+          var queryIndex = rawHash.indexOf("?");
+          return queryIndex >= 0 ? rawHash.slice(queryIndex + 1) : rawHash;
+        }
+
+        function isAiAutoOpen() {
+          return getOpenAiValue(window.location.search) === "1" || getOpenAiValue(getHashSearch()) === "1";
+        }
+        window.__hideAiAutoOpenBoot = function () {
+          document.documentElement.classList.remove("ai-auto-open-loading");
+          var boot = document.getElementById("ai-auto-open-boot");
+          if (boot && boot.parentNode) boot.parentNode.removeChild(boot);
+        };
+        if (isAiAutoOpen()) {
+          document.documentElement.classList.add("ai-auto-open-loading");
+        }
+      })();</script><style>html.ai-auto-open-loading,
+      html.ai-auto-open-loading body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: #050814;
+      }
+      #ai-auto-open-boot {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background:
+          radial-gradient(circle at 50% 42%, rgba(22, 144, 255, 0.16), transparent 34%),
+          linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+      }
+      html.ai-auto-open-loading #ai-auto-open-boot {
+        display: flex;
+      }
+      .ai-auto-open-boot__card {
+        min-width: 220px;
+        min-height: 132px;
+        padding: 24px 28px 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.84);
+        box-shadow: 0 18px 44px rgba(31, 43, 68, 0.08);
+      }
+      .ai-auto-open-boot__spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid rgba(22, 144, 255, 0.16);
+        border-top-color: #1690ff;
+        border-radius: 50%;
+        animation: ai-auto-open-boot-spin 0.8s linear infinite;
+      }
+      .ai-auto-open-boot__text {
+        font-size: 14px;
+        line-height: 20px;
+        color: #324054;
+      }
+      .ai-auto-open-boot__dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        height: 10px;
+      }
+      .ai-auto-open-boot__dots span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #1690ff;
+        animation: ai-auto-open-boot-bounce 1s infinite ease-in-out;
+      }
+      .ai-auto-open-boot__dots span:nth-child(2) {
+        animation-delay: 0.15s;
+      }
+      .ai-auto-open-boot__dots span:nth-child(3) {
+        animation-delay: 0.3s;
+      }
+      @keyframes ai-auto-open-boot-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes ai-auto-open-boot-bounce {
+        0%,
+        80%,
+        100% {
+          transform: scale(0.72);
+          opacity: 0.5;
+        }
+        40% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }</style><script src="https://sdk.51.la/perf/js-sdk-perf.min.js" crossorigin="anonymous"></script><script>new LingQue.Monitor().init({ id: "KrTqf4BkaR6Hz1HY" });</script><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({
+        id: "KrTq5Yu2mlE2Rdy4",
+        ck: "KrTq5Yu2mlE2Rdy4",
+        autoTrack: true,
+        hashMode: true,
+      });</script><link href="/css/app.424b4ef8.css" rel="preload" as="style"><link href="/css/chunk-vendors.6bb7cdd2.css" rel="preload" as="style"><link href="/js/app.ec4ea78d.js" rel="preload" as="script"><link href="/js/chunk-vendors.98ee1a06.js" rel="preload" as="script"><link href="/css/chunk-vendors.6bb7cdd2.css" rel="stylesheet"><link href="/css/app.424b4ef8.css" rel="stylesheet"></head><body><div id="ai-auto-open-boot" aria-live="polite" aria-busy="true"><div class="ai-auto-open-boot__card"><div class="ai-auto-open-boot__spinner"></div><div class="ai-auto-open-boot__text">正在打开 AI 问答</div><div class="ai-auto-open-boot__dots" aria-hidden="true"><span></span> <span></span> <span></span></div></div></div><noscript><strong>We're sorry but 51.LA网站统计V6 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/sdk/21052795.js"></script><script>console &
+        console.log(
+          "\n %c 51LA %c https://v6.51.la/ \n",
+          "color: #ffffff; background: #1690ff; padding:5px 0;",
+          "background: #fff; padding:5px 0;"
+        );</script><script src="//js.users.51.la/21968049.js"></script><script src="/js/chunk-vendors.98ee1a06.js"></script><script src="/js/app.ec4ea78d.js"></script></body></html>

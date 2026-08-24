@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="苏州晶溯微纳官网的结构、视觉、交互与可迁移经验案例复盘。">
+  <title>jsmems.com · 网站案例复盘</title>
+  <link rel="icon" type="image/svg+xml" href="assets/source/logo-green.svg?v=20260823">
+  <link rel="stylesheet" href="styles.css?v=20260823">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="返回案例顶部">
+        <span class="brand-mark" aria-hidden="true">μ</span>
+        <span><strong>案例库</strong><small>网站设计复盘</small></span>
+      </a>
+      <nav class="main-nav" aria-label="案例章节导航">
+        <a href="#overview">概览</a>
+        <a href="#patterns">模式</a>
+        <a href="#lab">组件</a>
+        <a href="#assets">资产</a>
+        <a href="#playbook">规则</a>
+      </nav>
+      <a class="source-link" href="https://www.jsmems.com/" target="_blank" rel="noreferrer">打开原站 <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">目录</button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="移动端章节导航">
+      <a href="#overview">概览</a><a href="#patterns">模式</a><a href="#lab">组件</a><a href="#assets">资产</a><a href="#playbook">规则</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="top" class="case-hero">
+      <div class="hero-image" role="img" aria-label="洁净室中检查晶圆的场景图">
+        <img src="assets/source/hero-01.jpg" alt="洁净室设备与晶圆检查场景" width="1920" height="860">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="container hero-content">
+        <div class="eyebrow light">网站案例 · 工业技术型官网</div>
+        <h1>把复杂的 MEMS<br><em>服务链</em>讲清楚</h1>
+        <p class="hero-lede">苏州晶溯微纳科技有限公司官网的内容架构、视觉语言和交互触发拆解。重点不是复制页面，而是提炼“什么条件下使用什么设计手段”。</p>
+        <div class="hero-meta">
+          <span>观察时间&nbsp; 2026.08.23</span>
+          <span>页面&nbsp; 首页</span>
+          <span>证据&nbsp; HTML / CSS / JS / 图片</span>
+        </div>
+        <a class="scroll-cue" href="#overview"><span class="scroll-line" aria-hidden="true"></span><span>向下阅读</span></a>
+      </div>
+      <div class="hero-index" aria-label="原站 Hero 轮播结构示意"><b>01</b><span>/</span><span>03</span></div>
+    </section>
+
+    <section id="overview" class="section overview">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="kicker">01 / 先看全貌</span><h2>可信的工业站点，<br><em>先让人找到路径</em></h2></div>
+          <p>原站将“公司能力、工艺服务、设备测试、材料销售、行业内容”排成一条渐进式路径：先建立可信印象，再解释服务，再补充证据，最后给出咨询入口。</p>
+        </div>
+        <div class="fact-grid reveal">
+          <article class="fact-card fact-card--accent"><span class="fact-number">07</span><span class="fact-label">一级导航入口</span><p>首页、MEMS 加工、测试服务、半导体材料、行业动态、关于我们、联系我们。</p></article>
+          <article class="fact-card"><span class="fact-number">03</span><span class="fact-label">Hero 场景图</span><p>全屏场景图 + 中央价值主张 + 编号分页 + 向下阅读提示。</p></article>
+          <article class="fact-card"><span class="fact-number">17</span><span class="fact-label">服务/材料入口</span><p>7 个 MEMS 工艺、7 个测试服务、3 个半导体材料入口。</p></article>
+          <article class="fact-card"><span class="fact-number">04</span><span class="fact-label">核心优势卡</span><p>精英团队、优质高效、及时响应、严格保密。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="patterns" class="section patterns-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="kicker">02 / 拆解模式</span><h2>五个值得迁移的<br><em>内容与视觉模式</em></h2></div>
+          <p>每个模式都写成“适用条件 → 设计动作 → 交付边界”，方便 AI 在新项目里判断是否应该使用。</p>
+        </div>
+        <div class="pattern-grid">
+          <article class="pattern-card pattern-card--wide reveal">
+            <div class="pattern-index">A / 01</div><div class="pattern-icon icon-path" aria-hidden="true"><i></i><i></i><i></i></div>
+            <h3>服务地图</h3><p>左侧用高层分类定位，右侧用编号卡片承接工艺、设备或材料入口。</p><div class="rule"><strong>适合</strong><span>服务项 ≥ 6，用户需要比较流程与能力范围时。</span></div>
+          </article>
+          <article class="pattern-card reveal">
+            <div class="pattern-index">A / 02</div><div class="pattern-icon icon-focus" aria-hidden="true"></div>
+            <h3>全屏定调</h3><p>用真实场景图建立洁净、精密和专业的第一印象。</p><div class="rule"><strong>边界</strong><span>关键信息必须有 HTML 文字，不能只写在图里。</span></div>
+          </article>
+          <article class="pattern-card reveal">
+            <div class="pattern-index">A / 03</div><div class="pattern-icon icon-rail" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+            <h3>叠加导航</h3><p>Hero 上透明叠加，进入滚动/聚焦状态后转实体背景。</p><div class="rule"><strong>先验</strong><span>先检查 Logo 对比度，再决定是否采用透明态。</span></div>
+          </article>
+          <article class="pattern-card reveal">
+            <div class="pattern-index">A / 04</div><div class="pattern-icon icon-orbit" aria-hidden="true"></div>
+            <h3>中心锚点</h3><p>把团队、交付、响应、保密等承诺围绕一个中心图形组织。</p><div class="rule"><strong>避免</strong><span>口号不要升级成没有来源的客户规模或转化指标。</span></div>
+          </article>
+          <article class="pattern-card pattern-card--wide reveal">
+            <div class="pattern-index">A / 05</div><div class="pattern-icon icon-news" aria-hidden="true"><i></i><i></i><i></i></div>
+            <h3>一主三辅</h3><p>一张大图承接行业深度，三条小条目承接持续更新，形成可扫描的新闻层级。</p><div class="rule"><strong>适合</strong><span>内容有真实发布日期、摘要和可打开的详情页时。</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section evidence-section">
+      <div class="container evidence-grid">
+        <figure class="evidence-figure reveal">
+          <div class="figure-frame"><img src="assets/source/about-diagram.png" alt="原站公司简介旁的绿色中心关系图" width="598" height="675"></div>
+          <figcaption><span>证据 01</span>公司简介旁的结构图：用图形强化“全流程能力”的概念，正文仍保留完整文字。</figcaption>
+        </figure>
+        <div class="evidence-copy reveal">
+          <span class="kicker">03 / 证据与判断</span>
+          <h2>视觉是证据的放大器，<br><em>不是证据的替身</em></h2>
+          <p>原站的视觉素材集中在洁净室、晶圆、工艺设备和结构图，和 MEMS 服务语境一致。可迁移的不是“绿色 + 大图”，而是让每张图承担一个明确任务：建立信任、解释流程或展示结果。</p>
+          <dl class="evidence-list">
+            <div><dt>已核实</dt><dd>主页 HTML 明确包含公司简介、产品与服务、核心优势、行业动态和合作图集。</dd></div>
+            <div><dt>待确认</dt><dd>原站的客户数量、合作院校范围、交付指标和案例授权状态，不能从首页视觉直接推断。</dd></div>
+            <div><dt>项目专属</dt><dd>图片构图、绿色色值和 Logo 只能作为本案例的观察结果，不升级为所有工业站点的默认答案。</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab" class="section lab-section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="kicker">04 / 组件实验室</span><h2>把“左侧分类 + 右侧卡片”<br><em>变成可复用组件</em></h2></div>
+          <p>下面是案例页自带的静态演示，不是原站的生产代码。它保留信息关系，并补上键盘、触摸和减少动效偏好需要的降级。</p>
+        </div>
+        <div class="service-lab reveal" data-tabs>
+          <div class="service-rail" role="tablist" aria-label="服务类别">
+            <button class="service-tab is-active" role="tab" aria-selected="true" aria-controls="service-panel-mems" id="service-tab-mems" data-tab="mems"><span>01</span><strong>MEMS 加工</strong><small>PROCESS</small></button>
+            <button class="service-tab" role="tab" aria-selected="false" aria-controls="service-panel-test" id="service-tab-test" data-tab="test"><span>02</span><strong>测试服务</strong><small>MEASUREMENT</small></button>
+            <button class="service-tab" role="tab" aria-selected="false" aria-controls="service-panel-material" id="service-tab-material" data-tab="material"><span>03</span><strong>半导体材料</strong><small>MATERIAL</small></button>
+          </div>
+          <div class="service-panels">
+            <div class="service-panel is-active" role="tabpanel" tabindex="0" id="service-panel-mems" aria-labelledby="service-tab-mems" data-panel="mems">
+              <div class="service-panel-head"><div><span class="panel-kicker">可迁移组件 / 01</span><h3>让工艺链路变得可扫描</h3></div><span class="panel-count">07 <small>项</small></span></div>
+              <div class="service-cards">
+                <a class="service-card" href="https://www.jsmems.com/gk" target="_blank" rel="noreferrer"><div class="service-card-image"><img src="assets/source/process-photolithography.jpg" alt="光刻工艺示意图" width="660" height="460"><span>01</span></div><h4>光刻</h4><p>用曝光与显影建立可理解的工艺入口。</p></a>
+                <a class="service-card service-card--abstract" href="#playbook"><div class="abstract-art abstract-art--etch" aria-hidden="true"><span></span><span></span><span></span></div><h4>刻蚀</h4><p>用第二张卡片继续解释材料去除与流程衔接。</p></a>
+                <a class="service-card service-card--abstract" href="#playbook"><div class="abstract-art abstract-art--film" aria-hidden="true"><span></span><span></span><span></span></div><h4>镀膜</h4><p>保留一句短说明，不用长段落抢占首屏。</p></a>
+              </div>
+              <div class="service-controls"><span>01 / 07</span><span class="control-line" aria-hidden="true"></span><button type="button" data-demo-next>查看交互规则 <span aria-hidden="true">→</span></button></div>
+            </div>
+            <div class="service-panel" role="tabpanel" tabindex="0" id="service-panel-test" aria-labelledby="service-tab-test" data-panel="test" hidden>
+              <div class="service-panel-head"><div><span class="panel-kicker">可迁移组件 / 02</span><h3>把仪器能力写成用户任务</h3></div><span class="panel-count">07 <small>项</small></span></div>
+              <div class="service-cards service-cards--test"><a class="service-card" href="#playbook"><div class="abstract-art abstract-art--measure" aria-hidden="true"><span>STEP</span><b>3D</b></div><h4>台阶仪 / 3D 轮廓</h4><p>用“要测什么”替代只罗列设备名称。</p></a><a class="service-card" href="#playbook"><div class="abstract-art abstract-art--measure"><span>THK</span><b>μm</b></div><h4>膜厚与应力</h4><p>把输出结果和应用场景绑定。</p></a><a class="service-card" href="#playbook"><div class="abstract-art abstract-art--measure"><span>SEM</span><b>×</b></div><h4>显微与失效分析</h4><p>为后续咨询建立清晰的入口。</p></a></div>
+              <div class="service-controls"><span>02 / 07</span><span class="control-line" aria-hidden="true"></span><button type="button" data-demo-next>查看交互规则 <span aria-hidden="true">→</span></button></div>
+            </div>
+            <div class="service-panel" role="tabpanel" tabindex="0" id="service-panel-material" aria-labelledby="service-tab-material" data-panel="material" hidden>
+              <div class="service-panel-head"><div><span class="panel-kicker">可迁移组件 / 03</span><h3>用锚点连接材料目录</h3></div><span class="panel-count">03 <small>项</small></span></div>
+              <div class="service-cards"><a class="service-card" href="#playbook"><div class="abstract-art abstract-art--wafer"><span></span><b>01</b></div><h4>衬底</h4><p>让材料分类指向可分享的详情锚点。</p></a><a class="service-card" href="#playbook"><div class="abstract-art abstract-art--resist"><span></span><b>02</b></div><h4>光刻胶</h4><p>在卡片层级展示规格和选型线索。</p></a><a class="service-card" href="#playbook"><div class="abstract-art abstract-art--mask"><span></span><b>03</b></div><h4>光刻板</h4><p>避免把目录做成无法点击的纯展示。</p></a></div>
+              <div class="service-controls"><span>03 / 03</span><span class="control-line" aria-hidden="true"></span><button type="button" data-demo-next>查看交互规则 <span aria-hidden="true">→</span></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="code-note reveal"><div><span class="kicker">实现公式</span><strong>触发器 → 状态变化 → 交互目的 → 最终状态/降级</strong></div><button class="copy-button" type="button" data-copy="hover / focus → active card → 让当前工艺更容易被扫描 → 点击、键盘、触摸都能切换">复制规则</button></div>
+      </div>
+    </section>
+
+    <section class="section interaction-section">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="kicker">05 / 交互触发</span><h2>好动效不是“会动”，<br><em>而是知道何时停</em></h2></div><p>原站的动效有明确的状态关系，但新项目应补齐可中断、键盘、触摸和减少动效偏好。</p></div>
+        <div class="interaction-table reveal">
+          <div class="interaction-row interaction-head"><span>触发器</span><span>状态变化</span><span>可迁移规则</span><span>降级</span></div>
+          <div class="interaction-row"><span class="trigger"><i class="dot dot-green"></i>滚动 / hover</span><span>导航透明 → 白底，Logo 与文字变深</span><span>只在对比度已验证的 Hero 上使用叠加导航</span><span>移动端直接实体导航</span></div>
+          <div class="interaction-row"><span class="trigger"><i class="dot dot-blue"></i>分类点击 / focus</span><span>左侧 active，右侧面板切换</span><span>用 `aria-selected` 与 URL/锚点保持状态可恢复</span><span>脚本失败时垂直卡片流</span></div>
+          <div class="interaction-row"><span class="trigger"><i class="dot dot-purple"></i>图片进入视口</span><span>短距离淡入、缩放或错峰显示</span><span>优先 transform/opacity，预留图片比例防 CLS</span><span>`prefers-reduced-motion` 关闭</span></div>
+          <div class="interaction-row"><span class="trigger"><i class="dot dot-orange"></i>咨询按钮点击</span><span>右侧入口 → 留言面板</span><span>展示真实字段、校验、成功/失败反馈</span><span>静态联系方式与邮箱链接</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="assets" class="section assets-section">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="kicker">06 / 资产观察</span><h2>素材不是装饰，<br><em>每张图都要有岗位</em></h2></div><p>这里仅展示已归档的公开资源。它们作为证据和视觉参考，不等于生产项目可以直接使用。</p></div>
+        <div class="asset-grid">
+          <figure class="asset-card asset-card--hero reveal"><img src="assets/source/hero-02.jpg" alt="原站 Hero 晶圆场景图" width="1920" height="860"><figcaption><span>Hero</span><strong>用真实设备画面建立专业语境</strong><small>建议：为移动端准备第二构图</small></figcaption></figure>
+          <figure class="asset-card reveal"><img src="assets/source/process-photolithography.jpg" alt="原站光刻工艺图片" width="660" height="460"><figcaption><span>服务卡片</span><strong>把工艺名和可视证据绑在一起</strong><small>建议：统一比例，预留加载尺寸</small></figcaption></figure>
+          <figure class="asset-card reveal"><img src="assets/source/news-feature.png" alt="原站行业动态主图" width="1609" height="899"><figcaption><span>行业动态</span><strong>一张大图承接长摘要</strong><small>建议：日期、标题、摘要全部可检索</small></figcaption></figure>
+          <figure class="asset-card asset-card--logo reveal"><div class="logo-stage"><img src="assets/source/logo-green.svg" alt="原站 Logo 归档" width="240" height="70"></div><figcaption><span>Logo</span><strong>导航状态切换需要两套对比版本</strong><small>归档文件：logo-green.svg / logo-white.svg</small></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="playbook" class="section playbook-section">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="kicker">07 / AI 建站规则</span><h2>把观察结果写成<br><em>可以复用的判断题</em></h2></div><p>下次开始工业技术型网站前，可把下面这组规则和真实资料一起交给 AI，再按项目证据做取舍。</p></div>
+        <div class="playbook-grid">
+          <article class="playbook-card playbook-card--do reveal"><div class="playbook-label">应该做</div><h3>让复杂服务先分组，再展开</h3><ul><li>先确认服务/产品分类数量和用户任务。</li><li>卡片至少有标题、证据图、短说明和详情入口。</li><li>桌面多栏，移动端自然退化为单列或可操作轮播。</li></ul></article>
+          <article class="playbook-card playbook-card--check reveal"><div class="playbook-label">先核实</div><h3>把“可信”绑定到证据</h3><ul><li>客户规模、合作院校、交付周期和资质必须有来源。</li><li>没有授权的案例图只放在内部复盘，不进生产首页。</li><li>自动轮播、视差和 hover 都要有静态状态。</li></ul></article>
+          <article class="playbook-card playbook-card--avoid reveal"><div class="playbook-label">不要复制</div><h3>不要把视觉技巧当成策略</h3><ul><li>不要因为原站使用绿色就给所有行业套绿色。</li><li>不要用超大 Hero、过度留白或连续动画填充页面。</li><li>不要让手机端依赖 hover、横向溢出或被浮层遮挡。</li></ul></article>
+        </div>
+        <div class="handoff reveal"><div><span class="kicker">交付摘要</span><h3>已归档：原始资源 + 视觉化案例页 + AI 规则</h3><p>后续可以直接把本目录的 `README.md` 与案例页作为上下文输入；生产项目仍需以客户资料、授权和真实证据为准。</p></div><a href="assets/source/manifest.md">查看资源来源 <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="sources">
+    <div class="container footer-grid">
+      <div><span class="brand-mark brand-mark--footer" aria-hidden="true">μ</span><h2>jsmems.com<br><em>案例复盘</em></h2><p>内部研究档案 · 2026.08.23</p></div>
+      <div><span class="kicker light">来源与边界</span><p>事实来自公开主页的只读 HTML/CSS/JS/图片资源观察。原站素材的版权、商标和生产使用权归原站或其授权方所有。</p><a href="assets/source/manifest.md">打开完整资源清单 <span aria-hidden="true">↗</span></a></div>
+      <div><span class="kicker light">原站</span><a class="footer-url" href="https://www.jsmems.com/" target="_blank" rel="noreferrer">www.jsmems.com ↗</a><p>建议先读 README，再打开案例页。</p></div>
+    </div>
+    <div class="container footer-bottom"><span>网站制作经验库 / cases</span><span>本页不提交任何表单</span></div>
+  </footer>
+
+  <button class="back-top" type="button" aria-label="返回顶部" data-back-top>↑</button>
+  <div class="toast" role="status" aria-live="polite" data-toast></div>
+  <script src="script.js?v=20260823" defer></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+{
+  "id": "btj_hcm",
+  "title": "晶华金属钙业网站案例：把金属钙讲成一条材料信任链",
+  "source": {
+    "url": "https://cn.btjhcm.com/",
+    "observedAt": "2026-08-24",
+    "locale": "zh-CN",
+    "notes": "Public claims are stored as source claims and require verification before reuse."
+  },
+  "positioning": ["calcium metal manufacturer", "calcium-based alloys", "industrial material supplier", "source manufacturing"],
+  "navigation": ["产品中心", "行业应用", "关于晶华", "新闻中心", "人才招聘", "联系我们"],
+  "productFamilies": [
+    {"name": "金属钙", "slug": "metal", "forms": ["钙粒", "钙块", "钙屑", "钙丝", "钙压块"]},
+    {"name": "钙系合金", "slug": "alloys", "forms": ["钙铝合金", "钙镁合金", "稀土钙合金"]}
+  ],
+  "applications": [
+    {"name": "钢铁与铸造工业", "task": "脱氧剂和脱硫剂"},
+    {"name": "有色金属冶炼工业", "task": "还原剂，制备稀有和贵重有色金属"},
+    {"name": "石油与化学工业", "task": "页面公开表述为广泛用途，具体工艺待核验"},
+    {"name": "电池工业", "task": "生产铅钙蓄电池"}
+  ],
+  "capabilities": ["品类齐全", "质量稳定", "工艺环保", "资质齐全"],
+  "publicClaims": [
+    {"claim": "公开自述成立于 2006 年，位于内蒙古包头九原工业园区", "status": "source-claim"},
+    {"claim": "相较传统工艺可降低 4–7 倍单位碳排放量", "status": "source-claim-unverified"},
+    {"claim": "产品直营远销 10+ 国家", "status": "source-claim-unverified"},
+    {"claim": "拥有生产、安全、质量、环境、员工管理等资质认证及自营出口资格", "status": "source-claim-needs-document-check"}
+  ],
+  "contact": {
+    "phone": "0086-472-298 9818",
+    "email": "info@btjhcm.com",
+    "address": "中国内蒙古包头市九原工业园区南绕城路42公里"
+  },
+  "designRules": [
+    "Start with material identity and visible forms before company claims.",
+    "Model family, form, specification, evidence and inquiry as one procurement path.",
+    "Translate industry names into real process actions and supporting documents.",
+    "Map each capability claim to a certificate, report, batch, process or contact.",
+    "Use industrial video as context with a poster, pause control and static fallback."
+  ],
+  "doNotCopy": [
+    "user-scalable=no",
+    "javascript:; placeholder links",
+    "autoplay-only Hero video",
+    "51.la analytics loader in the local snapshot",
+    "unverified carbon, export, quality or certification claims",
+    "images, video, logos and fonts without permission"
+  ],
+  "assets": {
+    "semanticImages": "assets/source/images/",
+    "rawArchive": "assets/source/original/",
+    "homeSnapshot": "assets/source/home.html",
+    "video": "assets/source/images/hero-factory.mp4",
+    "styles": ["assets/source/main.css", "assets/source/reset.css", "assets/source/swiper-3.4.2.min.css", "assets/source/animate.css"],
+    "scripts": ["assets/source/main.js", "assets/source/jquery-3.7.0.min.js", "assets/source/swiper.jquery.min.js", "assets/source/wow.js", "assets/source/gsap.min.js", "assets/source/ScrollTrigger.min.js"]
+  }
+}

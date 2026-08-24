@@ -1,0 +1,125 @@
+﻿$(function () {
+    new WOW().init(); // wow初始化
+    ys.phNavInit(2);// 移动端导航
+    ys.navSlide();// pc端导航默认下拉
+    ys.yxlenis();
+    navFixed();
+});
+// 导航不在顶部时加类名isfixed
+function navFixed(){
+    ys.isFixed(".ys-hd-pc");
+}
+// iPad导航兼容
+document.addEventListener('DOMContentLoaded', (event) => {
+    // 检测是否是iPad
+    const isIPad = navigator.userAgent.match(/iPad/i) != null;
+    if (isIPad) {
+    // 为所有链接添加点击事件监听器
+    document.querySelectorAll('.head-nav-item-title').forEach((link) => {
+        link.addEventListener('click', (event) => {
+        // 阻止链接跳转
+        event.preventDefault();
+        // 可以在这里添加其他逻辑，比如显示警告信息等
+        //   alert('链接跳转被禁止！');
+        });
+    });
+    }
+});
+// QQ浏览器图集触发兼容性问题
+if($(window).width() < 1200){
+    $('img:not(.viewer-show),video').click(function (e) {
+        e.preventDefault();
+    });
+    $('img,video').each(function () {
+        if ($(this).parents('a').length > 0) {
+            if($(this).parents('a').attr('target') == '_blank'){
+                $(this).parents('a').click(function () {
+                    window.open(this.href, '_blank');
+                })
+            }else{
+                $(this).parents('a').click(function () {
+                    window.location = this.href;
+                })
+            }
+        }
+    });
+}
+
+// 导航
+// 一级
+$('.head-nav-item').hover(function(){
+    $(this).addClass('yxnav-active1').siblings().removeClass('yxnav-active1');
+    $(".yx-search3xlbox").stop().slideUp();
+},function(){
+    $(this).removeClass('yxnav-active1');
+    $('.head-nav-item.act').addClass('yxnav-active1');
+})
+// 二级
+$(document).ready(function(){
+    $('.head-nav-item.has-pull').each(function(){
+        $(this).find('.hnid-pull-ri-imglis .hprl-pic').eq(0).show()
+        if ($('.hprl-ul-li').hasClass('act')) {
+            var index1 = $('.hprl-ul-li.act').index(); 
+            $(this).find('.hnid-pull-ri-imglis .hprl-pic').eq(index1).show().siblings().hide(); 
+        } else {
+            $(this).find('.hnid-pull-ri-imglis .hprl-pic').eq(0).show().siblings().hide(); 
+        }
+        $('.hprl-ul-li').hover(function() {
+            var index = $(this).index(); 
+            $(this).parents('.hnid-pull-ri').find('.hnid-pull-ri-imglis .hprl-pic').eq(index).show().siblings().hide(); 
+            $(this).addClass('yxnav-active2').siblings().removeClass('yxnav-active2'); 
+        }, function() {
+            $(this).removeClass('yxnav-active2');
+            $('.hprl-ul-li.act').addClass('yxnav-active2')
+        });
+        $('.hnid-pull').hover(function() {}, function() {
+            if ($('.hprl-ul-li').hasClass('act')) {
+                var index = $('.hprl-ul-li.act').index(); 
+                $(this).find('.hnid-pull-ri-imglis .hprl-pic').eq(index).show().siblings().hide(); 
+            } else {
+                $(this).find('.hnid-pull-ri-imglis .hprl-pic').eq(0).show().siblings().hide()
+            }
+        });
+    })
+
+   
+}) 
+$(document).ready(function() {
+    $(document).ready(function() {
+        $('.head-nav-item').removeClass('on1');
+    
+        $('.head-nav-item').each(function() {
+            var text = $(this).find('.head-nav-item-title p').text();
+            console.log(text)
+            if (text.includes('关于我们')) {
+                $(this).addClass('on1');
+            }
+        });
+    });
+});
+
+ // 搜索
+$(".yx-search3-btn").click(function (e) {
+    e.stopPropagation();
+    if($(this).hasClass('on')){
+        $(this).stop().removeClass('on');
+        $(this).parents(".yx-search3box").find(".yx-search3xlbox").stop().slideUp();
+    }else{
+        $(this).stop().addClass('on');
+        $(this).parents(".yx-search3box").find(".yx-search3xlbox").stop().slideDown();
+    }
+});
+$('.yx-search3box').click(function (e){
+    e.stopPropagation();
+});
+$('body,html').click(function(){
+    $('.yx-search3-btn').stop().removeClass('on');
+    $('.yx-search3-btn').stop().parents(".yx-search3box").find(".yx-search3xlbox").stop().slideUp();
+});
+// 语言
+$('.mnro-lang').hover(function(){
+    $(this).find('.mnro-lang-pull').stop().slideDown();
+    $(".yx-search3xlbox").stop().slideUp();
+},function(){
+    $(this).find('.mnro-lang-pull').stop().slideUp();
+})

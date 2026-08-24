@@ -1,0 +1,234 @@
+{
+  "slug": "jypower",
+  "title": "苏州吉远 JIYUAN（jypower.cn）官网案例",
+  "source": "https://www.jypower.cn/",
+  "source_variants": [
+    "https://www.jypower.cn/",
+    "https://en.jypower.cn/"
+  ],
+  "observed_at": "2026-08-23",
+  "timezone": "Asia/Shanghai",
+  "language": "zh-CN",
+  "languages": ["zh-CN", "en"],
+  "page_type": "功率转换控制器、功率器件与电源方案企业官网首页",
+  "industry": [
+    "功率半导体",
+    "电源管理",
+    "功率转换器件",
+    "USB PD",
+    "B2B电子元件"
+  ],
+  "evidence": {
+    "status": "public-homepage-readonly-observation",
+    "checked": [
+      "jypower.cn 公开中文首页 DOM 快照",
+      "首页引用的 CSS、JavaScript、公开图片、SVG、字体与 MP4",
+      "1440x900 桌面首页截图",
+      "390x844 移动首页截图",
+      "本地案例页的静态资源与交互"
+    ],
+    "not_checked": [
+      "登录与后台",
+      "真实订阅、资料或样品表单提交",
+      "接口和数据库",
+      "第三方数据核验",
+      "所有深层产品页的内容完整性",
+      "en.jypower.cn 英文变体的完整性"
+    ],
+    "notes": [
+      "根页面内容为中文，提供 en.jypower.cn 英文入口；本案例不把英文变体当作完整双语审计。",
+      "页面 viewport 含 maximum-scale=1.0 与 user-scalable=no；案例页移除该限制。",
+      "本地 HTML 快照已移除 CNZZ 注入脚本并保留清理注释；公开源码中的历史多库仍作为研究证据归档。"
+    ]
+  },
+  "site_facts": {
+    "navigation": [
+      "首页",
+      "产品：AC/DC 功率转换控制器、USB PD or Type C、功率器件、同步整流控制器、霍尔与 DC-DC 控制器、参考电压/运放/光耦",
+      "应用：AC/DC 电源、USB PD & Type C、LED 驱动电源、电机驱动",
+      "设计：设计小课堂、设计应用、客制化产品设计",
+      "支持：技术支持、资料与样品申请、品质管理、合作伙伴",
+      "关于吉远：吉远简介、公司愿景、吉远历程、新闻速递、加入吉远",
+      "联系方式、搜索与中文/英文切换"
+    ],
+    "hero": {
+      "slides": 4,
+      "themes": [
+        "专业功率转换器件供应商",
+        "加速创新、降本增效",
+        "科技节源",
+        "连接客户、分享方案"
+      ],
+      "images": [
+        "assets/source/images/hero-supplier.jpg",
+        "assets/source/images/hero-innovation.jpg",
+        "assets/source/images/hero-sustainable.jpg",
+        "assets/source/images/hero-service.png"
+      ],
+      "runtime": [
+        "Swiper 3.4.2",
+        "Swiper Animate",
+        "hero-service.mp4 autoplay playsinline loop muted"
+      ]
+    },
+    "product_families": [
+      "AC/DC 功率转换控制器",
+      "USB PD or Type C",
+      "功率器件",
+      "同步整流控制器",
+      "霍尔与 DC-DC 控制器",
+      "参考电压、运放及光耦"
+    ],
+    "application_families": [
+      "AC/DC 电源",
+      "USB PD & Type C",
+      "LED 驱动电源",
+      "电机驱动"
+    ],
+    "service_actions": [
+      "订购",
+      "设计",
+      "支持",
+      "加入"
+    ],
+    "news_observed": [
+      { "date": "2026-03-03", "title": "苏州吉远电子科技有限公司举办2026年度盛会暨颁奖典礼" },
+      { "date": "2026-01-12", "title": "中国企业创新实力闪耀美国消费电子展" },
+      { "date": "2025-12-25", "title": "苏州吉远电子科技有限公司官网更新上线" },
+      { "date": "2025-11-24", "title": "2025年中国电源学会品牌活动圆满收官" }
+    ],
+    "public_claims": [
+      "20 年电源方案经验",
+      "三代半导体功率器件",
+      "吉远工程师 24 小时内回复",
+      "苏州与深圳联系据点"
+    ],
+    "contacts": {
+      "suzhou": {
+        "address": "苏州工业园区苏虹东路177号方正智谷",
+        "phone": "+86 512-62373510",
+        "fax": "+86 512-62373512",
+        "email": "weixiliu@jypower.cn"
+      },
+      "shenzhen": {
+        "address": "深圳市光明区华强创意产业园A5幢",
+        "phone": "1866-2166-251",
+        "email": "Stevenshi@jypower.cn"
+      }
+    },
+    "responsive_observation": {
+      "desktop": "深蓝透明 Header、4 张 Hero、六张产品卡、四张应用卡、右侧联系/客服/置顶浮层",
+      "mobile": "白色 Header、EN 与汉堡菜单、Hero 纵向裁切、产品卡单列、浮层仍保留关键入口"
+    },
+    "source_stack": [
+      "jQuery 3.7",
+      "Swiper 3.4.2",
+      "Swiper Animate",
+      "Bootstrap",
+      "WOW",
+      "Fancybox",
+      "Waypoints",
+      "CountUp",
+      "social-share",
+      "Layer",
+      "GSAP",
+      "ScrollTrigger",
+      "SplitType",
+      "SuperSlide",
+      "Layui",
+      "more.js",
+      "main.js"
+    ],
+    "source_video": "公开首页 Hero 关联 1 个 MP4：20251223/646e4e38e85127f40fd1b41b35e243c2.mp4。"
+  },
+  "source_claims": [
+    { "metric": "电源方案经验", "value": "20 年", "verification": "unverified-public-site-claim" },
+    { "metric": "半导体功率器件", "value": "三代", "verification": "unverified-public-site-claim" },
+    { "metric": "工程师回复", "value": "24 小时内", "verification": "unverified-public-site-claim" },
+    { "metric": "联系据点", "value": "苏州、深圳", "verification": "public-contact-observation" }
+  ],
+  "transferable_patterns": [
+    {
+      "name": "工程语境 Hero",
+      "pattern": "电路/器件视觉 + 结果导向标题 + 产品或支持 CTA",
+      "when": "专业器件需要先被放回工作台和设备结果时",
+      "guardrail": "背景图不能替代规格、拓扑和真实详情"
+    },
+    {
+      "name": "产品与应用双路径",
+      "pattern": "产品家族回答‘有什么’，应用矩阵回答‘做什么’",
+      "when": "访客既有工程师也有采购或方案角色时",
+      "guardrail": "两条路径要汇入同一选型、详情或样品动作"
+    },
+    {
+      "name": "研发支持层",
+      "pattern": "订购、设计、支持、加入紧邻资讯和产品内容",
+      "when": "样品、参考设计和工程师沟通影响成交时",
+      "guardrail": "每个入口需要真实状态、时效和隐私说明"
+    },
+    {
+      "name": "日期更新轨道",
+      "pattern": "新闻标题 + 日期 + 详情路由",
+      "when": "工业品牌需要给长期访问者持续工作的信号时",
+      "guardrail": "日期要来自真实 CMS，不能用占位新闻伪造活跃度"
+    },
+    {
+      "name": "渐进增强视频",
+      "pattern": "Hero MP4 只增强场景，poster 和静态图片保留核心内容",
+      "when": "技术品牌希望增加动感但不能牺牲首屏性能时",
+      "guardrail": "提供暂停、静音、低带宽和 reduced-motion 退路"
+    }
+  ],
+  "do_not_copy": [
+    "user-scalable=no 与 maximum-scale=1.0",
+    "javascript:; 浮层/导航占位链接",
+    "没有性能预算的 jQuery + Swiper + WOW + GSAP + Layui 多库叠加",
+    "未经核验的 20 年、三代、24 小时承诺和公开联系方式",
+    "原站 Logo、照片、视频、字体、二维码、CSS 和 JS 的生产复用"
+  ],
+  "source_assets": [
+    "assets/source/home.html",
+    "assets/source/main.css",
+    "assets/source/site-main.css",
+    "assets/source/reset.css",
+    "assets/source/font.css",
+    "assets/source/fonts.css",
+    "assets/source/bootstrap.min.css",
+    "assets/source/swiper-3.4.2.min.css",
+    "assets/source/animate.css",
+    "assets/source/fancybox.css",
+    "assets/source/share.min.css",
+    "assets/source/iconfont.css",
+    "assets/source/iconfont-extra.css",
+    "assets/source/jquery-3.7.0.min.js",
+    "assets/source/swiper.jquery.min.js",
+    "assets/source/swiper.animate1.0.3.min.js",
+    "assets/source/bootstrap.min.js",
+    "assets/source/wow.js",
+    "assets/source/fancybox.umd.js",
+    "assets/source/jquery.waypoints.min.js",
+    "assets/source/jquery.countup.min.js",
+    "assets/source/social-share.min.js",
+    "assets/source/layer.js",
+    "assets/source/ksbm.js",
+    "assets/source/main.js",
+    "assets/source/more.js",
+    "assets/source/splitType.js",
+    "assets/source/jquery.SuperSlide.2.1.3.js",
+    "assets/source/layui.js",
+    "assets/source/original-home-desktop.png",
+    "assets/source/original-home-mobile.png",
+    "assets/source/case-page-desktop.png",
+    "assets/source/case-page-mobile.png",
+    "assets/source/images/",
+    "assets/source/original/",
+    "assets/source/manifest.md"
+  ],
+  "case_files": {
+    "page": "index.html",
+    "styles": "styles.css",
+    "script": "script.js",
+    "analysis": "README.md",
+    "structured_data": "case.json"
+  }
+}
