@@ -134,6 +134,45 @@ function Resolve-InputItem {
     return $item
 }
 
+function Test-NoReparsePointComponents {
+    param(
+        [Parameter(Mandatory = $true)][string]$CaseName,
+        [Parameter(Mandatory = $true)][string]$Field,
+        [Parameter(Mandatory = $true)][string]$CaseRoot,
+        [Parameter(Mandatory = $true)][string]$Candidate
+    )
+
+    try {
+        $rootFull = [System.IO.Path]::GetFullPath($CaseRoot).TrimEnd('\', '/')
+        $relative = $Candidate.Substring($rootFull.Length).TrimStart('\', '/')
+        $components = @($relative -split '[\\/]' | Where-Object { $_.Length -gt 0 })
+        $current = $rootFull
+        $rootItem = Get-Item -LiteralPath $current -Force -ErrorAction Stop
+        if (($rootItem.Attributes -band [System.IO.FileAttributes]::ReparsePoint) -ne 0) {
+            Add-ValidationError $CaseName $Field 'must not traverse a reparse point: .'
+            return $false
+        }
+
+        foreach ($component in $components) {
+            $current = Join-Path $current $component
+            if (-not (Test-Path -LiteralPath $current)) {
+                break
+            }
+            $item = Get-Item -LiteralPath $current -Force -ErrorAction Stop
+            if (($item.Attributes -band [System.IO.FileAttributes]::ReparsePoint) -ne 0) {
+                $displayPath = $current.Substring($rootFull.Length).TrimStart('\', '/').Replace('\', '/')
+                Add-ValidationError $CaseName $Field ("must not traverse a reparse point: {0}" -f $displayPath)
+                return $false
+            }
+        }
+        return $true
+    }
+    catch {
+        Add-ValidationError $CaseName $Field ("could not inspect path components for reparse points: {0}" -f $_.Exception.Message)
+        return $false
+    }
+}
+
 function Test-SafeCasePath {
     param(
         [Parameter(Mandatory = $true)][string]$CaseName,
@@ -165,6 +204,9 @@ function Test-SafeCasePath {
         $rootBoundary = $rootFull + [System.IO.Path]::DirectorySeparatorChar
         if (-not $candidate.StartsWith($rootBoundary, [System.StringComparison]::OrdinalIgnoreCase)) {
             Add-ValidationError $CaseName $Field 'must resolve inside the case directory'
+            return $false
+        }
+        if (-not (Test-NoReparsePointComponents $CaseName $Field $rootFull $candidate)) {
             return $false
         }
         $ResolvedPath.Value = $candidate
@@ -233,7 +275,8 @@ function Validate-RequiredNonEmptyString {
 function Validate-Evidence {
     param(
         [Parameter(Mandatory = $true)][string]$CaseName,
-        [AllowNull()][object]$Evidence
+        [AllowNull()][object]$Evidence,
+        [AllowNull()][object]$TopObservedAt
     )
 
     if (-not (Test-IsJsonObject $Evidence)) {
@@ -263,11 +306,14 @@ function Validate-Evidence {
         Add-ValidationError $CaseName 'evidence.observations' 'must contain at least one observation'
     }
 
+    $allObservationDatesValid = $true
+    $validObservationDates = New-Object 'System.Collections.Generic.List[string]'
     for ($index = 0; $index -lt $observations.Value.Count; $index++) {
         $observation = $observations.Value[$index]
         $prefix = "evidence.observations[$index]"
         if (-not (Test-IsJsonObject $observation)) {
             Add-ValidationError $CaseName $prefix 'must be an object'
+            $allObservationDatesValid = $false
             continue
         }
         foreach ($name in @('observed_at', 'scope', 'checked', 'not_checked', 'notes')) {
@@ -277,8 +323,15 @@ function Validate-Evidence {
         }
 
         $date = Get-ExactProperty $observation 'observed_at'
-        if ($null -ne $date -and -not (Test-ExactDate $date.Value)) {
+        if ($null -eq $date) {
+            $allObservationDatesValid = $false
+        }
+        elseif (-not (Test-ExactDate $date.Value)) {
             Add-ValidationError $CaseName ("{0}.observed_at" -f $prefix) 'must be an ISO date in yyyy-MM-dd format'
+            $allObservationDatesValid = $false
+        }
+        else {
+            $validObservationDates.Add($date.Value) | Out-Null
         }
         foreach ($arrayName in @('scope', 'checked', 'not_checked', 'notes')) {
             $arrayProperty = Get-ExactProperty $observation $arrayName
@@ -286,6 +339,14 @@ function Validate-Evidence {
                 $requiresItems = $arrayName -ceq 'scope'
                 $null = Test-StringArray $CaseName ("{0}.{1}" -f $prefix, $arrayName) $arrayProperty.Value $requiresItems $true $false
             }
+        }
+    }
+
+    if ($observations.Value.Count -gt 0 -and $allObservationDatesValid -and
+        $validObservationDates.Count -eq $observations.Value.Count -and (Test-ExactDate $TopObservedAt)) {
+        $latestObservationDate = @($validObservationDates | Sort-Object -Descending)[0]
+        if ($TopObservedAt -cne $latestObservationDate) {
+            Add-ValidationError $CaseName 'observed_at' ("must equal latest observation date {0}" -f $latestObservationDate)
         }
     }
 }
@@ -542,6 +603,9 @@ function Validate-Case {
         if ($source.Value -isnot [string]) {
             Add-ValidationError $caseName 'source' 'must be a string containing an HTTP(S) URI'
         }
+        elseif ([regex]::IsMatch($source.Value, '\s')) {
+            Add-ValidationError $caseName 'source' 'must not contain leading, trailing, or embedded whitespace'
+        }
         else {
             [uri]$uri = $null
             if (-not [uri]::TryCreate($source.Value, [System.UriKind]::Absolute, [ref]$uri) -or @('http', 'https') -cnotcontains $uri.Scheme) {
@@ -582,7 +646,8 @@ function Validate-Case {
 
     $evidence = Get-ExactProperty $metadata 'evidence'
     if ($null -ne $evidence) {
-        Validate-Evidence $caseName $evidence.Value
+        $topObservedAtValue = if ($null -ne $observedAt) { $observedAt.Value } else { $null }
+        Validate-Evidence $caseName $evidence.Value $topObservedAtValue
     }
 
     $siteFacts = Get-ExactProperty $metadata 'site_facts'

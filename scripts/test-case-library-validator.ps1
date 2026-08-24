@@ -9,6 +9,7 @@ $script:ProductionSchemaPath = Join-Path $script:RepositoryRoot 'cases/case.sche
 $script:Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
 $script:ContractPassed = 0
 $script:ContractFailed = 0
+$script:ContractBlocked = 0
 
 function Write-Utf8File {
     param(
@@ -147,6 +148,38 @@ function Remove-FixtureRoot {
     Remove-Item -LiteralPath $fullPath -Force
 }
 
+function Remove-FixtureJunction {
+    param(
+        [Parameter(Mandatory = $true)][string]$FixtureRoot,
+        [Parameter(Mandatory = $true)][string]$JunctionPath,
+        [Parameter(Mandatory = $true)][string]$TargetSentinel
+    )
+
+    if (-not (Test-Path -LiteralPath $JunctionPath)) {
+        return
+    }
+
+    $rootFull = [System.IO.Path]::GetFullPath($FixtureRoot).TrimEnd('\', '/')
+    $junctionFull = [System.IO.Path]::GetFullPath($JunctionPath)
+    $rootBoundary = $rootFull + [System.IO.Path]::DirectorySeparatorChar
+    if (-not $junctionFull.StartsWith($rootBoundary, [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "Refusing to remove junction outside GUID fixture root: $junctionFull"
+    }
+
+    $junction = Get-Item -LiteralPath $junctionFull -Force
+    if (($junction.Attributes -band [System.IO.FileAttributes]::ReparsePoint) -eq 0) {
+        throw "Refusing junction cleanup because path is not a reparse point: $junctionFull"
+    }
+
+    [System.IO.Directory]::Delete($junctionFull, $false)
+    if (Test-Path -LiteralPath $junctionFull) {
+        throw "Junction cleanup did not remove link: $junctionFull"
+    }
+    if (-not (Test-Path -LiteralPath $TargetSentinel -PathType Leaf)) {
+        throw "Junction cleanup followed the link and removed its target: $TargetSentinel"
+    }
+}
+
 function New-Fixture {
     param(
         [Parameter(Mandatory = $true)][string]$Name,
@@ -225,7 +258,8 @@ function Invoke-ContractRegressions {
         $stringArray = if ($null -ne $definitions) { Get-ExactJsonProperty $definitions.Value 'stringArray' } else { $null }
         $stringItems = if ($null -ne $stringArray) { Get-ExactJsonProperty $stringArray.Value 'items' } else { $null }
         $minimumLength = if ($null -ne $stringItems) { Get-ExactJsonProperty $stringItems.Value 'minLength' } else { $null }
-        Assert-ContractRegression ($null -ne $minimumLength -and $minimumLength.Value -eq 1) 'schema stringArray nonempty items' '$defs.stringArray.items.minLength must equal 1'
+        $stringItemPattern = if ($null -ne $stringItems) { Get-ExactJsonProperty $stringItems.Value 'pattern' } else { $null }
+        Assert-ContractRegression ($null -ne $minimumLength -and $minimumLength.Value -eq 1 -and $null -ne $stringItemPattern -and $stringItemPattern.Value -ceq '\S') 'schema stringArray nonempty items' '$defs.stringArray items must use minLength 1 and pattern \S'
 
         $stringArrayReference = '#/$defs/stringArray'
         $siteFactsRef = Get-ExactJsonProperty $schema.properties.site_facts '$ref'
@@ -239,9 +273,48 @@ function Invoke-ContractRegressions {
             $null -ne $notesRef -and $notesRef.Value -ceq $stringArrayReference
         Assert-ContractRegression $allStringArraysUseDefinition 'schema stringArray references' 'checked, not_checked, notes, and site_facts must use #/$defs/stringArray'
 
-        Assert-ContractRegression ($schema.properties.source.pattern -ceq '^[Hh][Tt][Tt][Pp][Ss]?://') 'schema source scheme casing' 'source.pattern must accept uppercase and lowercase HTTP(S)'
+        Assert-ContractRegression ($schema.properties.source.pattern -ceq '^[Hh][Tt][Tt][Pp][Ss]?://\S+$') 'schema source scheme casing and whitespace' 'source.pattern must accept uppercase/lowercase HTTP(S) and reject every whitespace character'
         $industryUnique = Get-ExactJsonProperty $schema.properties.industry 'uniqueItems'
         Assert-ContractRegression ($null -eq $industryUnique) 'schema duplicate industry values' 'industry must not declare uniqueItems'
+
+        $nonEmptyString = if ($null -ne $definitions) { Get-ExactJsonProperty $definitions.Value 'nonEmptyString' } else { $null }
+        $nonEmptyPattern = if ($null -ne $nonEmptyString) { Get-ExactJsonProperty $nonEmptyString.Value 'pattern' } else { $null }
+        $nonEmptyMinimum = if ($null -ne $nonEmptyString) { Get-ExactJsonProperty $nonEmptyString.Value 'minLength' } else { $null }
+        $nonEmptyStringRef = '#/$defs/nonEmptyString'
+        $ordinaryStringNodes = @(
+            $schema.properties.title,
+            $schema.properties.page_type,
+            $schema.properties.industry.items,
+            $schema.properties.evidence.properties.status,
+            $observationProperties.scope.items,
+            $schema.properties.source_claims.items.properties.claim,
+            $schema.properties.source_claims.items.properties.location,
+            $schema.properties.source_claims.items.properties.verification,
+            $schema.properties.transferable_patterns.items.properties.name,
+            $schema.properties.transferable_patterns.items.properties.when,
+            $schema.properties.transferable_patterns.items.properties.use,
+            $schema.properties.transferable_patterns.items.properties.guardrail,
+            $schema.properties.do_not_copy.items,
+            $schema.properties.source_assets.items.properties.kind,
+            $schema.properties.source_assets.items.properties.role
+        )
+        $ordinaryStringsUseDefinition = $true
+        foreach ($node in $ordinaryStringNodes) {
+            $reference = Get-ExactJsonProperty $node '$ref'
+            if ($null -eq $reference -or $reference.Value -cne $nonEmptyStringRef) {
+                $ordinaryStringsUseDefinition = $false
+            }
+        }
+        Assert-ContractRegression ($null -ne $nonEmptyMinimum -and $nonEmptyMinimum.Value -eq 1 -and $null -ne $nonEmptyPattern -and $nonEmptyPattern.Value -ceq '\S' -and $ordinaryStringsUseDefinition) 'schema ordinary nonempty strings' 'all ordinary nonempty string fields must use a minLength 1, pattern \S definition'
+
+        $relativePath = if ($null -ne $definitions) { Get-ExactJsonProperty $definitions.Value 'relativePath' } else { $null }
+        $relativePattern = if ($null -ne $relativePath) { Get-ExactJsonProperty $relativePath.Value 'pattern' } else { $null }
+        $sourceAssetFileRef = Get-ExactJsonProperty $schema.properties.source_assets.items.properties.file '$ref'
+        $supportingFileRef = Get-ExactJsonProperty $schema.properties.case_files.properties.supporting_files.items '$ref'
+        $expectedRelativePattern = '^(?=.*\S)(?!/)(?![A-Za-z]:)(?!.*(?:^|/)\.\.(?:/|$))(?!.*\\).+$'
+        Assert-ContractRegression ($null -ne $relativePattern -and $relativePattern.Value -ceq $expectedRelativePattern -and
+            $null -ne $sourceAssetFileRef -and $sourceAssetFileRef.Value -ceq '#/$defs/relativePath' -and
+            $null -ne $supportingFileRef -and $supportingFileRef.Value -ceq '#/$defs/relativePath') 'schema relative paths reject whitespace-only' 'relativePath must require a non-whitespace character and back both declared path fields'
     }
     catch {
         Assert-ContractRegression $false 'schema contract inspection' $_.Exception.Message
@@ -291,11 +364,99 @@ function Invoke-ContractRegressions {
             $invalidResult = Invoke-ValidatorProcess $casesPath $script:ProductionSchemaPath $indexPath
             Assert-ContractRegression ($invalidResult.ExitCode -eq 1 -and $invalidResult.Output -match $emptyStringCase.Pattern) $emptyStringCase.Name ("exit {0}; output: {1}" -f $invalidResult.ExitCode, (($invalidResult.Output -replace '[\r\n]+', ' ').Trim()))
         }
+
+        $whitespaceCases = @(
+            [pscustomobject]@{
+                Name = 'validator rejects whitespace-only title'
+                Pattern = 'title.*nonempty'
+                Update = { param($metadata) $metadata.title = '   ' }
+            }
+            [pscustomobject]@{
+                Name = 'validator rejects whitespace-only site_facts item'
+                Pattern = 'site_facts\[0\].*nonempty'
+                Update = { param($metadata) $metadata.site_facts = @('   ') }
+            }
+            [pscustomobject]@{
+                Name = 'validator rejects leading URL whitespace'
+                Pattern = 'source.*whitespace'
+                Update = { param($metadata) $metadata.source = ' HTTPS://example.com/' }
+            }
+            [pscustomobject]@{
+                Name = 'validator rejects trailing URL whitespace'
+                Pattern = 'source.*whitespace'
+                Update = { param($metadata) $metadata.source = 'HTTPS://example.com/ ' }
+            }
+            [pscustomobject]@{
+                Name = 'validator rejects embedded URL whitespace'
+                Pattern = 'source.*whitespace'
+                Update = { param($metadata) $metadata.source = 'HTTPS://exa mple.com/' }
+            }
+        )
+        foreach ($whitespaceCase in $whitespaceCases) {
+            New-ValidReviewCase $casesPath $indexPath
+            Update-CaseMetadata $casesPath $whitespaceCase.Update
+            $whitespaceResult = Invoke-ValidatorProcess $casesPath $script:ProductionSchemaPath $indexPath
+            Assert-ContractRegression ($whitespaceResult.ExitCode -eq 1 -and $whitespaceResult.Output -match $whitespaceCase.Pattern) $whitespaceCase.Name ("exit {0}; output: {1}" -f $whitespaceResult.ExitCode, (($whitespaceResult.Output -replace '[\r\n]+', ' ').Trim()))
+        }
+
+        New-ValidReviewCase $casesPath $indexPath
+        Update-CaseMetadata $casesPath {
+            param($metadata)
+            $metadata.evidence.observations += [pscustomobject]@{
+                observed_at = '2026-08-25'
+                scope = @('product page')
+                checked = @('content hierarchy')
+                not_checked = @()
+                notes = @('Newer observation fixture.')
+            }
+        }
+        $staleDateResult = Invoke-ValidatorProcess $casesPath $script:ProductionSchemaPath $indexPath
+        Assert-ContractRegression ($staleDateResult.ExitCode -eq 1 -and $staleDateResult.Output -match 'observed_at.*latest observation') 'validator rejects stale top-level observed_at' ("exit {0}; output: {1}" -f $staleDateResult.ExitCode, (($staleDateResult.Output -replace '[\r\n]+', ' ').Trim()))
+
+        New-ValidReviewCase $casesPath $indexPath
+        $externalSource = Join-Path $regressionRoot 'outside-case-source'
+        $targetSentinel = Join-Path $externalSource 'evidence.txt'
+        New-Item -ItemType Directory -Path $externalSource -Force | Out-Null
+        Write-Utf8File $targetSentinel 'outside case root'
+        $assetsPath = Join-Path (Join-Path $casesPath 'alpha') 'assets'
+        New-Item -ItemType Directory -Path $assetsPath -Force | Out-Null
+        $junctionPath = Join-Path $assetsPath 'source'
+        try {
+            $junction = New-Item -ItemType Junction -Path $junctionPath -Target $externalSource -ErrorAction Stop
+            if (($junction.Attributes -band [System.IO.FileAttributes]::ReparsePoint) -eq 0) {
+                throw 'created directory is not marked as a reparse point'
+            }
+        }
+        catch {
+            $script:ContractBlocked++
+            Write-Output ("CONTRACT BLOCKED junction regression: {0}" -f $_.Exception.Message)
+        }
+        if ($script:ContractBlocked -eq 0) {
+            Write-Utf8File (Join-Path (Join-Path $casesPath 'alpha') 'index.html') '<!doctype html><title>Alpha</title>'
+            Update-CaseMetadata $casesPath {
+                param($metadata)
+                $metadata.artifact_level = 'snapshot'
+                $metadata.source_assets = @(
+                    [pscustomobject]@{
+                        file = 'assets/source/evidence.txt'
+                        kind = 'text'
+                        role = 'source evidence'
+                    }
+                )
+                $metadata.case_files | Add-Member -NotePropertyName review_page -NotePropertyValue 'index.html'
+                $metadata.case_files | Add-Member -NotePropertyName source_root -NotePropertyValue 'assets/source'
+            }
+            $junctionResult = Invoke-ValidatorProcess $casesPath $script:ProductionSchemaPath $indexPath
+            Assert-ContractRegression ($junctionResult.ExitCode -eq 1 -and $junctionResult.Output -match 'reparse point') 'validator rejects junction escape' ("exit {0}; output: {1}" -f $junctionResult.ExitCode, (($junctionResult.Output -replace '[\r\n]+', ' ').Trim()))
+        }
     }
     catch {
         Assert-ContractRegression $false 'validator contract invocation' $_.Exception.Message
     }
     finally {
+        if ($null -ne $junctionPath -and $null -ne $targetSentinel) {
+            Remove-FixtureJunction $regressionRoot $junctionPath $targetSentinel
+        }
         Remove-FixtureRoot $regressionRoot
     }
 }
@@ -479,8 +640,11 @@ foreach ($fixture in $fixtures) {
 
 Invoke-ContractRegressions
 Write-Output ("Case validator contract regressions passed: {0}; failed: {1}" -f $script:ContractPassed, $script:ContractFailed)
+if ($script:ContractBlocked -gt 0) {
+    Write-Output ("Case validator contract regressions BLOCKED: {0}" -f $script:ContractBlocked)
+}
 Write-Output ("Case validator fixtures passed: {0}; failed: {1}" -f $passed, $failed)
-if ($failed -gt 0 -or $script:ContractFailed -gt 0) {
+if ($failed -gt 0 -or $script:ContractFailed -gt 0 -or $script:ContractBlocked -gt 0) {
     exit 1
 }
 exit 0
