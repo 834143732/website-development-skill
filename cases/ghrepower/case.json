@@ -1,5 +1,7 @@
 {
+  "schema_version": "1.0.0",
   "slug": "ghrepower",
+  "artifact_level": "snapshot",
   "title": "上海致远绿色能源（ghrepower.com）官网案例",
   "source": "https://www.ghrepower.com/",
   "observed_at": "2026-08-23",
@@ -8,8 +10,15 @@
   "page_type": "工业能源企业官网首页",
   "evidence": {
     "status": "public-homepage-readonly-observation",
-    "checked": ["response-headers", "home.html", "zhiyuan.css", "zy-h5.css", "zhiyuan.js", "nav.css", "nav.js", "public-image-assets", "desktop-and-mobile-screenshots"],
-    "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics", "third-party-verification-of-marketing-claims"]
+    "observations": [
+      {
+        "observed_at": "2026-08-23",
+        "scope": ["公开首页", "1440x900 桌面截图", "390x844 移动截图", "首页 DOM/CSS/JS"],
+        "checked": ["response-headers", "home.html", "zhiyuan.css", "zy-h5.css", "zhiyuan.js", "nav.css", "nav.js", "public-image-assets", "desktop-and-mobile-screenshots"],
+        "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics", "third-party-verification-of-marketing-claims"],
+        "notes": []
+      }
+    ]
   },
   "site_facts": [
     "首页是 5 幕纵向全屏 Swiper，右侧编号分页，启用鼠标滚轮并用 sessionStorage 记住场景",
@@ -90,5 +99,12 @@
     {"file": "assets/source/service-bg.jpg", "kind": "image", "role": "服务场景背景"},
     {"file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "桌面首页视觉证据"},
     {"file": "assets/source/original-home-mobile.png", "kind": "screenshot", "role": "移动首页视觉证据"}
-  ]
+  ],
+  "case_files": {
+    "readme": "README.md",
+    "metadata": "case.json",
+    "review_page": "index.html",
+    "source_root": "assets/source",
+    "supporting_files": ["styles.css", "script.js"]
+  }
 }

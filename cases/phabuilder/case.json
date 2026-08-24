@@ -1,5 +1,7 @@
 {
+  "schema_version": "1.0.0",
   "slug": "phabuilder",
+  "artifact_level": "snapshot",
   "title": "微构工场（phabuilder.com）官网案例",
   "source": "https://www.phabuilder.com/",
   "observed_at": "2026-08-23",
@@ -8,9 +10,15 @@
   "page_type": "生物材料与工业生物制造企业官网首页",
   "evidence": {
     "status": "public-homepage-readonly-browser-observation",
-    "checked": ["browser-response-dom", "index.css", "media.css", "index.js", "ksbm.js", "public-image-assets", "desktop-and-mobile-screenshots"],
-    "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics", "third-party-verification-of-company-claims"],
-    "note": "直接命令行 GET 在观察时返回 403；使用浏览器同源只读请求取得 HTML 快照。归档 home.html 移除了 51.la 与 CNZZ 的站点分析脚本及 ID。"
+    "observations": [
+      {
+        "observed_at": "2026-08-23",
+        "scope": ["公开首页", "1440x900 桌面截图", "390x844 移动截图", "首页 DOM/CSS/JS 与公开素材"],
+        "checked": ["browser-response-dom", "index.css", "media.css", "index.js", "ksbm.js", "public-image-assets", "desktop-and-mobile-screenshots"],
+        "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics", "third-party-verification-of-company-claims"],
+        "notes": ["直接命令行 GET 在观察时返回 403；使用浏览器同源只读请求取得 HTML 快照。归档 home.html 移除了 51.la 与 CNZZ 的站点分析脚本及 ID。"]
+      }
+    ]
   },
   "site_facts": [
     "顶部导航包含 PHAmily 原料产品、PHAbrary 定制方案、PHAdustry 智造产线、PHA Life 多元创造、其他非 PHA 产品和关于我们，并有中英文、搜索与采购入口",
@@ -90,5 +98,12 @@
     {"file": "assets/source/news-01.jpg", "kind": "image", "role": "新闻卡片图"},
     {"file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "桌面首页视觉证据"},
     {"file": "assets/source/original-home-mobile.png", "kind": "screenshot", "role": "移动首页视觉证据"}
-  ]
+  ],
+  "case_files": {
+    "readme": "README.md",
+    "metadata": "case.json",
+    "review_page": "index.html",
+    "source_root": "assets/source",
+    "supporting_files": ["styles.css", "script.js"]
+  }
 }

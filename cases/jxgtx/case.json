@@ -1,5 +1,7 @@
 {
+  "schema_version": "1.0.0",
   "slug": "jxgtx",
+  "artifact_level": "snapshot",
   "title": "江苏吉星 KomShine（jxgtx.com）官网案例",
   "source": "https://www.jxgtx.com/",
   "observed_at": "2026-08-23",
@@ -16,28 +18,34 @@
   ],
   "evidence": {
     "status": "public-homepage-readonly-observation",
-    "checked": [
-      "jxgtx.com 公开中文首页 DOM 快照",
-      "首页引用的 CSS、JavaScript、公开图片与字体引用",
-      "1440x900 桌面首页截图",
-      "390x844 移动首页截图",
-      "本地案例页的静态资源与交互"
-    ],
-    "not_checked": [
-      "登录与后台",
-      "真实表单提交",
-      "接口和数据库",
-      "第三方数据核验",
-      "所有深层产品页的内容完整性",
-      "www.komshine.com 多语变体的完整性"
-    ],
-    "notes": [
-      "根域可见内容主要为中文，但 HTML lang 为 en；语言链接指向 www.komshine.com 的多语变体。",
-      "30+研发团队、10+国际语种、50+服务国家、1000K+服务客户为原站自述，未做第三方核验。",
-      "本地 HTML 快照移除了重复 Baidu 统计加载器与 CNZZ 注入脚本，并保留清理注释。"
+    "observations": [
+      {
+        "observed_at": "2026-08-23",
+        "scope": ["公开中文首页", "1440x900 桌面截图", "390x844 移动截图", "本地案例页"],
+        "checked": [
+          "jxgtx.com 公开中文首页 DOM 快照",
+          "首页引用的 CSS、JavaScript、公开图片与字体引用",
+          "1440x900 桌面首页截图",
+          "390x844 移动首页截图",
+          "本地案例页的静态资源与交互"
+        ],
+        "not_checked": [
+          "登录与后台",
+          "真实表单提交",
+          "接口和数据库",
+          "第三方数据核验",
+          "所有深层产品页的内容完整性",
+          "www.komshine.com 多语变体的完整性"
+        ],
+        "notes": [
+          "根域可见内容主要为中文，但 HTML lang 为 en；语言链接指向 www.komshine.com 的多语变体。",
+          "30+研发团队、10+国际语种、50+服务国家、1000K+服务客户为原站自述，未做第三方核验。",
+          "本地 HTML 快照移除了重复 Baidu 统计加载器与 CNZZ 注入脚本，并保留清理注释。"
+        ]
+      }
     ]
   },
-  "site_facts": {
+  "site_fact_groups": {
     "navigation": [
       "首页",
       "产品&解决方案：光纤熔接机、OTDR、测量仪器、ODN 网络、光纤清洁、光纤工具",
@@ -146,40 +154,47 @@
     ],
     "anti_copy": "common.js 含禁止右键、复制、选择和 Ctrl+C 的公开脚本逻辑；仅作为待重构证据归档。"
   },
+  "site_facts": [
+    "导航连接六类光通信产品、新闻、服务支持、公司和联系入口",
+    "Hero 展示测试仪器、OTDR、熔接机和连接器五类主题",
+    "产品分为熔接机、OTDR、测量仪器、ODN、清洁和工具",
+    "首页提供手册、指南、教程和售后四类服务快捷入口",
+    "移动端在约 990px 以下切换汉堡菜单并重排产品卡"
+  ],
   "source_claims": [
-    { "metric": "研发团队", "value": "30+", "verification": "unverified-public-site-claim" },
-    { "metric": "国际语种", "value": "10+", "verification": "unverified-public-site-claim" },
-    { "metric": "服务国家", "value": "50+", "verification": "unverified-public-site-claim" },
-    { "metric": "服务客户", "value": "1000K+", "verification": "unverified-public-site-claim" }
+    { "claim": "研发团队：30+", "location": "首页公开内容", "verification": "unverified-public-site-claim" },
+    { "claim": "国际语种：10+", "location": "首页公开内容", "verification": "unverified-public-site-claim" },
+    { "claim": "服务国家：50+", "location": "首页公开内容", "verification": "unverified-public-site-claim" },
+    { "claim": "服务客户：1000K+", "location": "首页公开内容", "verification": "unverified-public-site-claim" }
   ],
   "transferable_patterns": [
     {
       "name": "现场先行的工业 Hero",
-      "pattern": "设备/测试动作 + 一项可核验参数 + 单一分类 CTA",
+      "use": "设备/测试动作 + 一项可核验参数 + 单一分类 CTA",
       "when": "技术产品需要先建立尺度与使用场景时",
       "guardrail": "首屏之后必须提供产品详情、参数和支持入口，避免只有氛围照片"
     },
     {
       "name": "任务型产品平台",
-      "pattern": "用熔接、测试、测量、分配、清洁、工具组织一级分类",
+      "use": "用熔接、测试、测量、分配、清洁、工具组织一级分类",
       "when": "产品目录深、采购角色多、SKU 不适合直接平铺时",
       "guardrail": "每类需要结果导向说明，并由真实详情路由承接"
     },
     {
       "name": "服务支持层",
-      "pattern": "手册、指南、视频、售后紧邻产品内容",
+      "use": "手册、指南、视频、售后紧邻产品内容",
       "when": "安装、学习、校准或维修会影响成交与交付时",
       "guardrail": "真实资源、下载状态和售后承诺要可验证"
     },
     {
       "name": "交付证据条",
-      "pattern": "能力、沟通、网络、影响四类数字分工",
+      "use": "能力、沟通、网络、影响四类数字分工",
       "when": "B2B 企业需要在首页快速建立覆盖感时",
       "guardrail": "标注日期、单位、口径、来源与未核验状态"
     },
     {
       "name": "渐进增强动效",
-      "pattern": "轮播/hover/计数只改变节奏，静态内容独立成立",
+      "use": "轮播/hover/计数只改变节奏，静态内容独立成立",
       "when": "首页需要展示多个场景但仍要兼顾性能和无障碍时",
       "guardrail": "支持键盘、触屏、无脚本和 prefers-reduced-motion"
     }
@@ -192,44 +207,46 @@
     "原站 Logo、照片、字体、产品图、CSS 和 JS 的生产复用"
   ],
   "source_assets": [
-    "assets/source/home.html",
-    "assets/source/main.css",
-    "assets/source/media.css",
-    "assets/source/reset.css",
-    "assets/source/bootstrap.min.css",
-    "assets/source/swiper-3.4.2.min.css",
-    "assets/source/animate.css",
-    "assets/source/fancybox.css",
-    "assets/source/font.css",
-    "assets/source/share.min.css",
-    "assets/source/iconfont.css",
-    "assets/source/iconfont-extra.css",
-    "assets/source/jquery-3.7.0.min.js",
-    "assets/source/swiper.jquery.min.js",
-    "assets/source/swiper.animate1.0.3.min.js",
-    "assets/source/bootstrap.min.js",
-    "assets/source/wow.js",
-    "assets/source/fancybox.umd.js",
-    "assets/source/jquery.waypoints.min.js",
-    "assets/source/jquery.countup.min.js",
-    "assets/source/social-share.min.js",
-    "assets/source/layer.js",
-    "assets/source/ksbm.js",
-    "assets/source/main.js",
-    "assets/source/common.js",
-    "assets/source/original-home-desktop.png",
-    "assets/source/original-home-mobile.png",
-    "assets/source/case-page-desktop.png",
-    "assets/source/case-page-mobile.png",
+    { "file": "assets/source/home.html", "kind": "html", "role": "归档来源文件：home.html" },
+    { "file": "assets/source/main.css", "kind": "css", "role": "归档来源文件：main.css" },
+    { "file": "assets/source/media.css", "kind": "css", "role": "归档来源文件：media.css" },
+    { "file": "assets/source/reset.css", "kind": "css", "role": "归档来源文件：reset.css" },
+    { "file": "assets/source/bootstrap.min.css", "kind": "css", "role": "归档来源文件：bootstrap.min.css" },
+    { "file": "assets/source/swiper-3.4.2.min.css", "kind": "css", "role": "归档来源文件：swiper-3.4.2.min.css" },
+    { "file": "assets/source/animate.css", "kind": "css", "role": "归档来源文件：animate.css" },
+    { "file": "assets/source/fancybox.css", "kind": "css", "role": "归档来源文件：fancybox.css" },
+    { "file": "assets/source/font.css", "kind": "css", "role": "归档来源文件：font.css" },
+    { "file": "assets/source/share.min.css", "kind": "css", "role": "归档来源文件：share.min.css" },
+    { "file": "assets/source/iconfont.css", "kind": "css", "role": "归档来源文件：iconfont.css" },
+    { "file": "assets/source/iconfont-extra.css", "kind": "css", "role": "归档来源文件：iconfont-extra.css" },
+    { "file": "assets/source/jquery-3.7.0.min.js", "kind": "javascript", "role": "归档来源文件：jquery-3.7.0.min.js" },
+    { "file": "assets/source/swiper.jquery.min.js", "kind": "javascript", "role": "归档来源文件：swiper.jquery.min.js" },
+    { "file": "assets/source/swiper.animate1.0.3.min.js", "kind": "javascript", "role": "归档来源文件：swiper.animate1.0.3.min.js" },
+    { "file": "assets/source/bootstrap.min.js", "kind": "javascript", "role": "归档来源文件：bootstrap.min.js" },
+    { "file": "assets/source/wow.js", "kind": "javascript", "role": "归档来源文件：wow.js" },
+    { "file": "assets/source/fancybox.umd.js", "kind": "javascript", "role": "归档来源文件：fancybox.umd.js" },
+    { "file": "assets/source/jquery.waypoints.min.js", "kind": "javascript", "role": "归档来源文件：jquery.waypoints.min.js" },
+    { "file": "assets/source/jquery.countup.min.js", "kind": "javascript", "role": "归档来源文件：jquery.countup.min.js" },
+    { "file": "assets/source/social-share.min.js", "kind": "javascript", "role": "归档来源文件：social-share.min.js" },
+    { "file": "assets/source/layer.js", "kind": "javascript", "role": "归档来源文件：layer.js" },
+    { "file": "assets/source/ksbm.js", "kind": "javascript", "role": "归档来源文件：ksbm.js" },
+    { "file": "assets/source/main.js", "kind": "javascript", "role": "归档来源文件：main.js" },
+    { "file": "assets/source/common.js", "kind": "javascript", "role": "归档来源文件：common.js" },
+    { "file": "assets/source/original-home-desktop.png", "kind": "png", "role": "归档来源文件：original-home-desktop.png" },
+    { "file": "assets/source/original-home-mobile.png", "kind": "png", "role": "归档来源文件：original-home-mobile.png" },
+    { "file": "assets/source/case-page-desktop.png", "kind": "png", "role": "归档来源文件：case-page-desktop.png" },
+    { "file": "assets/source/case-page-mobile.png", "kind": "png", "role": "归档来源文件：case-page-mobile.png" },
+    { "file": "assets/source/manifest.md", "kind": "markdown", "role": "归档来源文件：manifest.md" }
+  ],
+  "source_asset_groups": [
     "assets/source/images/",
-    "assets/source/original/",
-    "assets/source/manifest.md"
+    "assets/source/original/"
   ],
   "case_files": {
-    "page": "index.html",
-    "styles": "styles.css",
-    "script": "script.js",
-    "analysis": "README.md",
-    "structured_data": "case.json"
+    "readme": "README.md",
+    "metadata": "case.json",
+    "review_page": "index.html",
+    "source_root": "assets/source",
+    "supporting_files": ["styles.css", "script.js"]
   }
 }

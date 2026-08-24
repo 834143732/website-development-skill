@@ -1,5 +1,7 @@
 {
+  "schema_version": "1.0.0",
   "slug": "meihua",
+  "artifact_level": "snapshot",
   "title": "梅花集团（meihua.group）官网案例",
   "source": "https://www.meihua.group/",
   "source_variants": [
@@ -24,30 +26,36 @@
   ],
   "evidence": {
     "status": "public-homepage-readonly-observation",
-    "checked": [
-      "www.meihua.group 中文首页 DOM 快照",
-      "english.meihua.group 英文首页 DOM 快照",
-      "首页引用的 CSS、JavaScript 与 Lottie JSON",
-      "首页公开图片、SVG 与视频引用",
-      "1440x900 桌面首页截图",
-      "390x844 移动首页截图",
-      "本地案例页的静态资源与交互"
-    ],
-    "not_checked": [
-      "登录与后台",
-      "真实表单提交",
-      "接口和数据库",
-      "第三方数据核验",
-      "所有深层产品页的内容完整性",
-      "视频文件的完整离线播放"
-    ],
-    "notes": [
-      "根域快照呈现中文内容，英文子域快照呈现对应英文结构；本案例将两者并列归档。",
-      "公开页面中出现的 20 年、150 个国家/地区、30 亿人口为原站自述，未做第三方核验。",
-      "本地 HTML 快照已移除 WowPop、Google Analytics 与 Baidu 统计加载器并保留清理注释。"
+    "observations": [
+      {
+        "observed_at": "2026-08-23",
+        "scope": ["中文首页", "英文首页", "1440x900 桌面截图", "390x844 移动截图", "本地案例页"],
+        "checked": [
+          "www.meihua.group 中文首页 DOM 快照",
+          "english.meihua.group 英文首页 DOM 快照",
+          "首页引用的 CSS、JavaScript 与 Lottie JSON",
+          "首页公开图片、SVG 与视频引用",
+          "1440x900 桌面首页截图",
+          "390x844 移动首页截图",
+          "本地案例页的静态资源与交互"
+        ],
+        "not_checked": [
+          "登录与后台",
+          "真实表单提交",
+          "接口和数据库",
+          "第三方数据核验",
+          "所有深层产品页的内容完整性",
+          "视频文件的完整离线播放"
+        ],
+        "notes": [
+          "根域快照呈现中文内容，英文子域快照呈现对应英文结构；本案例将两者并列归档。",
+          "公开页面中出现的 20 年、150 个国家/地区、30 亿人口为原站自述，未做第三方核验。",
+          "本地 HTML 快照已移除 WowPop、Google Analytics 与 Baidu 统计加载器并保留清理注释。"
+        ]
+      }
     ]
   },
-  "site_facts": {
+  "site_fact_groups": {
     "navigation": [
       "About Us / 关于我们",
       "Product / 产品中心",
@@ -132,57 +140,64 @@
       "viewport_observation": "原站公开 viewport 含 user-scalable=no；案例页移除该限制"
     }
   },
+  "site_facts": [
+    "中英文导航连接公司、产品、研发、人才、投资者关系和可持续发展",
+    "Hero 用家庭烹饪与陪伴场景引出营养和生物制造",
+    "产品分为动物营养、鲜味剂、食品原料、胶体多糖、动物保健、植物蛋白和植物营养",
+    "生物制造模块连接可再生原料、生产效率、供应链循环和未来应用",
+    "产品卡在不同断点从横向多列逐步收敛到单列"
+  ],
   "source_claims": [
     {
-      "metric": "全球服务经验",
-      "value": "20 years / Since 2005",
+      "claim": "全球服务经验：20 years / Since 2005",
+      "location": "首页公开内容",
       "verification": "unverified-public-site-claim"
     },
     {
-      "metric": "全球销售网络",
-      "value": "150 countries",
+      "claim": "全球销售网络：150 countries",
+      "location": "首页公开内容",
       "verification": "unverified-public-site-claim"
     },
     {
-      "metric": "服务人口",
-      "value": "3 billion",
+      "claim": "服务人口：3 billion",
+      "location": "首页公开内容",
       "verification": "unverified-public-site-claim"
     }
   ],
   "transferable_patterns": [
     {
       "name": "结果先行的技术品牌 Hero",
-      "pattern": "家庭/食物场景 + 结果导向标题 + 单一 CTA + 技术详情后置",
+      "use": "家庭/食物场景 + 结果导向标题 + 单一 CTA + 技术详情后置",
       "when": "技术复杂、但最终价值落在日常生活或消费结果时",
       "guardrail": "首屏之后必须提供产品、工艺与证据入口，避免只有情绪没有能力"
     },
     {
       "name": "一站式产品平台",
-      "pattern": "按采购任务平行展开多品类，每类用一句结果语言解释",
+      "use": "按采购任务平行展开多品类，每类用一句结果语言解释",
       "when": "企业同时服务食品、动物、农业或多种 B2B 采购角色时",
       "guardrail": "分类、路由和后台产品数据保持一一对应"
     },
     {
       "name": "时间—范围—影响证据条",
-      "pattern": "用三种单位形成从经验到覆盖再到结果的记忆阶梯",
+      "use": "用三种单位形成从经验到覆盖再到结果的记忆阶梯",
       "when": "品牌需要在首页快速建立规模可信度时",
       "guardrail": "每项数字附口径、日期、来源和验证状态"
     },
     {
       "name": "中心能力 + 应用轨道",
-      "pattern": "固定中心视觉承载制造能力，领域标签向外扩展未来应用",
+      "use": "固定中心视觉承载制造能力，领域标签向外扩展未来应用",
       "when": "既有成熟产品，又要表达研发边界和下一阶段方向时",
       "guardrail": "每个方向都要有详情、阶段或证据，不使用空分类"
     },
     {
       "name": "双语同构内容系统",
-      "pattern": "共享模块结构，分别维护中文/英文 DOM、链接、SEO 和资源映射",
+      "use": "共享模块结构，分别维护中文/英文 DOM、链接、SEO 和资源映射",
       "when": "品牌同时面对国内采购者与海外客户时",
       "guardrail": "明确语言切换、canonical、翻译审核和统计归因"
     },
     {
       "name": "动效渐进增强",
-      "pattern": "轮播、换景、计数、Lottie 只增强节奏，HTML 文本和静态 poster 是底座",
+      "use": "轮播、换景、计数、Lottie 只增强节奏，HTML 文本和静态 poster 是底座",
       "when": "首页需要展示制造过程、产品差异或滚动关系时",
       "guardrail": "提供键盘、触摸、暂停、reduced-motion、无脚本与慢网退路"
     }
@@ -198,125 +213,127 @@
   ],
   "source_assets": [
     {
-      "path": "assets/source/home.html",
+      "file": "assets/source/home.html",
       "kind": "html",
-      "description": "根域中文公开首页 DOM 快照，已清理第三方统计加载器"
+      "role": "根域中文公开首页 DOM 快照，已清理第三方统计加载器"
     },
     {
-      "path": "assets/source/home-en.html",
+      "file": "assets/source/home-en.html",
       "kind": "html",
-      "description": "english.meihua.group 英文公开首页 DOM 快照，已清理第三方统计加载器"
+      "role": "english.meihua.group 英文公开首页 DOM 快照，已清理第三方统计加载器"
     },
     {
-      "path": "assets/source/main.css",
+      "file": "assets/source/main.css",
       "kind": "css",
-      "description": "根域中文首页主样式"
+      "role": "根域中文首页主样式"
     },
     {
-      "path": "assets/source/media.css",
+      "file": "assets/source/media.css",
       "kind": "css",
-      "description": "根域中文媒体查询与响应式样式"
+      "role": "根域中文媒体查询与响应式样式"
     },
     {
-      "path": "assets/source/main-en.css",
+      "file": "assets/source/main-en.css",
       "kind": "css",
-      "description": "英文首页主样式变体"
+      "role": "英文首页主样式变体"
     },
     {
-      "path": "assets/source/media-en.css",
+      "file": "assets/source/media-en.css",
       "kind": "css",
-      "description": "英文首页媒体查询变体"
+      "role": "英文首页媒体查询变体"
     },
     {
-      "path": "assets/source/public-cn.css",
+      "file": "assets/source/public-cn.css",
       "kind": "css",
-      "description": "中文公共样式"
+      "role": "中文公共样式"
     },
     {
-      "path": "assets/source/public-en.css",
+      "file": "assets/source/public-en.css",
       "kind": "css",
-      "description": "英文公共样式"
+      "role": "英文公共样式"
     },
     {
-      "path": "assets/source/iconfont-cn.css",
+      "file": "assets/source/iconfont-cn.css",
       "kind": "css",
-      "description": "中文图标字体声明"
+      "role": "中文图标字体声明"
     },
     {
-      "path": "assets/source/iconfont.css",
+      "file": "assets/source/iconfont.css",
       "kind": "css",
-      "description": "英文图标字体声明"
+      "role": "英文图标字体声明"
     },
     {
-      "path": "assets/source/Yongsy-cn.js",
+      "file": "assets/source/Yongsy-cn.js",
       "kind": "javascript",
-      "description": "中文站点公共交互依赖"
+      "role": "中文站点公共交互依赖"
     },
     {
-      "path": "assets/source/Yongsy.js",
+      "file": "assets/source/Yongsy.js",
       "kind": "javascript",
-      "description": "英文站点公共交互依赖"
+      "role": "英文站点公共交互依赖"
     },
     {
-      "path": "assets/source/public-cn.js",
+      "file": "assets/source/public-cn.js",
       "kind": "javascript",
-      "description": "中文公共脚本"
+      "role": "中文公共脚本"
     },
     {
-      "path": "assets/source/public-en.js",
+      "file": "assets/source/public-en.js",
       "kind": "javascript",
-      "description": "英文公共脚本"
+      "role": "英文公共脚本"
     },
     {
-      "path": "assets/source/base-v3.0-cn.min.js",
+      "file": "assets/source/base-v3.0-cn.min.js",
       "kind": "javascript",
-      "description": "中文压缩基础运行时"
+      "role": "中文压缩基础运行时"
     },
     {
-      "path": "assets/source/base-v3.0-en.min.js",
+      "file": "assets/source/base-v3.0-en.min.js",
       "kind": "javascript",
-      "description": "英文压缩基础运行时"
+      "role": "英文压缩基础运行时"
     },
     {
-      "path": "assets/source/common-cn.js",
+      "file": "assets/source/common-cn.js",
       "kind": "javascript",
-      "description": "中文公共模块初始化"
+      "role": "中文公共模块初始化"
     },
     {
-      "path": "assets/source/common-en.js",
+      "file": "assets/source/common-en.js",
       "kind": "javascript",
-      "description": "英文公共模块初始化"
+      "role": "英文公共模块初始化"
     },
     {
-      "path": "assets/source/data-cn.json",
+      "file": "assets/source/data-cn.json",
       "kind": "json",
-      "description": "中文 Lottie/生物制造动画数据"
+      "role": "中文 Lottie/生物制造动画数据"
     },
     {
-      "path": "assets/source/data.json",
+      "file": "assets/source/data.json",
       "kind": "json",
-      "description": "英文 Lottie/生物制造动画数据"
+      "role": "英文 Lottie/生物制造动画数据"
     },
     {
-      "path": "assets/source/original-home-desktop.png",
+      "file": "assets/source/original-home-desktop.png",
       "kind": "screenshot",
-      "description": "根域中文原站桌面首页截图 1440x900"
+      "role": "根域中文原站桌面首页截图 1440x900"
     },
     {
-      "path": "assets/source/original-home-mobile.png",
+      "file": "assets/source/original-home-mobile.png",
       "kind": "screenshot",
-      "description": "根域中文原站移动首页截图 390x844"
+      "role": "根域中文原站移动首页截图 390x844"
     },
     {
-      "path": "assets/source/case-page-desktop.png",
+      "file": "assets/source/case-page-desktop.png",
       "kind": "derived-screenshot",
-      "description": "本案例页桌面 QA 截图 1440x900"
+      "role": "本案例页桌面 QA 截图 1440x900"
     },
     {
-      "path": "assets/source/case-page-mobile.png",
+      "file": "assets/source/case-page-mobile.png",
       "kind": "derived-screenshot",
-      "description": "本案例页移动 QA 截图 390x844"
-    },
+      "role": "本案例页移动 QA 截图 390x844"
+    }
+  ],
+  "source_asset_groups": [
     {
       "path": "assets/source/images/",
       "kind": "images",
@@ -329,10 +346,10 @@
     }
   ],
   "case_files": {
-    "page": "index.html",
-    "styles": "styles.css",
-    "script": "script.js",
-    "analysis": "README.md",
-    "manifest": "assets/source/manifest.md"
+    "readme": "README.md",
+    "metadata": "case.json",
+    "review_page": "index.html",
+    "source_root": "assets/source",
+    "supporting_files": ["styles.css", "script.js"]
   }
 }

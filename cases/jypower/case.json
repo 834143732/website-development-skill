@@ -1,5 +1,7 @@
 {
+  "schema_version": "1.0.0",
   "slug": "jypower",
+  "artifact_level": "snapshot",
   "title": "苏州吉远 JIYUAN（jypower.cn）官网案例",
   "source": "https://www.jypower.cn/",
   "source_variants": [
@@ -20,28 +22,34 @@
   ],
   "evidence": {
     "status": "public-homepage-readonly-observation",
-    "checked": [
-      "jypower.cn 公开中文首页 DOM 快照",
-      "首页引用的 CSS、JavaScript、公开图片、SVG、字体与 MP4",
-      "1440x900 桌面首页截图",
-      "390x844 移动首页截图",
-      "本地案例页的静态资源与交互"
-    ],
-    "not_checked": [
-      "登录与后台",
-      "真实订阅、资料或样品表单提交",
-      "接口和数据库",
-      "第三方数据核验",
-      "所有深层产品页的内容完整性",
-      "en.jypower.cn 英文变体的完整性"
-    ],
-    "notes": [
-      "根页面内容为中文，提供 en.jypower.cn 英文入口；本案例不把英文变体当作完整双语审计。",
-      "页面 viewport 含 maximum-scale=1.0 与 user-scalable=no；案例页移除该限制。",
-      "本地 HTML 快照已移除 CNZZ 注入脚本并保留清理注释；公开源码中的历史多库仍作为研究证据归档。"
+    "observations": [
+      {
+        "observed_at": "2026-08-23",
+        "scope": ["公开中文首页", "1440x900 桌面截图", "390x844 移动截图", "本地案例页"],
+        "checked": [
+          "jypower.cn 公开中文首页 DOM 快照",
+          "首页引用的 CSS、JavaScript、公开图片、SVG、字体与 MP4",
+          "1440x900 桌面首页截图",
+          "390x844 移动首页截图",
+          "本地案例页的静态资源与交互"
+        ],
+        "not_checked": [
+          "登录与后台",
+          "真实订阅、资料或样品表单提交",
+          "接口和数据库",
+          "第三方数据核验",
+          "所有深层产品页的内容完整性",
+          "en.jypower.cn 英文变体的完整性"
+        ],
+        "notes": [
+          "根页面内容为中文，提供 en.jypower.cn 英文入口；本案例不把英文变体当作完整双语审计。",
+          "页面 viewport 含 maximum-scale=1.0 与 user-scalable=no；案例页移除该限制。",
+          "本地 HTML 快照已移除 CNZZ 注入脚本并保留清理注释；公开源码中的历史多库仍作为研究证据归档。"
+        ]
+      }
     ]
   },
-  "site_facts": {
+  "site_fact_groups": {
     "navigation": [
       "首页",
       "产品：AC/DC 功率转换控制器、USB PD or Type C、功率器件、同步整流控制器、霍尔与 DC-DC 控制器、参考电压/运放/光耦",
@@ -141,40 +149,47 @@
     ],
     "source_video": "公开首页 Hero 关联 1 个 MP4：20251223/646e4e38e85127f40fd1b41b35e243c2.mp4。"
   },
+  "site_facts": [
+    "导航按产品、应用、设计、支持和公司信息组织",
+    "Hero 使用四张画面说明功率转换、创新、节源和客户连接",
+    "产品覆盖 AC/DC、USB PD、功率器件、同步整流、霍尔/DC-DC 与参考电压等系列",
+    "应用覆盖 AC/DC 电源、USB PD、LED 驱动和电机驱动",
+    "页面提供订购、设计、支持和加入四类行动入口"
+  ],
   "source_claims": [
-    { "metric": "电源方案经验", "value": "20 年", "verification": "unverified-public-site-claim" },
-    { "metric": "半导体功率器件", "value": "三代", "verification": "unverified-public-site-claim" },
-    { "metric": "工程师回复", "value": "24 小时内", "verification": "unverified-public-site-claim" },
-    { "metric": "联系据点", "value": "苏州、深圳", "verification": "public-contact-observation" }
+    { "claim": "电源方案经验：20 年", "location": "首页公开内容", "verification": "unverified-public-site-claim" },
+    { "claim": "半导体功率器件：三代", "location": "首页公开内容", "verification": "unverified-public-site-claim" },
+    { "claim": "工程师回复：24 小时内", "location": "首页公开内容", "verification": "unverified-public-site-claim" },
+    { "claim": "联系据点：苏州、深圳", "location": "首页公开内容", "verification": "public-contact-observation" }
   ],
   "transferable_patterns": [
     {
       "name": "工程语境 Hero",
-      "pattern": "电路/器件视觉 + 结果导向标题 + 产品或支持 CTA",
+      "use": "电路/器件视觉 + 结果导向标题 + 产品或支持 CTA",
       "when": "专业器件需要先被放回工作台和设备结果时",
       "guardrail": "背景图不能替代规格、拓扑和真实详情"
     },
     {
       "name": "产品与应用双路径",
-      "pattern": "产品家族回答‘有什么’，应用矩阵回答‘做什么’",
+      "use": "产品家族回答‘有什么’，应用矩阵回答‘做什么’",
       "when": "访客既有工程师也有采购或方案角色时",
       "guardrail": "两条路径要汇入同一选型、详情或样品动作"
     },
     {
       "name": "研发支持层",
-      "pattern": "订购、设计、支持、加入紧邻资讯和产品内容",
+      "use": "订购、设计、支持、加入紧邻资讯和产品内容",
       "when": "样品、参考设计和工程师沟通影响成交时",
       "guardrail": "每个入口需要真实状态、时效和隐私说明"
     },
     {
       "name": "日期更新轨道",
-      "pattern": "新闻标题 + 日期 + 详情路由",
+      "use": "新闻标题 + 日期 + 详情路由",
       "when": "工业品牌需要给长期访问者持续工作的信号时",
       "guardrail": "日期要来自真实 CMS，不能用占位新闻伪造活跃度"
     },
     {
       "name": "渐进增强视频",
-      "pattern": "Hero MP4 只增强场景，poster 和静态图片保留核心内容",
+      "use": "Hero MP4 只增强场景，poster 和静态图片保留核心内容",
       "when": "技术品牌希望增加动感但不能牺牲首屏性能时",
       "guardrail": "提供暂停、静音、低带宽和 reduced-motion 退路"
     }
@@ -187,48 +202,50 @@
     "原站 Logo、照片、视频、字体、二维码、CSS 和 JS 的生产复用"
   ],
   "source_assets": [
-    "assets/source/home.html",
-    "assets/source/main.css",
-    "assets/source/site-main.css",
-    "assets/source/reset.css",
-    "assets/source/font.css",
-    "assets/source/fonts.css",
-    "assets/source/bootstrap.min.css",
-    "assets/source/swiper-3.4.2.min.css",
-    "assets/source/animate.css",
-    "assets/source/fancybox.css",
-    "assets/source/share.min.css",
-    "assets/source/iconfont.css",
-    "assets/source/iconfont-extra.css",
-    "assets/source/jquery-3.7.0.min.js",
-    "assets/source/swiper.jquery.min.js",
-    "assets/source/swiper.animate1.0.3.min.js",
-    "assets/source/bootstrap.min.js",
-    "assets/source/wow.js",
-    "assets/source/fancybox.umd.js",
-    "assets/source/jquery.waypoints.min.js",
-    "assets/source/jquery.countup.min.js",
-    "assets/source/social-share.min.js",
-    "assets/source/layer.js",
-    "assets/source/ksbm.js",
-    "assets/source/main.js",
-    "assets/source/more.js",
-    "assets/source/splitType.js",
-    "assets/source/jquery.SuperSlide.2.1.3.js",
-    "assets/source/layui.js",
-    "assets/source/original-home-desktop.png",
-    "assets/source/original-home-mobile.png",
-    "assets/source/case-page-desktop.png",
-    "assets/source/case-page-mobile.png",
+    { "file": "assets/source/home.html", "kind": "html", "role": "归档来源文件：home.html" },
+    { "file": "assets/source/main.css", "kind": "css", "role": "归档来源文件：main.css" },
+    { "file": "assets/source/site-main.css", "kind": "css", "role": "归档来源文件：site-main.css" },
+    { "file": "assets/source/reset.css", "kind": "css", "role": "归档来源文件：reset.css" },
+    { "file": "assets/source/font.css", "kind": "css", "role": "归档来源文件：font.css" },
+    { "file": "assets/source/fonts.css", "kind": "css", "role": "归档来源文件：fonts.css" },
+    { "file": "assets/source/bootstrap.min.css", "kind": "css", "role": "归档来源文件：bootstrap.min.css" },
+    { "file": "assets/source/swiper-3.4.2.min.css", "kind": "css", "role": "归档来源文件：swiper-3.4.2.min.css" },
+    { "file": "assets/source/animate.css", "kind": "css", "role": "归档来源文件：animate.css" },
+    { "file": "assets/source/fancybox.css", "kind": "css", "role": "归档来源文件：fancybox.css" },
+    { "file": "assets/source/share.min.css", "kind": "css", "role": "归档来源文件：share.min.css" },
+    { "file": "assets/source/iconfont.css", "kind": "css", "role": "归档来源文件：iconfont.css" },
+    { "file": "assets/source/iconfont-extra.css", "kind": "css", "role": "归档来源文件：iconfont-extra.css" },
+    { "file": "assets/source/jquery-3.7.0.min.js", "kind": "javascript", "role": "归档来源文件：jquery-3.7.0.min.js" },
+    { "file": "assets/source/swiper.jquery.min.js", "kind": "javascript", "role": "归档来源文件：swiper.jquery.min.js" },
+    { "file": "assets/source/swiper.animate1.0.3.min.js", "kind": "javascript", "role": "归档来源文件：swiper.animate1.0.3.min.js" },
+    { "file": "assets/source/bootstrap.min.js", "kind": "javascript", "role": "归档来源文件：bootstrap.min.js" },
+    { "file": "assets/source/wow.js", "kind": "javascript", "role": "归档来源文件：wow.js" },
+    { "file": "assets/source/fancybox.umd.js", "kind": "javascript", "role": "归档来源文件：fancybox.umd.js" },
+    { "file": "assets/source/jquery.waypoints.min.js", "kind": "javascript", "role": "归档来源文件：jquery.waypoints.min.js" },
+    { "file": "assets/source/jquery.countup.min.js", "kind": "javascript", "role": "归档来源文件：jquery.countup.min.js" },
+    { "file": "assets/source/social-share.min.js", "kind": "javascript", "role": "归档来源文件：social-share.min.js" },
+    { "file": "assets/source/layer.js", "kind": "javascript", "role": "归档来源文件：layer.js" },
+    { "file": "assets/source/ksbm.js", "kind": "javascript", "role": "归档来源文件：ksbm.js" },
+    { "file": "assets/source/main.js", "kind": "javascript", "role": "归档来源文件：main.js" },
+    { "file": "assets/source/more.js", "kind": "javascript", "role": "归档来源文件：more.js" },
+    { "file": "assets/source/splitType.js", "kind": "javascript", "role": "归档来源文件：splitType.js" },
+    { "file": "assets/source/jquery.SuperSlide.2.1.3.js", "kind": "javascript", "role": "归档来源文件：jquery.SuperSlide.2.1.3.js" },
+    { "file": "assets/source/layui.js", "kind": "javascript", "role": "归档来源文件：layui.js" },
+    { "file": "assets/source/original-home-desktop.png", "kind": "png", "role": "归档来源文件：original-home-desktop.png" },
+    { "file": "assets/source/original-home-mobile.png", "kind": "png", "role": "归档来源文件：original-home-mobile.png" },
+    { "file": "assets/source/case-page-desktop.png", "kind": "png", "role": "归档来源文件：case-page-desktop.png" },
+    { "file": "assets/source/case-page-mobile.png", "kind": "png", "role": "归档来源文件：case-page-mobile.png" },
+    { "file": "assets/source/manifest.md", "kind": "markdown", "role": "归档来源文件：manifest.md" }
+  ],
+  "source_asset_groups": [
     "assets/source/images/",
-    "assets/source/original/",
-    "assets/source/manifest.md"
+    "assets/source/original/"
   ],
   "case_files": {
-    "page": "index.html",
-    "styles": "styles.css",
-    "script": "script.js",
-    "analysis": "README.md",
-    "structured_data": "case.json"
+    "readme": "README.md",
+    "metadata": "case.json",
+    "review_page": "index.html",
+    "source_root": "assets/source",
+    "supporting_files": ["styles.css", "script.js"]
   }
 }
