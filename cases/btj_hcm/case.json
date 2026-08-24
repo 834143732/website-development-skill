@@ -1,15 +1,43 @@
 {
-  "id": "btj_hcm",
+  "schema_version": "1.0.0",
+  "slug": "btj_hcm",
+  "artifact_level": "snapshot",
   "title": "晶华金属钙业网站案例：把金属钙讲成一条材料信任链",
-  "source": {
-    "url": "https://cn.btjhcm.com/",
-    "observedAt": "2026-08-24",
-    "locale": "zh-CN",
-    "notes": "Public claims are stored as source claims and require verification before reuse."
+  "source": "https://cn.btjhcm.com/",
+  "observed_at": "2026-08-24",
+  "language": "zh-CN",
+  "industry": ["金属钙", "钙系合金", "工业材料", "源头制造"],
+  "page_type": "金属钙与钙系合金制造企业官网首页",
+  "evidence": {
+    "status": "public-site-readonly-snapshot",
+    "observations": [
+      {
+        "observed_at": "2026-08-24",
+        "scope": ["公开首页", "桌面与移动截图", "DOM/CSS/JS", "公开图片与视频"],
+        "checked": [
+          "公开首页 Hero、产品中心、行业应用、优势/能力、制造叙事、新闻与联系结构",
+          "原始首页快照 assets/source/home.html",
+          "桌面与移动截图",
+          "语义化图片与视频 assets/source/images/",
+          "公开原始依赖 assets/source/original/"
+        ],
+        "not_checked": ["表单提交", "登录与后台", "第三方宣传核验", "原站素材生产授权"],
+        "notes": [
+          "Public claims are stored as source claims and require verification before reuse.",
+          "图片、Logo、视频、字体、客户/供应商文案仅供内部研究；生产项目需重新制作或取得授权。"
+        ]
+      }
+    ]
   },
+  "site_facts": [
+    "页面同时展示金属钙形态与钙系合金产品族",
+    "应用连接钢铁铸造、有色冶金、化工与电池任务",
+    "能力卡展示产品范围、供应稳定性、环保工艺与资质",
+    "公开页面提供联系方式"
+  ],
   "positioning": ["calcium metal manufacturer", "calcium-based alloys", "industrial material supplier", "source manufacturing"],
   "navigation": ["产品中心", "行业应用", "关于晶华", "新闻中心", "人才招聘", "联系我们"],
-  "productFamilies": [
+  "product_families": [
     {"name": "金属钙", "slug": "metal", "forms": ["钙粒", "钙块", "钙屑", "钙丝", "钙压块"]},
     {"name": "钙系合金", "slug": "alloys", "forms": ["钙铝合金", "钙镁合金", "稀土钙合金"]}
   ],
@@ -20,25 +48,25 @@
     {"name": "电池工业", "task": "生产铅钙蓄电池"}
   ],
   "capabilities": ["品类齐全", "质量稳定", "工艺环保", "资质齐全"],
-  "publicClaims": [
-    {"claim": "公开自述成立于 2006 年，位于内蒙古包头九原工业园区", "status": "source-claim"},
-    {"claim": "相较传统工艺可降低 4–7 倍单位碳排放量", "status": "source-claim-unverified"},
-    {"claim": "产品直营远销 10+ 国家", "status": "source-claim-unverified"},
-    {"claim": "拥有生产、安全、质量、环境、员工管理等资质认证及自营出口资格", "status": "source-claim-needs-document-check"}
+  "source_claims": [
+    {"claim": "公开自述成立于 2006 年，位于内蒙古包头九原工业园区", "location": "全站公开内容", "verification": "source-claim"},
+    {"claim": "相较传统工艺可降低 4–7 倍单位碳排放量", "location": "全站公开内容", "verification": "source-claim-unverified"},
+    {"claim": "产品直营远销 10+ 国家", "location": "全站公开内容", "verification": "source-claim-unverified"},
+    {"claim": "拥有生产、安全、质量、环境、员工管理等资质认证及自营出口资格", "location": "全站公开内容", "verification": "source-claim-needs-document-check"}
   ],
   "contact": {
     "phone": "0086-472-298 9818",
     "email": "info@btjhcm.com",
     "address": "中国内蒙古包头市九原工业园区南绕城路42公里"
   },
-  "designRules": [
-    "Start with material identity and visible forms before company claims.",
-    "Model family, form, specification, evidence and inquiry as one procurement path.",
-    "Translate industry names into real process actions and supporting documents.",
-    "Map each capability claim to a certificate, report, batch, process or contact.",
-    "Use industrial video as context with a poster, pause control and static fallback."
+  "transferable_patterns": [
+    {"name": "材料身份优先", "when": "金属钙与钙系合金制造企业官网首页", "use": "Start with material identity and visible forms before company claims.", "guardrail": "user-scalable=no"},
+    {"name": "采购关系模型", "when": "金属钙与钙系合金制造企业官网首页", "use": "Model family, form, specification, evidence and inquiry as one procurement path.", "guardrail": "javascript:; placeholder links"},
+    {"name": "行业任务证据", "when": "金属钙与钙系合金制造企业官网首页", "use": "Translate industry names into real process actions and supporting documents.", "guardrail": "autoplay-only Hero video"},
+    {"name": "能力证明映射", "when": "金属钙与钙系合金制造企业官网首页", "use": "Map each capability claim to a certificate, report, batch, process or contact.", "guardrail": "51.la analytics loader in the local snapshot"},
+    {"name": "工业视频回退", "when": "金属钙与钙系合金制造企业官网首页", "use": "Use industrial video as context with a poster, pause control and static fallback.", "guardrail": "unverified carbon, export, quality or certification claims"}
   ],
-  "doNotCopy": [
+  "do_not_copy": [
     "user-scalable=no",
     "javascript:; placeholder links",
     "autoplay-only Hero video",
@@ -46,10 +74,22 @@
     "unverified carbon, export, quality or certification claims",
     "images, video, logos and fonts without permission"
   ],
-  "assets": {
-    "semanticImages": "assets/source/images/",
-    "rawArchive": "assets/source/original/",
-    "homeSnapshot": "assets/source/home.html",
+  "source_assets": [
+    {"file": "assets/source/home.html", "kind": "html", "role": "公开首页 DOM 快照"},
+    {"file": "assets/source/images/hero-factory.jpg", "kind": "image", "role": "工厂场景 Hero 视觉证据"},
+    {"file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "原站桌面首页视觉证据"}
+  ],
+  "case_files": {
+    "readme": "README.md",
+    "metadata": "case.json",
+    "review_page": "index.html",
+    "source_root": "assets/source",
+    "supporting_files": ["styles.css", "script.js"]
+  },
+  "asset_groups": {
+    "semantic_images": "assets/source/images/",
+    "raw_archive": "assets/source/original/",
+    "home_snapshot": "assets/source/home.html",
     "video": "assets/source/images/hero-factory.mp4",
     "styles": ["assets/source/main.css", "assets/source/reset.css", "assets/source/swiper-3.4.2.min.css", "assets/source/animate.css"],
     "scripts": ["assets/source/main.js", "assets/source/jquery-3.7.0.min.js", "assets/source/swiper.jquery.min.js", "assets/source/wow.js", "assets/source/gsap.min.js", "assets/source/ScrollTrigger.min.js"]

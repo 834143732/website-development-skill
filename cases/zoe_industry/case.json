@@ -1,15 +1,43 @@
 {
-  "id": "zoe_industry",
+  "schema_version": "1.0.0",
+  "slug": "zoe_industry",
+  "artifact_level": "snapshot",
   "title": "舟欧工业科技网站案例：把工业 MRO 讲成一条跨境交付链",
-  "source": {
-    "url": "https://www.zoe-industry.cn/",
-    "observedAt": "2026-08-23",
-    "locale": "zh-CN",
-    "notes": "Public homepage claims are recorded as source claims and require verification before reuse."
+  "source": "https://www.zoe-industry.cn/",
+  "observed_at": "2026-08-23",
+  "language": "zh-CN",
+  "industry": ["工业自动化", "MRO 采购", "欧洲品牌代理与经销", "跨境交付"],
+  "page_type": "工业 MRO 与跨境供应链企业官网首页",
+  "evidence": {
+    "status": "public-site-readonly-snapshot",
+    "observations": [
+      {
+        "observed_at": "2026-08-23",
+        "scope": ["公开首页", "桌面与移动截图", "DOM/CSS/JS", "公开品牌与产品资源"],
+        "checked": [
+          "公开首页 Hero、产品中心、品牌中心、关于、服务领域、新闻与联系结构",
+          "原始首页快照 assets/source/home.html",
+          "桌面与移动截图",
+          "语义化图片 assets/source/images/",
+          "公开原始依赖 assets/source/original/"
+        ],
+        "not_checked": ["表单提交", "登录与后台", "第三方宣传核验", "原站素材生产授权"],
+        "notes": [
+          "Public homepage claims are recorded as source claims and require verification before reuse.",
+          "图片、Logo、字体、客户标识和品牌授权文案仅用于内部研究；生产项目要获得授权或重新制作。"
+        ]
+      }
+    ]
   },
+  "site_facts": [
+    "导航提供产品、品牌、公司、新闻与联系入口",
+    "九类产品覆盖传感、泵、阀、电机、夹具、电气与仪表任务",
+    "页面展示十二类行业应用",
+    "品牌关系可见但仍需授权核验"
+  ],
   "positioning": ["industrial automation supplier", "MRO procurement", "European brand agency/distribution", "cross-border delivery"],
   "navigation": ["网站首页", "产品中心", "品牌中心", "关于我们", "新闻中心", "联系我们"],
-  "productFamilies": [
+  "product_families": [
     {"name": "编码器", "slug": "bmqia", "task": "Sense position"},
     {"name": "工业泵", "slug": "gybe", "task": "Move the medium"},
     {"name": "工业阀", "slug": "gyfa", "task": "Control the flow"},
@@ -20,7 +48,7 @@
     {"name": "仪器仪表", "slug": "yqyba", "task": "Verify the signal"},
     {"name": "机械及配件", "slug": "jxjpk", "task": "Complete the line"}
   ],
-  "brandExamples": [
+  "brand_examples": [
     {"name": "Profiroll", "relationship": "代理/经销（页面可见 Logo，具体关系待核验）"},
     {"name": "Carlo Gavazzi", "relationship": "代理/经销（具体关系待核验）"},
     {"name": "SIEMENS", "relationship": "经销品牌（具体授权范围待核验）"},
@@ -29,36 +57,48 @@
     {"name": "Festo", "relationship": "经销品牌（具体授权范围待核验）"}
   ],
   "industries": ["矿山设备", "冶金行业", "能源行业", "生物医药", "机械加工", "船舶行业", "物流运输", "轨道交通", "航空航天", "电力行业", "石油化工", "汽车制造行业"],
-  "publicClaims": [
-    {"claim": "公司公开自述成立于 2016 年", "status": "source-claim"},
-    {"claim": "1000+ 全球供应商", "status": "source-claim-unverified"},
-    {"claim": "2000+ 全球合作客户（家）", "status": "source-claim-unverified"},
-    {"claim": "50+ 国内名校团队占比（人）", "status": "source-copy-needs-clarification"},
-    {"claim": "德国分支与欧洲供应商直接联系", "status": "source-claim-unverified"}
+  "source_claims": [
+    {"claim": "公司公开自述成立于 2016 年", "location": "全站公开内容", "verification": "source-claim"},
+    {"claim": "1000+ 全球供应商", "location": "全站公开内容", "verification": "source-claim-unverified"},
+    {"claim": "2000+ 全球合作客户（家）", "location": "全站公开内容", "verification": "source-claim-unverified"},
+    {"claim": "50+ 国内名校团队占比（人）", "location": "全站公开内容", "verification": "source-copy-needs-clarification"},
+    {"claim": "德国分支与欧洲供应商直接联系", "location": "全站公开内容", "verification": "source-claim-unverified"}
   ],
   "contact": {
     "phone": "021-58888912",
     "email": "sales@zoe-industry.com",
     "address": "中国（上海）自由贸易试验区临港新片区港城广场一街坊12号楼501"
   },
-  "designRules": [
-    "Provide product, brand relationship and industry task routes in parallel.",
-    "Treat brand relationship as structured evidence, not a decorative logo wall.",
-    "Translate each industry card into a real process task and next action.",
-    "Bind every trust number to date, scope, source and verification status.",
-    "Use equipment imagery for context; provide static and reduced-motion fallbacks."
+  "transferable_patterns": [
+    {"name": "产品品牌行业三路径", "when": "工业 MRO 与跨境供应链企业官网首页", "use": "Provide product, brand relationship and industry task routes in parallel.", "guardrail": "user-scalable=no"},
+    {"name": "品牌关系证据", "when": "工业 MRO 与跨境供应链企业官网首页", "use": "Treat brand relationship as structured evidence, not a decorative logo wall.", "guardrail": "javascript:; placeholder links"},
+    {"name": "行业任务下一步", "when": "工业 MRO 与跨境供应链企业官网首页", "use": "Translate each industry card into a real process task and next action.", "guardrail": "third-party analytics loaders in the local snapshot"},
+    {"name": "信任数字核验", "when": "工业 MRO 与跨境供应链企业官网首页", "use": "Bind every trust number to date, scope, source and verification status.", "guardrail": "unverified supplier/customer/team counts"},
+    {"name": "设备图像降级", "when": "工业 MRO 与跨境供应链企业官网首页", "use": "Use equipment imagery for context; provide static and reduced-motion fallbacks.", "guardrail": "logos, customer marks, fonts, images and authorization copy without permission"}
   ],
-  "doNotCopy": [
+  "do_not_copy": [
     "user-scalable=no",
     "javascript:; placeholder links",
     "third-party analytics loaders in the local snapshot",
     "unverified supplier/customer/team counts",
     "logos, customer marks, fonts, images and authorization copy without permission"
   ],
-  "assets": {
-    "semanticImages": "assets/source/images/",
-    "rawArchive": "assets/source/original/",
-    "homeSnapshot": "assets/source/home.html",
+  "source_assets": [
+    {"file": "assets/source/home.html", "kind": "html", "role": "公开首页 DOM 快照"},
+    {"file": "assets/source/images/about-team.jpg", "kind": "image", "role": "团队与服务场景视觉证据"},
+    {"file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "原站桌面首页视觉证据"}
+  ],
+  "case_files": {
+    "readme": "README.md",
+    "metadata": "case.json",
+    "review_page": "index.html",
+    "source_root": "assets/source",
+    "supporting_files": ["styles.css", "script.js"]
+  },
+  "asset_groups": {
+    "semantic_images": "assets/source/images/",
+    "raw_archive": "assets/source/original/",
+    "home_snapshot": "assets/source/home.html",
     "styles": ["assets/source/main.css", "assets/source/reset.css", "assets/source/swiper-3.4.2.min.css", "assets/source/animate.css"],
     "scripts": ["assets/source/main.js", "assets/source/jquery-3.7.0.min.js", "assets/source/swiper.jquery.min.js", "assets/source/wow.js", "assets/source/layer.js"]
   }
