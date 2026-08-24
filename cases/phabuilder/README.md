@@ -90,15 +90,17 @@
 
 完整 URL、观察日期、清理项和权利边界见 `assets/source/manifest.md`。资源不代表本仓库拥有生产使用权。
 
-## 进入案例页
+### 本地通用资产映射（2026-08-21）
 
-直接打开 [index.html](index.html)，或在仓库根目录启动静态服务器：
-
-```bash
-python3 -m http.server 4173
-```
-
-然后访问 <http://localhost:4173/cases/phabuilder/>。
+| 类型 | 观察到的模式 | 状态 | 仓库对应资产 | 许可或风险 |
+| --- | --- | --- | --- | --- |
+| 移动菜单 | 全屏菜单、主栏目分组和关闭状态 | 本地重写 | [`accessible-disclosure-nav.js`](../../assets/library/js/accessible-disclosure-nav.js)、[`menu.svg`](../../assets/library/icons/menu.svg)、[`x.svg`](../../assets/library/icons/x.svg)、[`focus-ring.css`](../../assets/library/css/focus-ring.css) | 原站触发器与脚本不复制；本地实现补齐语义、Esc、焦点和背景锁定 |
+| 入场与楼层反馈 | 标题上移、卡片揭示、楼层进入和图片轻微缩放 | 本地重写 | [`motion-safe-reveal.css`](../../assets/library/css/motion-safe-reveal.css)、[`reveal-on-scroll.js`](../../assets/library/js/reveal-on-scroll.js) | 只复用通用“进入视口后显示”模式，不复制 fullPage/Swiper 参数、选择器或源码 |
+| 工具图标 | 菜单、关闭、搜索、外链/商城与联系入口 | 已归档 | [`menu.svg`](../../assets/library/icons/menu.svg)、[`x.svg`](../../assets/library/icons/x.svg)、[`search.svg`](../../assets/library/icons/search.svg)、[`external-link.svg`](../../assets/library/icons/external-link.svg) | 使用 Lucide 版本并保留许可通知，不保存参考站 SVG |
+| 中性科技底图 | 材料谱系、数据模型或产线模块需要轻量网格辅助 | 已归档 | [`neutral-grid.svg`](../../assets/library/images/neutral-grid.svg) | 自行创作；只能作为装饰，不能替代材料、工厂或流程证据 |
+| Logo 与 `PHA*` 视觉命名 | 山水 Logo、绿色品牌系统、PHAmily/PHAbrary/PHAdustry/PHA Life 字标 | 仅作参考 | 无 | 属于品牌识别和命名资产，不下载、不改色套用、不用于其他客户 |
+| 真实影像与图解 | 森林、材料、医疗/包装/纤维制品、工厂、全球布局、合作伙伴和联名商品 | 仅作参考 | 无 | 权利、人物/场地授权和数据口径未验证；客户项目必须使用自有或明确授权资产 |
+| 原站依赖与源码 | jQuery、WOW、Swiper、fullPage、scrollOverflow、CountUp、Fancybox 和站点脚本/样式 | 仅作参考 | 无 | 许可证、版本与组合配置需逐项确认；不复制原站 CSS/JS 或打包文件 |
 
 ## 多页面补充观察（2026-08-21）
 
@@ -197,3 +199,13 @@ python3 -m http.server 4173
 - 开启 `prefers-reduced-motion: reduce` 后停止图片缩放、自动轮播、视频自动播放、计数和楼层转场，直接显示每章最终状态；JS、图片、视频或字体失败时保持普通可读页面。
 - 为首页和每类代表内页分别检查控制台、失败请求、重复脚本、LCP、CLS、图片请求数、响应式图片、懒加载和第三方统计；不得保留语法错误或互斥滚动配置。
 - 商城、订阅、采购、询样和联系入口分别验证成功、校验失败、网络失败、隐私同意和可恢复状态，外部目标明确标记。
+
+## 进入案例页
+
+直接打开 [index.html](index.html)，或在仓库根目录启动静态服务器：
+
+```bash
+python3 -m http.server 4173
+```
+
+然后访问 <http://localhost:4173/cases/phabuilder/>。

@@ -9,7 +9,7 @@
   "industry": ["生物材料", "合成生物学", "PHA", "工业生物制造", "可持续制造"],
   "page_type": "生物材料与工业生物制造企业官网首页",
   "evidence": {
-    "status": "public-homepage-readonly-browser-observation",
+    "status": "public-site-readonly-browser-observation",
     "observations": [
       {
         "observed_at": "2026-08-23",
@@ -51,8 +51,7 @@
     {"claim": "PHA 可在 1–3 年内于自然环境中彻底消解", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
     {"claim": "PHA 降解效率是传统塑料所需时间的 1%", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
     {"claim": "超过 100 亿种组合方式的 PHA 家族", "location": "品牌描述/4P 战略", "verification": "unverified-homepage-marketing-claim"},
-    {"claim": "设备成本降低 30%、能耗减少 50% 以上、产率提高 80%、生产时间降低 30%", "location": "生物制造优势区", "verification": "unverified-homepage-marketing-claims"},
-    {"claim": "页面展示的材料属性、抗菌率、产能、投资额、数字化率、人员、认证和合作关系均为原站自述。", "location": "多页面公开内容", "verification": "unverified-source-claim"}
+    {"claim": "设备成本降低 30%、能耗减少 50% 以上、产率提高 80%、生产时间降低 30%", "location": "生物制造优势区", "verification": "unverified-homepage-marketing-claims"}
   ],
   "transferable_patterns": [
     {
@@ -117,16 +116,14 @@
     }
   ],
   "do_not_copy": [
-    "不要照搬 lang=\"en\" 到中文页面",
-    "不要让 fullPage.js、ScrollOverflow、Swiper 和 WOW 叠加成为唯一阅读路径",
+    "不要照搬错误的页面 lang、缺失 H1 或页面地标的结构",
+    "不要叠加 fullPage.js、ScrollOverflow、Swiper、WOW 等职责重叠插件，且必须消除 fullPage 配置冲突",
     "不要让移动端首屏标题存在横向裁切风险",
     "不要让视频自动播放、进入章节后取消静音或第三方脚本干扰用户",
     "不要照搬 51.la、CNZZ、分享和其他第三方统计/供应链脚本",
     "不要把原站的材料降解、能耗、成本、产率、时间和组合数量宣传数字迁移到新项目",
     "不要在没有授权时把归档 Logo、图片、视频、CSS、JS、新闻文案和伙伴标识用于生产项目",
-    "缺少 H1/页面地标且页面 lang 错误",
     "全部图片未使用原生懒加载",
-    "插件职责重叠并存在 fullPage 配置冲突",
     "移动菜单缺少焦点、Esc 和背景锁定",
     "图解缺少文本等价物"
   ],
