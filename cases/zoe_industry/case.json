@@ -16,7 +16,7 @@
         "scope": ["公开首页", "桌面与移动截图", "DOM/CSS/JS", "公开品牌与产品资源"],
         "checked": [
           "公开首页 Hero、产品中心、品牌中心、关于、服务领域、新闻与联系结构",
-          "原始首页快照 assets/source/home.html",
+          "已清理第三方统计脚本的首页 DOM 研究快照 assets/source/home.html",
           "桌面与移动截图",
           "语义化图片 assets/source/images/",
           "公开原始依赖 assets/source/original/"
@@ -69,6 +69,13 @@
     "email": "sales@zoe-industry.com",
     "address": "中国（上海）自由贸易试验区临港新片区港城广场一街坊12号楼501"
   },
+  "design_rules": [
+    "Provide product, brand relationship and industry task routes in parallel.",
+    "Treat brand relationship as structured evidence, not a decorative logo wall.",
+    "Translate each industry card into a real process task and next action.",
+    "Bind every trust number to date, scope, source and verification status.",
+    "Use equipment imagery for context; provide static and reduced-motion fallbacks."
+  ],
   "transferable_patterns": [
     {"name": "产品品牌行业三路径", "when": "工业 MRO 与跨境供应链企业官网首页", "use": "Provide product, brand relationship and industry task routes in parallel.", "guardrail": "user-scalable=no"},
     {"name": "品牌关系证据", "when": "工业 MRO 与跨境供应链企业官网首页", "use": "Treat brand relationship as structured evidence, not a decorative logo wall.", "guardrail": "javascript:; placeholder links"},
@@ -85,7 +92,7 @@
   ],
   "source_assets": [
     {"file": "assets/source/home.html", "kind": "html", "role": "公开首页 DOM 快照"},
-    {"file": "assets/source/images/about-team.jpg", "kind": "image", "role": "团队与服务场景视觉证据"},
+    {"file": "assets/source/images/about-team.jpg", "kind": "image", "role": "原站关于我们模块的城市园区鸟瞰配图"},
     {"file": "assets/source/original-home-desktop.png", "kind": "screenshot", "role": "原站桌面首页视觉证据"}
   ],
   "case_files": {
