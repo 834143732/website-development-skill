@@ -17,6 +17,16 @@
         "checked": ["browser-response-dom", "index.css", "media.css", "index.js", "ksbm.js", "public-image-assets", "desktop-and-mobile-screenshots"],
         "not_checked": ["authenticated-admin", "form-submission", "private-project-metrics", "third-party-verification-of-company-claims"],
         "notes": ["直接命令行 GET 在观察时返回 403；使用浏览器同源只读请求取得 HTML 快照。归档 home.html 移除了 51.la 与 CNZZ 的站点分析脚本及 ID。"]
+      },
+      {
+        "observed_at": "2026-08-21",
+        "scope": ["首页", "PHAmily 原料产品", "PHAbrary 定制方案", "PHAdustry 智造产线", "PHA Life 多元创造", "1440x900", "390x844"],
+        "checked": ["页面信息架构与业务路径", "标题与页面地标", "移动菜单与横向溢出", "图片/视频/轮播数量", "控制台错误与 fullPage 配置"],
+        "not_checked": ["英文站完整内容", "搜索与商城", "订阅与联系提交", "新闻/专利/认证详情", "真实移动设备", "Firefox", "弱网与受控性能", "站点自述数据的第三方核验"],
+        "notes": [
+          "页面展示的组合数量、材料属性、抗菌率、产能、投资额、数字化率、人员、效率、认证和合作关系均为原站自述。",
+          "可读取样式未发现 prefers-reduced-motion，另有跨域样式无法检查。"
+        ]
       }
     ]
   },
@@ -30,13 +40,19 @@
     "生物制造区拆为简易、节能低碳、高效、非粮四张优势卡片",
     "热销产品区展示 PB3000G、PB3430G、PV3000G 三个产品系列，并提供详情链接",
     "新闻区使用循环 Swiper 展示约 10 条公司动态，卡片包含图片、日期、标题和详情入口",
-    "页面加载 jQuery 3.3.1、Swiper 3.4.2、WOW、fullPage.js、ScrollOverflow、Fancybox、CountUp 与第三方统计/分享脚本"
+    "页面加载 jQuery 3.3.1、Swiper 3.4.2、WOW、fullPage.js、ScrollOverflow、Fancybox、CountUp 与第三方统计/分享脚本",
+    "四条内页路径分别承接原料、应用定制、规模制造和商业化",
+    "PHAmily 将科学分类与牌号/采购数据结合",
+    "PHAbrary 按六类应用任务组织定制方案",
+    "PHAdustry 以布局、数字化和产线状态支撑交付",
+    "PHA Life 区分合作展示、可购买产品和即将上线状态"
   ],
   "source_claims": [
     {"claim": "PHA 可在 1–3 年内于自然环境中彻底消解", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
     {"claim": "PHA 降解效率是传统塑料所需时间的 1%", "location": "核心产品区", "verification": "unverified-homepage-marketing-claim"},
     {"claim": "超过 100 亿种组合方式的 PHA 家族", "location": "品牌描述/4P 战略", "verification": "unverified-homepage-marketing-claim"},
-    {"claim": "设备成本降低 30%、能耗减少 50% 以上、产率提高 80%、生产时间降低 30%", "location": "生物制造优势区", "verification": "unverified-homepage-marketing-claims"}
+    {"claim": "设备成本降低 30%、能耗减少 50% 以上、产率提高 80%、生产时间降低 30%", "location": "生物制造优势区", "verification": "unverified-homepage-marketing-claims"},
+    {"claim": "页面展示的材料属性、抗菌率、产能、投资额、数字化率、人员、认证和合作关系均为原站自述。", "location": "多页面公开内容", "verification": "unverified-source-claim"}
   ],
   "transferable_patterns": [
     {
@@ -74,6 +90,30 @@
       "when": "品牌的可信度来自持续的科研、认证、ESG、行业活动与合作",
       "use": "使用真实日期、缩略图、标题和详情链接建立动态时间线",
       "guardrail": "新闻必须有来源，不用数量制造没有证据的活跃感"
+    },
+    {
+      "name": "四阶段业务关系模型",
+      "when": "企业同时具有材料谱系、应用开发、规模制造和商业案例",
+      "use": "建立材料/牌号→性能→应用→样品/方案→产线→商业案例→证据关系",
+      "guardrail": "业务阶段不完整或命名难懂时改用直白栏目"
+    },
+    {
+      "name": "真实资产认知递进",
+      "when": "新材料需要从价值直觉逐步解释到产业落地",
+      "use": "按自然场景、材料/实验、工厂、生活产品排列真实资产",
+      "guardrail": "自然风光不能替代产品、样品、工厂和测试证据"
+    },
+    {
+      "name": "产线状态证据",
+      "when": "产业客户需要判断规模化交付风险",
+      "use": "区分布局、数字化、设计产能、在建、投产和实际产量",
+      "guardrail": "产能、效率、投资和数字化数据必须保留口径与审核状态"
+    },
+    {
+      "name": "商业化状态区分",
+      "when": "平台同时展示概念样品、合作与可购买产品",
+      "use": "分开记录概念、展览、合作、可购买和即将上线状态",
+      "guardrail": "不把合作展示或概念样品写成已量产销售事实"
     }
   ],
   "do_not_copy": [
@@ -83,7 +123,12 @@
     "不要让视频自动播放、进入章节后取消静音或第三方脚本干扰用户",
     "不要照搬 51.la、CNZZ、分享和其他第三方统计/供应链脚本",
     "不要把原站的材料降解、能耗、成本、产率、时间和组合数量宣传数字迁移到新项目",
-    "不要在没有授权时把归档 Logo、图片、视频、CSS、JS、新闻文案和伙伴标识用于生产项目"
+    "不要在没有授权时把归档 Logo、图片、视频、CSS、JS、新闻文案和伙伴标识用于生产项目",
+    "缺少 H1/页面地标且页面 lang 错误",
+    "全部图片未使用原生懒加载",
+    "插件职责重叠并存在 fullPage 配置冲突",
+    "移动菜单缺少焦点、Esc 和背景锁定",
+    "图解缺少文本等价物"
   ],
   "source_assets": [
     {"file": "assets/source/home.html", "kind": "html", "role": "首页 DOM 快照（已移除统计脚本及 ID）"},
