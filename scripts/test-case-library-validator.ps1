@@ -5,7 +5,10 @@ $ErrorActionPreference = 'Stop'
 
 $script:RepositoryRoot = Split-Path -Parent $PSScriptRoot
 $script:ValidatorPath = Join-Path $PSScriptRoot 'validate-case-library.ps1'
+$script:ProductionSchemaPath = Join-Path $script:RepositoryRoot 'cases/case.schema.json'
 $script:Utf8NoBom = New-Object System.Text.UTF8Encoding($false)
+$script:ContractPassed = 0
+$script:ContractFailed = 0
 
 function Write-Utf8File {
     param(
@@ -157,6 +160,143 @@ function New-Fixture {
         ExpectedExitCode = $ExpectedExitCode
         ExpectedPattern = $ExpectedPattern
         Arrange = $Arrange
+    }
+}
+
+function Get-ExactJsonProperty {
+    param(
+        [AllowNull()][object]$Object,
+        [Parameter(Mandatory = $true)][string]$Name
+    )
+
+    if ($null -eq $Object -or $Object -isnot [pscustomobject]) {
+        return $null
+    }
+    $properties = @($Object.PSObject.Properties | Where-Object { $_.Name -ceq $Name })
+    if ($properties.Count -eq 0) {
+        return $null
+    }
+    return $properties[0]
+}
+
+function Assert-ContractRegression {
+    param(
+        [Parameter(Mandatory = $true)][bool]$Condition,
+        [Parameter(Mandatory = $true)][string]$Name,
+        [Parameter(Mandatory = $true)][string]$FailureMessage
+    )
+
+    if ($Condition) {
+        $script:ContractPassed++
+    }
+    else {
+        $script:ContractFailed++
+        Write-Output ("CONTRACT FAIL {0}: {1}" -f $Name, $FailureMessage)
+    }
+}
+
+function Invoke-ValidatorProcess {
+    param(
+        [Parameter(Mandatory = $true)][string]$CasesPath,
+        [Parameter(Mandatory = $true)][string]$SchemaPath,
+        [Parameter(Mandatory = $true)][string]$IndexPath
+    )
+
+    $oldErrorActionPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        $output = & powershell -NoProfile -ExecutionPolicy Bypass -File $script:ValidatorPath -CasesPath $CasesPath -SchemaPath $SchemaPath -IndexPath $IndexPath 2>&1 | Out-String
+        $exitCode = $LASTEXITCODE
+    }
+    finally {
+        $ErrorActionPreference = $oldErrorActionPreference
+    }
+
+    [pscustomobject]@{
+        ExitCode = $exitCode
+        Output = $output
+    }
+}
+
+function Invoke-ContractRegressions {
+    try {
+        $schema = Get-Content -LiteralPath $script:ProductionSchemaPath -Raw | ConvertFrom-Json
+        $definitions = Get-ExactJsonProperty $schema '$defs'
+        $stringArray = if ($null -ne $definitions) { Get-ExactJsonProperty $definitions.Value 'stringArray' } else { $null }
+        $stringItems = if ($null -ne $stringArray) { Get-ExactJsonProperty $stringArray.Value 'items' } else { $null }
+        $minimumLength = if ($null -ne $stringItems) { Get-ExactJsonProperty $stringItems.Value 'minLength' } else { $null }
+        Assert-ContractRegression ($null -ne $minimumLength -and $minimumLength.Value -eq 1) 'schema stringArray nonempty items' '$defs.stringArray.items.minLength must equal 1'
+
+        $stringArrayReference = '#/$defs/stringArray'
+        $siteFactsRef = Get-ExactJsonProperty $schema.properties.site_facts '$ref'
+        $observationProperties = $schema.properties.evidence.properties.observations.items.properties
+        $checkedRef = Get-ExactJsonProperty $observationProperties.checked '$ref'
+        $notCheckedRef = Get-ExactJsonProperty $observationProperties.not_checked '$ref'
+        $notesRef = Get-ExactJsonProperty $observationProperties.notes '$ref'
+        $allStringArraysUseDefinition = $null -ne $siteFactsRef -and $siteFactsRef.Value -ceq $stringArrayReference -and
+            $null -ne $checkedRef -and $checkedRef.Value -ceq $stringArrayReference -and
+            $null -ne $notCheckedRef -and $notCheckedRef.Value -ceq $stringArrayReference -and
+            $null -ne $notesRef -and $notesRef.Value -ceq $stringArrayReference
+        Assert-ContractRegression $allStringArraysUseDefinition 'schema stringArray references' 'checked, not_checked, notes, and site_facts must use #/$defs/stringArray'
+
+        Assert-ContractRegression ($schema.properties.source.pattern -ceq '^[Hh][Tt][Tt][Pp][Ss]?://') 'schema source scheme casing' 'source.pattern must accept uppercase and lowercase HTTP(S)'
+        $industryUnique = Get-ExactJsonProperty $schema.properties.industry 'uniqueItems'
+        Assert-ContractRegression ($null -eq $industryUnique) 'schema duplicate industry values' 'industry must not declare uniqueItems'
+    }
+    catch {
+        Assert-ContractRegression $false 'schema contract inspection' $_.Exception.Message
+    }
+
+    $regressionRoot = Join-Path ([System.IO.Path]::GetTempPath()) ("case-validator-{0}" -f [guid]::NewGuid().ToString('D'))
+    try {
+        $casesPath = Join-Path $regressionRoot 'cases'
+        $indexPath = Join-Path $regressionRoot 'README.md'
+        New-Item -ItemType Directory -Path $casesPath -Force | Out-Null
+
+        New-ValidReviewCase $casesPath $indexPath
+        Update-CaseMetadata $casesPath {
+            param($metadata)
+            $metadata.source = 'HTTPS://example.com/'
+            $metadata.industry = @('Testing', 'Testing')
+        }
+        $validResult = Invoke-ValidatorProcess $casesPath $script:ProductionSchemaPath $indexPath
+        Assert-ContractRegression ($validResult.ExitCode -eq 0 -and $validResult.Output -match 'Case library validation passed: 1 cases\.') 'validator accepts uppercase HTTP and duplicate industry' ("exit {0}; output: {1}" -f $validResult.ExitCode, (($validResult.Output -replace '[\r\n]+', ' ').Trim()))
+
+        $emptyStringCases = @(
+            [pscustomobject]@{
+                Name = 'validator rejects empty checked item'
+                Pattern = 'evidence\.observations\[0\]\.checked\[0\].*nonempty'
+                Update = { param($metadata) $metadata.evidence.observations[0].checked = @('') }
+            }
+            [pscustomobject]@{
+                Name = 'validator rejects empty not_checked item'
+                Pattern = 'evidence\.observations\[0\]\.not_checked\[0\].*nonempty'
+                Update = { param($metadata) $metadata.evidence.observations[0].not_checked = @('') }
+            }
+            [pscustomobject]@{
+                Name = 'validator rejects empty notes item'
+                Pattern = 'evidence\.observations\[0\]\.notes\[0\].*nonempty'
+                Update = { param($metadata) $metadata.evidence.observations[0].notes = @('') }
+            }
+            [pscustomobject]@{
+                Name = 'validator rejects empty site_facts item'
+                Pattern = 'site_facts\[0\].*nonempty'
+                Update = { param($metadata) $metadata.site_facts = @('') }
+            }
+        )
+
+        foreach ($emptyStringCase in $emptyStringCases) {
+            New-ValidReviewCase $casesPath $indexPath
+            Update-CaseMetadata $casesPath $emptyStringCase.Update
+            $invalidResult = Invoke-ValidatorProcess $casesPath $script:ProductionSchemaPath $indexPath
+            Assert-ContractRegression ($invalidResult.ExitCode -eq 1 -and $invalidResult.Output -match $emptyStringCase.Pattern) $emptyStringCase.Name ("exit {0}; output: {1}" -f $invalidResult.ExitCode, (($invalidResult.Output -replace '[\r\n]+', ' ').Trim()))
+        }
+    }
+    catch {
+        Assert-ContractRegression $false 'validator contract invocation' $_.Exception.Message
+    }
+    finally {
+        Remove-FixtureRoot $regressionRoot
     }
 }
 
@@ -337,8 +477,10 @@ foreach ($fixture in $fixtures) {
     }
 }
 
+Invoke-ContractRegressions
+Write-Output ("Case validator contract regressions passed: {0}; failed: {1}" -f $script:ContractPassed, $script:ContractFailed)
 Write-Output ("Case validator fixtures passed: {0}; failed: {1}" -f $passed, $failed)
-if ($failed -gt 0) {
+if ($failed -gt 0 -or $script:ContractFailed -gt 0) {
     exit 1
 }
 exit 0

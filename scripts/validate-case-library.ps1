@@ -284,7 +284,7 @@ function Validate-Evidence {
             $arrayProperty = Get-ExactProperty $observation $arrayName
             if ($null -ne $arrayProperty) {
                 $requiresItems = $arrayName -ceq 'scope'
-                $null = Test-StringArray $CaseName ("{0}.{1}" -f $prefix, $arrayName) $arrayProperty.Value $requiresItems $requiresItems $false
+                $null = Test-StringArray $CaseName ("{0}.{1}" -f $prefix, $arrayName) $arrayProperty.Value $requiresItems $true $false
             }
         }
     }
@@ -577,7 +577,7 @@ function Validate-Case {
 
     $industry = Get-ExactProperty $metadata 'industry'
     if ($null -ne $industry) {
-        $null = Test-StringArray $caseName 'industry' $industry.Value $true $true $true
+        $null = Test-StringArray $caseName 'industry' $industry.Value $true $true $false
     }
 
     $evidence = Get-ExactProperty $metadata 'evidence'
@@ -587,7 +587,7 @@ function Validate-Case {
 
     $siteFacts = Get-ExactProperty $metadata 'site_facts'
     if ($null -ne $siteFacts) {
-        $null = Test-StringArray $caseName 'site_facts' $siteFacts.Value $false $false $false
+        $null = Test-StringArray $caseName 'site_facts' $siteFacts.Value $false $true $false
     }
 
     $sourceClaims = Get-ExactProperty $metadata 'source_claims'
