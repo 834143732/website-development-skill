@@ -968,12 +968,12 @@ Set `industry` and `page_type` from the fixed design-spec identity table. Put th
 $slugs = 'gpixel','szzygh','iyungo','vision-life','funext-protein','tomilo','yimmet'
 foreach ($slug in $slugs) {
     $relative = @(Get-ChildItem "cases/$slug" -Recurse -File | ForEach-Object { $_.FullName.Substring((Resolve-Path "cases/$slug").Path.Length + 1).Replace('\','/') }) | Sort-Object
-    if (($relative -join ',') -ne 'README.md,case.json') { throw "Unexpected review files for $slug: $($relative -join ',')" }
+    if (($relative -join ',') -ne 'case.json,README.md') { throw "Unexpected review files for $slug: $($relative -join ',')" }
 }
 $output = & powershell -NoProfile -ExecutionPolicy Bypass -File scripts/validate-case-library.ps1 2>&1
 if ($LASTEXITCODE -eq 0) { throw 'Validator unexpectedly passed before the canonical index was updated' }
-$indexErrors = @($output | Where-Object { $_ -match '^ERROR \[index\] cases/README\.md: missing entry for ' })
-$nonIndexErrors = @($output | Where-Object { $_ -match '^ERROR ' -and $_ -notmatch '^ERROR \[index\] cases/README\.md: missing entry for ' })
+$indexErrors = @($output | Where-Object { $_ -match '^ERROR \[index\] index: missing case directory entry: ' })
+$nonIndexErrors = @($output | Where-Object { $_ -match '^ERROR ' -and $_ -notmatch '^ERROR \[index\] index: missing case directory entry: ' })
 if ($indexErrors.Count -ne 7) { throw "Expected seven missing index entries, got $($indexErrors.Count)" }
 if ($nonIndexErrors.Count -gt 0) { throw ($nonIndexErrors -join [Environment]::NewLine) }
 git add cases references/site-reviews
@@ -1024,8 +1024,8 @@ Append a `## 多页面补充观察（2026-08-21）` section to `cases/phabuilder
 git rm references/site-reviews/phabuilder.md
 $output = & powershell -NoProfile -ExecutionPolicy Bypass -File .\scripts\validate-case-library.ps1 2>&1
 if ($LASTEXITCODE -ne 1) { throw "Expected only pre-index validation failures: $($output -join ' | ')" }
-$indexErrors = @($output | Where-Object { $_ -match '^ERROR \[index\] cases/README\.md: missing entry for ' })
-$nonIndexErrors = @($output | Where-Object { $_ -match '^ERROR ' -and $_ -notmatch '^ERROR \[index\] cases/README\.md: missing entry for ' })
+$indexErrors = @($output | Where-Object { $_ -match '^ERROR \[index\] index: missing case directory entry: ' })
+$nonIndexErrors = @($output | Where-Object { $_ -match '^ERROR ' -and $_ -notmatch '^ERROR \[index\] index: missing case directory entry: ' })
 if ($indexErrors.Count -ne 7) { throw "Expected seven missing index entries, got $($indexErrors.Count)" }
 if ($nonIndexErrors.Count -gt 0) { throw ($nonIndexErrors -join [Environment]::NewLine) }
 git add cases/phabuilder
@@ -1201,7 +1201,7 @@ $reviewSlugs = 'gpixel','szzygh','iyungo','vision-life','funext-protein','tomilo
 foreach ($slug in $reviewSlugs) {
     $root = (Resolve-Path "cases/$slug").Path
     $files = @(Get-ChildItem $root -Recurse -File | ForEach-Object { $_.FullName.Substring($root.Length + 1).Replace('\','/') }) | Sort-Object
-    if (($files -join ',') -ne 'README.md,case.json') { throw "Unexpected lightweight files for $slug: $($files -join ',')" }
+    if (($files -join ',') -ne 'case.json,README.md') { throw "Unexpected lightweight files for $slug: $($files -join ',')" }
 }
 $snapshotSlugs = 'btj_hcm','enerax','ghrepower','jsmems','jxgtx','jypower','meihua','phabuilder','zoe_industry'
 $snapshotFiles = @($snapshotSlugs | ForEach-Object { Get-ChildItem "cases/$_" -Recurse -File })

@@ -14,12 +14,4 @@ The script creates a directory junction at `%USERPROFILE%\.codex\skills\website-
 
 ## 网站案例
 
-- [苏州晶溯微纳（jsmems.com）案例](cases/jsmems/)
-- [上海致远绿色能源（ghrepower.com）案例](cases/ghrepower/)
-- [微构工场（phabuilder.com）案例](cases/phabuilder/)
-- [能翊行（enerax.cn）案例](cases/enerax/)
-- [梅花集团（meihua.group）案例](cases/meihua/)
-- [江苏吉星 KomShine（jxgtx.com）案例](cases/jxgtx/)
-- [苏州吉远 JIYUAN（jypower.cn）案例](cases/jypower/)
-- [舟欧工业科技（zoe-industry.cn）案例](cases/zoe_industry/)
-- [包头市晶华金属钙业（cn.btjhcm.com）案例](cases/btj_hcm/)
+统一案例库同时收录轻量审阅与带来源归档的完整快照；按行业、页面类型、完整度和重点模式从 [网站案例库](cases/) 选择参考。
