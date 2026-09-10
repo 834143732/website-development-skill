@@ -266,7 +266,7 @@ AURA 只用于按任务复杂度和风险选择工作模式，不覆盖用户指
 
 - 所有网站项目默认通过 GitHub Actions 部署。
 - 具体的数据源、API 边界、构建产物、迁移、回滚和验收要求，先按上面的项目类型 reference 执行，再套用本节通用 Actions 规则。
-- WordPress 项目：在仓库存放主体（主题/站点主体代码）和插件，使用 Actions 将对应内容推送到目标 WordPress 目录。
+- WordPress 项目：初始仓库默认包含 `.github/workflows/deploy.yml`、`theme/<项目名称>/`、`plugins/`、`tools/` 和 `建站资料/`；仓库存放主体（主题/站点主体代码）和插件，使用 Actions 将对应内容推送到目标 WordPress 目录。`docs/` 按项目文档规范另行建立与维护，不将 `deploy/` 作为默认目录。
 - WordPress 客户服务器部署前置检查：当目标服务器由客户提供时，在 push 或触发 Actions 自动部署之前，必须使用本机保存且已确认对应服务器的 SSH alias/config/key 做只读预检。先核对解析出的主机、端口、登录用户、环境和 `known_hosts` 指纹；使用 `BatchMode`、`IdentitiesOnly` 和 `StrictHostKeyChecking=yes`，不得输出私钥、密码或密钥变量值。
 - 预检必须在实际部署用户上下文确认远端 `rsync` 和 WP-CLI 可执行并能返回版本信息，例如检查 `command -v rsync` + `rsync --version`、`command -v wp` + `wp --version`；只确认 SSH 能登录或只检查 `command -v` 不算通过。主机、用户、工具缺失/不可执行/版本不符合要求或环境无法核对时，必须阻止 Actions，不得先触发部署。
 - WordPress 客户服务器默认使用 PHP 8.2：预检还需确认远端 `php -v` 与 WP-CLI 报告的 PHP 版本为 8.2，并将 PHP 版本纳入阻止自动部署的条件（版本不符或 `php -l` 报错时不得部署）。开发电脑也默认安装 PHP 8.2，本地 lint/seed 与线上保持一致。

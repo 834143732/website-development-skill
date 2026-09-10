@@ -5,6 +5,7 @@
 ## 目录
 
 - [识别信号与边界](#识别信号与边界)
+- [初始仓库结构](#初始仓库结构)
 - [样例工程结构](#样例工程结构)
 - [路由、内容与数据流](#路由内容与数据流)
 - [编辑入口与内容覆盖风险](#编辑入口与内容覆盖风险)
@@ -17,14 +18,35 @@
 
 ## 识别信号与边界
 
-当仓库包含自定义主题、PHP 模板、`functions.php`、WordPress CPT/Taxonomy、WP-CLI 或主题部署目录时，按 WordPress 项目处理。不要只因为仓库里有 PHP 就做此判断；必须确认运行时由 WordPress Core、数据库和主题共同渲染。
+当仓库包含自定义主题、PHP 模板、`functions.php`、WordPress CPT/Taxonomy、WP-CLI 或 WordPress 部署 workflow 时，按 WordPress 项目处理。不要只因为仓库里有 PHP 就做此判断；必须确认运行时由 WordPress Core、数据库和主题共同渲染。
 
 WordPress 项目的主要边界是：
 
 - 主题代码负责模板、查询、字段归一化和前端资源。
 - WordPress 数据库负责文章、分类、媒体、设置和自定义字段。
 - WP-CLI seed 可以初始化或覆盖数据库内容，但不应默认视为“只读初始化”。
-- 插件、WordPress Core、服务器配置和媒体目录可能不在仓库内，部署前必须单独核对。
+- 第三方插件、WordPress Core、服务器配置和媒体目录可能不在仓库内；项目自有插件默认放在仓库 `plugins/`，部署前仍必须单独核对实际启用的全部插件。
+
+## 初始仓库结构
+
+WordPress 项目的初始仓库默认包含以下 5 项：
+
+```text
+<repo>/
+|-- .github/workflows/deploy.yml
+|-- theme/<项目名称>/
+|-- plugins/
+|-- tools/
+`-- 建站资料/
+```
+
+- `.github/workflows/deploy.yml`：定义 GitHub Actions 的部署触发、检查、同步和线上验收流程。
+- `theme/<项目名称>/`：项目主题代码，主题文件夹名称必须使用项目名称。
+- `plugins/`：项目自有插件代码，与主题分开；CPT、Taxonomy、Meta、REST 接口、数据同步和外部集成等功能按职责放入插件。
+- `tools/`：WP-CLI 使用的 seed、数据校验、报告和其他运维工具。
+- `建站资料/`：由用户提供的制作前资料，按全局规则加入 `.gitignore`，AI 不自动创建。
+
+`docs/` 仍按全局项目文档规范在制作过程中建立和维护，但不计入本节 5 项 WordPress 运行/部署初始结构。`deploy/` 不是新项目默认目录；服务器 Nginx 配置由 workflow、服务器管理或托管环境提供等效维护方式。
 
 ## 样例工程结构
 
@@ -37,10 +59,9 @@ WordPress 项目的主要边界是：
 | `daqing/theme/daqing/inc/content.php` | 读取 JSON、查询 CPT、标准化字段并提供 fallback。 |
 | `daqing/theme/daqing/inc/meta-fields.php` | 产品和荣誉的后台 Meta Box 与保存逻辑。 |
 | `daqing/tools/wordpress-seed.php` | 用 WP-CLI 幂等写入页面、分类、产品、荣誉和站点选项。 |
-| `daqing/deploy/daqing.wuyoustudio.com.conf` | Nginx 前端控制器配置。 |
 | `.github/workflows/deploy.yml` | 同步主题、备份、seed、Nginx reload 和线上 smoke test。 |
 
-样例中未发现 `package.json`、`composer.json`、Dockerfile、WordPress Core 或仓库内插件目录；不要假定存在 npm/Composer 构建链或插件代码。
+样例中的 `daqing/deploy/daqing.wuyoustudio.com.conf` 是历史服务器配置，不属于新项目默认初始结构。样例中也未发现 `package.json`、`composer.json`、Dockerfile、WordPress Core 或仓库内插件目录；新项目仍应按上面的默认结构管理项目自有插件，不要假定存在 npm/Composer 构建链或第三方插件源码。
 
 ## 路由、内容与数据流
 
@@ -253,7 +274,7 @@ GEO 当前发布协议使用下列 MD5 兼容算法：按 key 排序，排除 `s
 样例没有 npm/Composer 构建；Actions 主要做确定性文件校验、远程 PHP lint、`nginx -t` 和页面/资源 smoke test。部署链为：
 
 1. `main` push 或手动触发。
-2. 使用 `SSH_PRIVATE_KEY` 连接服务器，`rsync --delete-after` 同步主题。
+2. 使用 `SSH_PRIVATE_KEY` 连接服务器，`rsync --delete-after` 同步主题和项目插件。
 3. 上传并执行 WP-CLI seed，安装 Nginx 配置并 reload。
 4. 验证首页、产品/新闻路由、静态页面和图片。
 
@@ -261,7 +282,7 @@ GEO 当前发布协议使用下列 MD5 兼容算法：按 key 排序，排除 `s
 
 WordPress 项目默认使用 **PHP 8.2**：开发电脑默认安装 PHP 8.2，线上服务器、PHP-FPM、WP-CLI 和 Actions runner 也应统一在 PHP 8.2 运行。部署前预检需确认远端 `php -v`、`wp --info` 或 WP-CLI 报告的 PHP 版本为 8.2；主题、插件和 seed 脚本按 PHP 8.2 的语法与弃用边界编写，不依赖更低或更高版本的行为。远端 PHP 版本不是 8.2 或执行 `php -l` 出错时，必须阻止自动部署。
 
-不要把 `rsync --delete-after`、root SSH、seed 覆盖和“只恢复 active theme”当作安全默认值。至少补充非 root 账号、固定 SSH 指纹、部署锁、staging、备份保留策略和恢复演练；部署包只允许运行时清单、主题、工具和必要配置进入 web root，原始客户资料与 source snapshot 必须排除或放在 docroot 外。
+不要把 `rsync --delete-after`、root SSH、seed 覆盖和“只恢复 active theme”当作安全默认值。至少补充非 root 账号、固定 SSH 指纹、部署锁、staging、备份保留策略和恢复演练；部署包只允许运行时清单、主题、插件、工具和必要配置进入 web root，原始客户资料与 source snapshot 必须排除或放在 docroot 外。
 
 ## WordPress/Nginx/Actions 发布强制注意点
 
@@ -308,7 +329,7 @@ WordPress 项目默认使用 **PHP 8.2**：开发电脑默认安装 PHP 8.2，�
 ### 7. 发布前最小验证矩阵
 
 ```text
-php -l <all theme/tools PHP files>
+php -l <all theme/plugins/tools PHP files>
 python tools/validate-content.py --repo-root . --strict
 python -m unittest discover -s tests -p 'test_*.py'
 php tests/test_wp_contracts.php
